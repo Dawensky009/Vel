@@ -52,6 +52,26 @@ export interface Communique {
   corpsHtml: string; // rendered HTML from the markdown body
 }
 
+export interface MediaVideo {
+  url: string; // embeddable URL (YouTube/Facebook/Vimeo)
+  titre?: string;
+}
+
+export interface Activite {
+  slug: string;
+  titre: string;
+  date: string; // ISO
+  type: string; // "Conférence de presse", "Atelier", "Lancement", "Événement", "Table ronde"…
+  edition?: string; // edition annee ref
+  lieu?: string;
+  statut?: Statut; // "a-venir" | "passe"
+  resume: string;
+  couverture?: string; // path under /public
+  paragraphs?: string[];
+  images?: string[]; // paths under /public
+  videos?: MediaVideo[];
+}
+
 export interface Membre {
   nom: string;
   role: string;

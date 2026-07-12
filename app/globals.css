@@ -228,7 +228,7 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
   font: inherit; font-weight: 700; font-size: var(--step--1); cursor: pointer; align-items: center; gap: 0.4rem;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   .has-js .nav__toggle { display: inline-flex; }
   .has-js .nav__links {
     position: absolute; top: 100%; left: 0; right: 0;
@@ -660,6 +660,47 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .staff__role { color: var(--vel-green-palm); font-weight: 600; font-size: var(--step--1); margin-top: 0.15rem; }
 .staff__cap { margin-top: var(--space-lg); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
 
+/* ============ Agenda (timeline + médias) ============ */
+
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 0.6rem; bottom: 0.6rem; width: 2px; background: var(--vel-line-strong); }
+.tl-item { position: relative; padding: 0 0 clamp(1.75rem, 4vw, 2.75rem) clamp(1.9rem, 5vw, 2.75rem); }
+.tl-item__marker { position: absolute; left: 0; top: 0.3rem; width: 16px; height: 16px; border-radius: 50%; background: var(--vel-navy); box-shadow: 0 0 0 4px var(--vel-cream); }
+.tl-item.is-upcoming .tl-item__marker { background: var(--vel-sun); }
+.tl-item__date { font-weight: 700; color: var(--vel-ink-muted); font-size: var(--step--1); margin-bottom: var(--space-sm); font-variant-numeric: tabular-nums; }
+.tl-card { display: block; text-decoration: none; color: inherit; background: var(--vel-cream); border: 1px solid var(--vel-line); border-radius: var(--radius-lg); overflow: clip; transition: box-shadow var(--dur-mid) var(--ease-out-quart), transform var(--dur-mid) var(--ease-out-quart), border-color var(--dur-fast) ease; }
+.tl-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--vel-line-strong); }
+@media (min-width: 640px) { .tl-card.has-media { display: grid; grid-template-columns: 0.5fr 1fr; align-items: stretch; } }
+.tl-card__media { position: relative; display: block; min-height: 170px; background: var(--vel-panel); }
+.tl-card__media img { transition: transform 0.6s var(--ease-out-quart); }
+.tl-card:hover .tl-card__media img { transform: scale(1.04); }
+.tl-card__body { display: block; padding: var(--space-lg); }
+.tl-card__type { display: flex; align-items: center; gap: 0.6rem; margin-bottom: var(--space-sm); }
+.tl-badge { display: inline-block; background: var(--vel-navy); color: var(--vel-cream); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.02em; padding: 0.2em 0.65em; border-radius: 999px; }
+.tl-soon { color: var(--vel-green-palm); font-weight: 700; font-size: var(--step--1); }
+.tl-card__title { display: block; font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-navy); line-height: 1.15; }
+.tl-card__resume { display: block; margin-top: 0.5rem; color: var(--vel-ink-muted); font-size: var(--step-0); }
+.tl-card__more { display: inline-block; margin-top: var(--space-md); color: var(--vel-green-palm); font-weight: 700; font-size: var(--step--1); }
+
+/* Détail d'une activité */
+.act__text { max-width: 760px; }
+.act__section { margin-top: var(--space-xl); }
+.act__h2 { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-navy); margin-bottom: var(--space-lg); }
+.act__media-grid { display: grid; gap: clamp(0.6rem, 1.5vw, 1rem); grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.act__media-grid figure { margin: 0; position: relative; aspect-ratio: 4 / 3; overflow: clip; border-radius: var(--radius); background: var(--vel-panel); }
+.act__media-grid img { width: 100%; height: 100%; object-fit: cover; }
+.act__cta { margin-top: var(--space-xl); font-size: var(--step-1); }
+.act__cta a { color: var(--vel-green-palm); font-weight: 700; text-underline-offset: 3px; }
+.act__cta a:hover { text-decoration-color: var(--vel-sun); }
+
+/* Vidéos */
+.videos { display: grid; gap: clamp(1rem, 3vw, 2rem); grid-template-columns: 1fr; }
+@media (min-width: 820px) { .videos { grid-template-columns: repeat(2, 1fr); } }
+.video { margin: 0; }
+.video__frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: clip; box-shadow: var(--shadow-md); background: var(--vel-navy); }
+.video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__cap { margin-top: 0.6rem; font-size: var(--step--1); color: var(--vel-ink-muted); font-style: italic; }
+
 /* ---------- Reveal motion (enriches an already-visible default) ---------- */
 .has-js .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out-expo); }
 .has-js .reveal.is-in { opacity: 1; transform: none; }
@@ -676,4 +717,5 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   .zoom img { transition: none !important; }
   .parallax { transform: none !important; }
   .feature, .ccard, .ecard, .ecard__media img { transition: none !important; }
+  .tl-card, .tl-card__media img { transition: none !important; }
 }

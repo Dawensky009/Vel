@@ -7,12 +7,14 @@ import { marked } from "marked";
 import { editions } from "@/content/editions";
 import { publishers } from "@/content/publishers";
 import { organisation } from "@/content/organisation";
+import { activites } from "@/content/activites";
 import type {
   Edition,
   Communique,
   MaisonEdition,
   Personne,
   Organisation,
+  Activite,
 } from "./types";
 
 const COMMUNIQUES_DIR = path.join(process.cwd(), "content", "communiques");
@@ -34,6 +36,18 @@ export function getUpcomingEdition(): Edition {
 export function getGuestOfHonour(annee?: string): Personne | undefined {
   const ed = annee ? getEdition(annee) : getUpcomingEdition();
   return ed?.guest;
+}
+
+/* ---------- Activités (agenda / timeline) ---------- */
+
+export function getActivites(annee?: string): Activite[] {
+  const list = annee ? activites.filter((a) => a.edition === annee) : [...activites];
+  // chronologique (du plus ancien au plus récent) — la timeline suit l'année
+  return list.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+export function getActivite(slug: string): Activite | undefined {
+  return activites.find((a) => a.slug === slug);
 }
 
 /* ---------- Organisation ---------- */
