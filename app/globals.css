@@ -429,7 +429,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   background: linear-gradient(to top, rgba(27,20,100,0.88) 4%, rgba(27,20,100,0.52) 40%, rgba(27,20,100,0.14) 74%, rgba(27,20,100,0.30) 100%);
 }
 .hero-im__inner {
-  position: relative; z-index: 2; width: 100%;
+  position: relative; z-index: 2;
   padding-block: clamp(2.5rem, 7vw, 5rem);
   display: grid; gap: clamp(1.75rem, 4vw, 3rem); align-items: end;
 }
