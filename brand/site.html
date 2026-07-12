@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Vacances en livres — L'événement de l'été · 15 août 2026, Delmas</title>
+<meta name="description" content="Vacances en livres : trente auteurs en signature au Palais Municipal de Delmas, le samedi 15 août 2026. 500 HTG par adulte, gratuit pour les enfants de 14 ans et moins.">
+<meta name="theme-color" content="#F4EDE0">
+<link rel="canonical" href="https://vacancesenlivres.ht/">
+
+<!-- Open Graph / Twitter — WhatsApp & Facebook are the #1 sharing channels -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Vacances en livres">
+<meta property="og:title" content="Vacances en livres — L'événement de l'été">
+<meta property="og:description" content="Trente auteurs en signature au Palais Municipal de Delmas, le 15 août 2026. 500 HTG · gratuit pour les enfants de 14 ans et moins.">
+<meta property="og:image" content="../Ressources/Annonces.jpeg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="Affiche officielle de Vacances en livres 2026">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vacances en livres — L'événement de l'été">
+<meta name="twitter:description" content="Trente auteurs en signature au Palais Municipal de Delmas, le 15 août 2026.">
+<meta name="twitter:image" content="../Ressources/Annonces.jpeg">
+
+<!-- Favicon: open book + sun, brand colors -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231B1464'/%3E%3Cpath%20d='M16%2011.2v12.4M16%2011.2C13%209%208.8%209.4%206.9%2010.5v12.2C8.8%2021.6%2013%2021.2%2016%2023.4M16%2011.2c3-2.2%207.2-1.8%209.1-.7v12.2c-1.9-1.1-6.1-1.5-9.1.7'%20fill='none'%20stroke='%23F4EDE0'%20stroke-width='1.5'%20stroke-linejoin='round'%20stroke-linecap='round'/%3E%3Ccircle%20cx='16'%20cy='7.4'%20r='1.7'%20fill='%23FECE01'/%3E%3C/svg%3E">
+
+<!-- Set JS flag before paint so no-JS renders fully visible -->
+<script>document.documentElement.className = document.documentElement.className.replace('no-js','has-js');</script>
+
+<!-- Fonts: Alegreya (display), Manrope (body/UI), Caveat (rare signature) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,800;1,400;1,800&family=Caveat:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+
+<link rel="stylesheet" href="./tokens.css">
+<style>
+  /* ---------- Reset ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    background: var(--vel-cream);
+    color: var(--vel-ink);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: var(--lh-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 3px solid var(--vel-focus);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
+  }
+  ::selection { background: var(--vel-sun); color: var(--vel-navy); }
+
+  /* ---------- Layout ---------- */
+  .container { width: min(100% - (var(--gutter) * 2), var(--container)); margin-inline: auto; }
+  .section { padding-block: var(--space-section); position: relative; }
+  .section + .section { border-top: 1px solid var(--vel-line); }
+  section[id], [id="top"] { scroll-margin-top: 5.5rem; }
+
+  .skip {
+    position: absolute; left: var(--gutter); top: -100px;
+    background: var(--vel-navy); color: var(--vel-cream);
+    padding: 0.6rem 1rem; border-radius: var(--radius); z-index: var(--z-overlay);
+    font-weight: 600; transition: top var(--dur-fast) var(--ease-out-quart);
+  }
+  .skip:focus { top: 0.6rem; }
+
+  /* Section standfirst + heading (natural case, not a tracked eyebrow) */
+  .s-head { max-width: var(--measure); margin-bottom: var(--space-lg); }
+  .s-lead {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--vel-ink-muted);
+    margin-bottom: var(--space-2xs);
+  }
+  .s-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-3);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--tracking-display);
+  }
+  .s-title em { color: var(--vel-green-palm); font-style: italic; }
+
+  /* Rare handwritten signature — Caveat, ≤ 4 uses total */
+  .script { font-family: var(--font-script); font-weight: 700; line-height: 1; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    font-family: var(--font-body); font-weight: 700;
+    text-decoration: none; cursor: pointer; border: 0;
+    border-radius: var(--radius); line-height: 1;
+    transition: transform var(--dur-fast) var(--ease-out-quart),
+                background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+  }
+  .btn--cta {
+    background: var(--vel-sun); color: var(--vel-navy);
+    padding: 0.95em 1.4em; font-size: var(--step-0);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn--cta:hover { background: var(--vel-sun-deep); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  .btn--cta:active { transform: translateY(0); }
+  .btn--cta .arw { transition: transform var(--dur-fast) var(--ease-out-quart); }
+  .btn--cta:hover .arw { transform: translateX(3px); }
+  .btn--block { width: 100%; justify-content: center; padding-block: 1.1em; font-size: var(--step-1); }
+  .btn--ghost {
+    background: transparent; color: var(--vel-navy);
+    padding: 0.8em 1.15em; box-shadow: inset 0 0 0 1.5px var(--vel-navy);
+  }
+  .btn--ghost:hover { background: var(--vel-navy); color: var(--vel-cream); }
+  .btn--ghost-invert {
+    background: transparent; color: var(--vel-cream);
+    padding: 0.8em 1.15em; box-shadow: inset 0 0 0 1.5px var(--vel-cream);
+  }
+  .btn--ghost-invert:hover { background: var(--vel-cream); color: var(--vel-navy); }
+  .btn--ghost .arw, .btn--ghost-invert .arw { transition: transform var(--dur-fast) var(--ease-out-quart); }
+  .btn--ghost:hover .arw, .btn--ghost-invert:hover .arw { transform: translateX(3px); }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: var(--z-sticky);
+    background: var(--vel-nav-bg);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid var(--vel-line);
+    transition: box-shadow var(--dur-mid) var(--ease-out-quart), border-color var(--dur-mid) ease, background-color var(--dur-mid) ease;
+  }
+  .nav--scrolled { box-shadow: 0 8px 24px -16px rgba(27, 20, 100, 0.32); border-bottom-color: var(--vel-line-strong); }
+  .nav__inner { display: flex; align-items: center; gap: var(--space-md); min-height: 4.5rem; }
+  .wordmark {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.65rem; letter-spacing: -0.02em; text-decoration: none;
+    color: var(--vel-navy); line-height: 1; margin-right: auto;
+  }
+  .wordmark em { color: var(--vel-green-palm); font-style: italic; }
+  .nav__links ul { list-style: none; display: flex; gap: clamp(0.75rem, 2vw, 1.75rem); padding: 0; }
+  .nav__links a {
+    text-decoration: none; color: var(--vel-navy); font-weight: 600;
+    font-size: var(--step--1); padding: 0.35rem 0.15rem; position: relative; white-space: nowrap;
+  }
+  .nav__links a::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px;
+    background: var(--vel-sun); border-radius: 2px;
+    transform: scaleX(0); transform-origin: left; opacity: 0;
+    transition: transform var(--dur-mid) var(--ease-out-expo), opacity var(--dur-fast) ease;
+  }
+  .nav__links a:hover::after { transform: scaleX(1); opacity: 1; }
+  .nav__links a[aria-current="true"] { font-weight: 700; }
+  .nav__links a[aria-current="true"]::after { transform: scaleX(1); opacity: 1; }
+  .nav__cta { padding: 0.62em 1em; font-size: var(--step--1); }
+  .nav__toggle {
+    display: none; background: transparent; border: 1.5px solid var(--vel-navy);
+    color: var(--vel-navy); border-radius: var(--radius); padding: 0.45rem 0.7rem;
+    font: inherit; font-weight: 700; font-size: var(--step--1); cursor: pointer; align-items: center; gap: 0.4rem;
+  }
+
+  @media (max-width: 860px) {
+    .has-js .nav__toggle { display: inline-flex; }
+    .has-js .nav__links {
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--vel-cream); border-bottom: 1px solid var(--vel-line);
+      box-shadow: var(--shadow-md);
+      display: grid; grid-template-rows: 0fr;
+      transition: grid-template-rows var(--dur-mid) var(--ease-out-expo);
+    }
+    .has-js .nav__links > ul { overflow: hidden; flex-direction: column; gap: 0; min-height: 0; }
+    .has-js .nav--open .nav__links { grid-template-rows: 1fr; }
+    .has-js .nav__links li { border-top: 1px solid var(--vel-line); }
+    .has-js .nav__links li:first-child { border-top: 0; }
+    .has-js .nav__links a { display: block; padding: 0.95rem var(--gutter); font-size: var(--step-0); }
+    .has-js .nav__links a::after { display: none; }
+    .has-js .nav__links a[aria-current="true"] { box-shadow: inset 3px 0 0 var(--vel-sun); }
+    /* no-JS: links wrap under the bar, always reachable */
+    .no-js .nav__inner { flex-wrap: wrap; }
+    .no-js .nav__links { order: 3; flex-basis: 100%; }
+    .no-js .nav__links ul { flex-wrap: wrap; gap: 0.5rem 1.1rem; padding-bottom: 0.75rem; }
+  }
+  @media (max-width: 400px) { .nav__cta .lbl-long { display: none; } }
+
+  /* ---------- Hero (typographique + infographie du jour) ---------- */
+  .hero { padding-block: clamp(2.5rem, 6vw, 5rem) var(--space-section); }
+  .hero__grid { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  @media (min-width: 920px) { .hero__grid { grid-template-columns: 1.35fr 1fr; } }
+  .hero__script { color: var(--vel-green-palm); font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 0.4rem; display: inline-block; }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(2.6rem, 6.2vw, 4.75rem); line-height: 1.03;
+    letter-spacing: var(--tracking-display); color: var(--vel-navy);
+    max-width: 15ch; text-wrap: balance;
+  }
+  .hero h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-green-palm); }
+  .hero__deck {
+    font-size: var(--step-1); color: var(--vel-ink); max-width: 42ch;
+    margin-top: var(--space-md); line-height: 1.45;
+  }
+  .hero__deck em { font-style: italic; color: var(--vel-ink-muted); }
+  .hero__cta { margin-top: var(--space-lg); display: flex; flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+  .hero__free { font-size: var(--step--1); color: var(--vel-ink-muted); }
+  .hero__free b { color: var(--vel-green-palm); font-weight: 700; }
+
+  /* Infographie : le 15 août en bref (frise, pas un grid de stats) */
+  .hero__info { background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2rem); box-shadow: var(--shadow-sm); }
+  .hero__info-date { font-family: var(--font-display); font-weight: 800; font-size: var(--step-3); color: var(--vel-navy); line-height: 1; }
+  .hero__info-sub { color: var(--vel-ink-muted); font-size: var(--step-0); margin-top: 0.4rem; line-height: 1.45; }
+  .hero__tl-title { font-size: var(--step--1); font-weight: 600; color: var(--vel-ink-muted); margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--vel-line); }
+  .hero__tl { list-style: none; margin: var(--space-2xs) 0 0; padding: 0; position: relative; }
+  .hero__tl::before { content: ""; position: absolute; left: 5px; top: 1.15rem; bottom: 1.15rem; width: 2px; background: var(--vel-line-strong); }
+  .hero__tl li { position: relative; padding: 0.5rem 0 0.5rem 1.9rem; }
+  .hero__tl li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 12px; height: 12px; border-radius: 50%; background: var(--vel-sun); box-shadow: 0 0 0 3px var(--vel-panel); }
+  .hero__tl time { display: inline-block; min-width: 3.4em; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--vel-navy); font-size: var(--step--1); }
+  .hero__tl span { color: var(--vel-ink-muted); font-size: var(--step--1); }
+
+  /* ---------- L'événement ---------- */
+  .prose { max-width: var(--measure-tight); font-size: var(--step-1); line-height: 1.7; }
+  .prose p + p { margin-top: 1.1em; }
+  .prose__lead::first-letter {
+    font-family: var(--font-display); font-style: italic; font-weight: 800;
+    color: var(--vel-green-palm);
+    float: left; font-size: 3.6em; line-height: 0.72;
+    padding-right: 0.09em; padding-top: 0.06em;
+  }
+  .prose em { font-style: italic; }
+  .attrib { margin-top: var(--space-md); font-family: var(--font-display); font-style: italic; color: var(--vel-ink-muted); font-size: var(--step-0); }
+
+  /* ---------- Programme ---------- */
+  .prog { display: grid; gap: var(--space-xl) var(--space-lg); }
+  @media (min-width: 760px) { .prog { grid-template-columns: 1fr 1fr; } }
+  .prog__part h3 {
+    font-family: var(--font-display); font-weight: 800; font-size: var(--step-2);
+    display: flex; align-items: baseline; gap: 0.55rem; margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs); border-bottom: 2px solid var(--vel-navy);
+  }
+  .prog__num { color: var(--vel-green-palm); font-style: italic; font-weight: 400; }
+  .prog dl { display: grid; gap: 0; }
+  .prog .slot { display: grid; gap: 0.15rem; padding: 0.85rem 0; border-top: 1px solid var(--vel-line); }
+  .prog .slot:first-of-type { border-top: 0; }
+  .prog dt {
+    font-variant-numeric: tabular-nums; font-weight: 700; font-size: var(--step--1);
+    color: var(--vel-navy); letter-spacing: 0.01em;
+  }
+  .prog dd { color: var(--vel-ink-muted); font-size: var(--step-0); }
+  .prog__note { margin-top: var(--space-lg); font-style: italic; color: var(--vel-ink-muted); max-width: var(--measure); }
+
+  /* ---------- Sponsors ---------- */
+  .sponsors__intro { max-width: var(--measure); font-size: var(--step-1); margin-bottom: var(--space-xl); }
+  .tiers { display: grid; gap: 0; }
+  .tier { display: grid; gap: 0.35rem; padding: var(--space-md) 0; border-top: 1px solid var(--vel-line); }
+  @media (min-width: 680px) { .tier { grid-template-columns: 15rem 1fr; gap: var(--space-lg); align-items: baseline; } }
+  .tier:first-child { border-top: 0; }
+  .tier__label { font-weight: 700; color: var(--vel-ink-muted); font-size: var(--step--1); }
+  .tier__names { font-family: var(--font-display); font-size: var(--step-2); font-weight: 800; color: var(--vel-navy); line-height: 1.2; }
+  .tier--sub .tier__names { font-size: var(--step-1); font-weight: 800; color: var(--vel-ink); }
+  .tier--soft .tier__names { font-family: var(--font-body); font-size: var(--step-0); font-weight: 500; color: var(--vel-ink-muted); }
+  .sponsors__cta { margin-top: var(--space-xl); font-size: var(--step-1); max-width: var(--measure); }
+  .sponsors__cta a { color: var(--vel-green-palm); font-weight: 700; text-underline-offset: 3px; transition: text-underline-offset var(--dur-fast) ease, text-decoration-color var(--dur-fast) ease; }
+  .sponsors__cta a:hover { text-underline-offset: 5px; text-decoration-color: var(--vel-sun); }
+
+  /* ---------- Billetterie ---------- */
+  .bill__grid { display: grid; gap: var(--space-xl); }
+  @media (min-width: 900px) { .bill__grid { grid-template-columns: 1.4fr 1fr; align-items: start; } }
+  table.tickets { width: 100%; border-collapse: collapse; }
+  table.tickets caption { text-align: left; color: var(--vel-ink-muted); font-size: var(--step--1); padding-bottom: var(--space-sm); }
+  table.tickets th, table.tickets td { text-align: left; padding: var(--space-md) 0; border-top: 1px solid var(--vel-line-strong); vertical-align: baseline; }
+  table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 600; color: var(--vel-ink-muted); padding-top: 0; }
+  .tk-offer { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy); width: 42%; }
+  .tk-offer small { display: block; font-family: var(--font-body); font-weight: 400; font-size: var(--step--1); color: var(--vel-ink-muted); margin-top: 0.2rem; }
+  .tk-price { font-weight: 800; font-family: var(--font-display); font-size: var(--step-1); color: var(--vel-navy); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .badge-free {
+    display: inline-block; background: var(--vel-green-palm); color: #fff;
+    font-family: var(--font-body); font-weight: 700; font-size: var(--step--1);
+    padding: 0.25em 0.7em; border-radius: 999px; letter-spacing: 0.01em;
+  }
+  .pay { background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius-lg); padding: var(--space-lg); }
+  .pay h3 { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); margin-bottom: var(--space-sm); }
+  .pay p { color: var(--vel-ink); font-size: var(--step-0); }
+  .pay p + p { margin-top: var(--space-sm); }
+  .pay strong { font-weight: 700; }
+  .pay__soon { color: var(--vel-ink-muted); font-size: var(--step--1); font-style: italic; }
+  .pay .btn { margin-top: var(--space-md); }
+
+  /* ---------- Infos pratiques ---------- */
+  .infos__grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .info-card h3 { font-family: var(--font-body); font-weight: 700; font-size: var(--step--1); color: var(--vel-ink-muted); margin-bottom: 0.35rem; }
+  .info-card p { font-size: var(--step-0); color: var(--vel-navy); }
+  .info-card a { color: var(--vel-navy); text-decoration-color: var(--vel-line-strong); text-underline-offset: 3px; transition: text-decoration-color var(--dur-fast) ease, text-underline-offset var(--dur-fast) ease; }
+  .info-card a:hover { text-decoration-color: var(--vel-sun); text-underline-offset: 5px; }
+  .map { margin-top: var(--space-xl); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--vel-line); box-shadow: var(--shadow-sm); }
+  .map iframe { display: block; width: 100%; height: clamp(280px, 42vw, 420px); border: 0; }
+  .map__note { padding: 0.6rem var(--space-md); font-size: var(--step--1); color: var(--vel-ink-muted); background: var(--vel-panel); }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 760px; }
+  .faq details { border-top: 1px solid var(--vel-line); }
+  .faq details:last-child { border-bottom: 1px solid var(--vel-line); }
+  .faq summary {
+    list-style: none; cursor: pointer; padding: var(--space-md) 2.5rem var(--space-md) 0;
+    font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy);
+    position: relative; line-height: 1.3;
+    transition: color var(--dur-fast) ease;
+  }
+  .faq summary:hover, .faq summary:focus-visible { color: var(--vel-green-palm); }
+  .faq summary:hover::after { transform: translateY(-50%) scale(1.15); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; position: absolute; right: 0.2rem; top: 50%; transform: translateY(-50%);
+    font-family: var(--font-body); font-weight: 400; font-size: 1.7rem; color: var(--vel-green-palm);
+    transition: transform var(--dur-fast) var(--ease-out-quart);
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq__a { padding: 0 0 var(--space-md); color: var(--vel-ink); max-width: 62ch; }
+  .faq__a a { color: var(--vel-green-palm); font-weight: 600; }
+
+  /* ---------- Prendre part (double appel) ---------- */
+  .callto__panel {
+    background: var(--vel-navy); color: var(--vel-cream);
+    border-radius: var(--radius-lg); padding: clamp(1.75rem, 5vw, 3.5rem);
+    box-shadow: var(--shadow-md);
+  }
+  .callto__grid { display: grid; gap: var(--space-lg); }
+  @media (min-width: 720px) {
+    .callto__grid { grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); position: relative; }
+    .callto__grid::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgba(244, 237, 224, 0.2); }
+  }
+  .callto__col { display: flex; flex-direction: column; align-items: flex-start; }
+  .callto__col h3 { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-cream); line-height: var(--lh-snug); }
+  .callto__col p { color: var(--vel-cream-70); font-size: var(--step-0); margin: 0.55rem 0 var(--space-md); max-width: 34ch; }
+
+  /* ---------- Footer ---------- */
+  .foot { background: var(--vel-navy); color: var(--vel-cream); padding-block: var(--space-xl); }
+  .foot__grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .foot__brand .fname { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); }
+  .foot__brand .ftag { font-family: var(--font-script); font-weight: 500; color: var(--vel-sun); font-size: 1.6rem; line-height: 1; margin: 0.1rem 0 0.6rem; }
+  .foot__brand p { color: var(--vel-cream-70); font-size: var(--step--1); }
+  .foot h4 { font-size: var(--step--1); font-weight: 600; color: var(--vel-cream-70); margin-bottom: var(--space-sm); }
+  .foot ul { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+  .foot a { color: var(--vel-cream); text-decoration: none; text-underline-offset: 3px; font-size: var(--step-0); }
+  .foot a:hover { text-decoration: underline; text-decoration-color: var(--vel-sun); }
+  .foot__colophon { color: var(--vel-cream-70); font-size: var(--step--1); }
+  .foot__bar { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(244,237,224,0.18); color: var(--vel-cream-70); font-size: var(--step--1); }
+
+  /* ---------- Reveal motion (enriches an already-visible default) ---------- */
+  .has-js .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out-expo); }
+  .has-js .reveal.is-in { opacity: 1; transform: none; }
+  .has-js .stagger > * { opacity: 0; transform: translateY(14px); transition: opacity var(--dur-mid) ease, transform var(--dur-mid) var(--ease-out-expo); transition-delay: calc(var(--i, 0) * 45ms); }
+  .has-js .stagger.is-in > * { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .has-js .reveal, .has-js .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .btn, .nav__links a::after, .faq summary::after { transition: none !important; }
+  }
+</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="site-nav">
+  <div class="nav__inner container">
+    <a class="wordmark" href="#top" aria-label="Vacances en livres, accueil">V<em>el</em></a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span aria-hidden="true">☰</span> Menu
+    </button>
+    <nav class="nav__links" id="primary-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#evenement">L'événement</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#infos">Infos</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--cta nav__cta" href="#reserver">Réserver <span class="arw" aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1 — Hero (typographique + infographie « la journée ») -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero__grid">
+      <div class="hero__text reveal">
+        <span class="script hero__script">Stay Focus</span>
+        <h1 id="hero-title">Vacances en livres. <em>L'événement de l'été.</em></h1>
+        <p class="hero__deck">Trente auteurs, un palais qui s'ouvre au public, <em>une journée à passer avec les livres.</em></p>
+        <div class="hero__cta">
+          <a class="btn btn--cta" href="#reserver">Réserver ma place · 500 HTG <span class="arw" aria-hidden="true">→</span></a>
+          <p class="hero__free"><b>Gratuit</b> pour vos enfants jusqu'à 14 ans.</p>
+        </div>
+      </div>
+      <aside class="hero__info reveal" aria-label="Le 15 août, en bref">
+        <p class="hero__info-date">15 août 2026</p>
+        <p class="hero__info-sub">Samedi · 9h00 – 18h30<br>Palais Municipal, Delmas</p>
+        <p class="hero__tl-title">La journée</p>
+        <ol class="hero__tl">
+          <li><time>9h00</time><span>Ouverture officielle</span></li>
+          <li><time>10h30</time><span>Tables rondes &amp; signatures</span></li>
+          <li><time>14h00</time><span>Rencontres, voix de la diaspora</span></li>
+          <li><time>17h30</time><span>Lecture publique &amp; clôture</span></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 2 — L'événement -->
+  <section class="section container" id="evenement" aria-labelledby="ev-title">
+    <div class="s-head reveal">
+      <p class="s-lead">La coalition</p>
+      <h2 class="s-title" id="ev-title">L'événement.</h2>
+    </div>
+    <div class="prose reveal">
+      <p class="prose__lead"><em>Vacances en livres</em> n'est pas un salon de plus. C'est une invitation à ouvrir un livre en public, à s'asseoir près d'un inconnu, à demander à un enfant ce qu'il lit. La coalition qui porte le projet rassemble libraires, éditeurs, bibliothèques associatives et enseignants qui partagent une même conviction : la lecture n'est pas un luxe.</p>
+      <p>Le 15 août, le Palais Municipal de Delmas devient une bibliothèque de quartier à ciel ouvert. Trente auteurs signent, discutent, écoutent. Les enfants ont leur espace, les familles rentrent avec des livres qu'elles n'auraient pas achetés seules, les libraires trouvent leur public.</p>
+      <p class="attrib">La coalition organisatrice</p>
+    </div>
+  </section>
+
+  <!-- 3 — Programme -->
+  <section class="section container" id="programme" aria-labelledby="prog-title">
+    <div class="s-head reveal">
+      <p class="s-lead">Le déroulé de la journée</p>
+      <h2 class="s-title" id="prog-title">Programme.</h2>
+    </div>
+    <div class="prog">
+      <div class="prog__part reveal">
+        <h3><span class="prog__num">I.</span> Matinée</h3>
+        <dl>
+          <div class="slot"><dt>9h00 – 10h00</dt><dd>Ouverture officielle et mot de la coalition.</dd></div>
+          <div class="slot"><dt>10h00 – 12h00</dt><dd>Séances de signatures, première vague d'auteurs.</dd></div>
+          <div class="slot"><dt>10h30 – 11h30</dt><dd>Table ronde : lire en créole aujourd'hui.</dd></div>
+          <div class="slot"><dt>11h00 – 12h30</dt><dd>Atelier jeunesse : dessine ton propre livre.</dd></div>
+        </dl>
+      </div>
+      <div class="prog__part reveal">
+        <h3><span class="prog__num">II.</span> Après-midi</h3>
+        <dl>
+          <div class="slot"><dt>14h00 – 15h30</dt><dd>Rencontre : trois voix de la diaspora.</dd></div>
+          <div class="slot"><dt>15h00 – 17h00</dt><dd>Séances de signatures, seconde vague.</dd></div>
+          <div class="slot"><dt>16h00 – 17h30</dt><dd>Table ronde : l'édition indépendante en Haïti.</dd></div>
+          <div class="slot"><dt>17h30 – 18h30</dt><dd>Lecture publique et clôture en musique.</dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="prog__note reveal">Le programme sera précisé au fil des confirmations d'auteurs.</p>
+  </section>
+
+  <!-- 4 — Sponsors -->
+  <section class="section container" id="sponsors" aria-labelledby="sp-title">
+    <div class="s-head reveal">
+      <p class="s-lead">Ils rendent 2026 possible</p>
+      <h2 class="s-title" id="sp-title">Sponsors.</h2>
+    </div>
+    <p class="sponsors__intro reveal">Vacances en livres est rendu possible par le soutien d'entreprises et d'institutions qui croient à la démocratisation de la lecture en Haïti. La coalition les remercie.</p>
+    <div class="tiers reveal">
+      <div class="tier">
+        <p class="tier__label">Partenaire principal</p>
+        <p class="tier__names">Coalition Vacances en livres</p>
+      </div>
+      <div class="tier tier--sub">
+        <p class="tier__label">Partenaires officiels</p>
+        <p class="tier__names">À confirmer · À confirmer · À confirmer</p>
+      </div>
+      <div class="tier tier--soft">
+        <p class="tier__label">Soutiens</p>
+        <p class="tier__names">À confirmer · À confirmer · À confirmer · À confirmer · À confirmer · À confirmer</p>
+      </div>
+    </div>
+    <p class="sponsors__cta reveal">Vous souhaitez rejoindre les sponsors 2026 ? <a href="https://wa.me/50955792024">Écrivez-nous sur WhatsApp</a> pour recevoir le dossier partenaires.</p>
+  </section>
+
+  <!-- 6 — Billetterie -->
+  <section class="section container" id="reserver" aria-labelledby="bill-title">
+    <div class="s-head reveal">
+      <p class="s-lead">Un tarif juste, pensé pour les familles</p>
+      <h2 class="s-title" id="bill-title">Billetterie.</h2>
+    </div>
+    <div class="bill__grid">
+      <table class="tickets reveal">
+        <caption>Entrée valable toute la journée du 15 août, matinée et après-midi.</caption>
+        <thead>
+          <tr><th scope="col">Formule</th><th scope="col">Tarif</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tk-offer">Individuel adulte<small>Accès à toute la journée, matinée et après-midi.</small></td>
+            <td class="tk-price">500 HTG</td>
+          </tr>
+          <tr>
+            <td class="tk-offer">Enfants de 14 ans et moins<small>Accompagnés d'un adulte muni d'un billet. Sans limite par famille.</small></td>
+            <td class="tk-price"><span class="badge-free">Gratuit</span></td>
+          </tr>
+          <tr>
+            <td class="tk-offer">Groupes scolaires, dès 10 enfants<small>Visite guidée organisée avec la coalition.</small></td>
+            <td class="tk-price">Sur demande</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pay reveal">
+        <h3>Modes de paiement</h3>
+        <p>Deux options : <strong>MonCash</strong> vers le numéro Digicel de la coalition (+509 5579-2024), puis envoi de la capture sur WhatsApp pour valider la réservation. Ou <strong>paiement sur place</strong> le jour J, en gourdes ou en dollars.</p>
+        <p class="pay__soon">La réservation en ligne ouvre le 20 juillet. Chaque inscription est confirmée sous 24 heures.</p>
+        <a class="btn btn--cta btn--block" href="https://wa.me/50955792024?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20pour%20Vacances%20en%20livres%202026.">Réserver ma place <span class="arw" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 — Infos pratiques -->
+  <section class="section container" id="infos" aria-labelledby="inf-title">
+    <div class="s-head reveal">
+      <p class="s-lead">Où et comment nous rejoindre</p>
+      <h2 class="s-title" id="inf-title">Infos <em>pratiques</em>.</h2>
+    </div>
+    <div class="infos__grid reveal">
+      <div class="info-card">
+        <h3>Lieu</h3>
+        <p>Palais Municipal de Delmas<br>Delmas, Ouest, Haïti</p>
+      </div>
+      <div class="info-card">
+        <h3>Date et horaires</h3>
+        <p>Samedi 15 août 2026<br>de 9h00 à 18h30</p>
+      </div>
+      <div class="info-card">
+        <h3>Contact</h3>
+        <p><a href="https://wa.me/50955792024">+509 5579-2024 (WhatsApp)</a><br><a href="tel:+50931215441">+509 3121-5441</a></p>
+      </div>
+      <div class="info-card">
+        <h3>Accès</h3>
+        <p>À 15 minutes de Pétion-Ville en tap-tap. Parking gratuit sur place.</p>
+      </div>
+    </div>
+    <figure class="map reveal">
+      <iframe title="Carte : Palais Municipal de Delmas, Haïti" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-72.3150%2C18.5350%2C-72.2900%2C18.5560&layer=mapnik&marker=18.5455%2C-72.3025"></iframe>
+      <figcaption class="map__note">Emplacement approximatif du Palais Municipal de Delmas. Repère exact à confirmer.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 8 — FAQ -->
+  <section class="section container" aria-labelledby="faq-title">
+    <div class="s-head reveal">
+      <p class="s-lead">Ce qu'on nous demande</p>
+      <h2 class="s-title" id="faq-title">Questions <em>fréquentes</em>.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Les enfants payent-ils l'entrée ?</summary>
+        <div class="faq__a"><p>Non. L'entrée est gratuite pour les enfants de 14 ans et moins, accompagnés d'un adulte muni d'un billet. Il n'y a pas de limite de nombre par famille.</p></div>
+      </details>
+      <details>
+        <summary>Comment payer avec MonCash ?</summary>
+        <div class="faq__a"><p>Envoyez 500 HTG par adulte au numéro Digicel de la coalition, +509 5579-2024, puis transmettez la capture de confirmation sur WhatsApp. Nous validons la réservation sous 24 heures.</p></div>
+      </details>
+      <details>
+        <summary>Puis-je payer sur place le jour J ?</summary>
+        <div class="faq__a"><p>Oui. Le paiement à l'entrée est possible le 15 août, en gourdes ou en dollars. Réserver en ligne à l'avance reste conseillé pour éviter l'attente.</p></div>
+      </details>
+      <details>
+        <summary>Je viens avec un groupe scolaire, comment procéder ?</summary>
+        <div class="faq__a"><p>À partir de 10 enfants, écrivez-nous sur <a href="https://wa.me/50955792024">WhatsApp</a>. Nous organisons une visite guidée et un accueil adapté.</p></div>
+      </details>
+      <details>
+        <summary>Je suis journaliste ou blogueur, y a-t-il un accès presse ?</summary>
+        <div class="faq__a"><p>Oui. Contactez la coalition sur <a href="https://wa.me/50955792024">WhatsApp</a> pour recevoir votre accréditation presse avant l'événement.</p></div>
+      </details>
+      <details>
+        <summary>Le site est-il accessible aux personnes à mobilité réduite ?</summary>
+        <div class="faq__a"><p>Le Palais Municipal de Delmas est de plain-pied et accessible. Un membre de l'équipe peut vous accompagner : signalez-le-nous à l'avance.</p></div>
+      </details>
+      <details>
+        <summary>Puis-je transférer mon billet ?</summary>
+        <div class="faq__a"><p>Votre réservation est nominative mais transférable à un proche. Prévenez-nous sur WhatsApp pour mettre à jour le nom.</p></div>
+      </details>
+      <details>
+        <summary>Il pleut le 15 août, que se passe-t-il ?</summary>
+        <div class="faq__a"><p>L'événement se tient à l'intérieur du Palais Municipal. Il est maintenu par tous les temps.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 9 — Prendre part (double appel : familles / bailleurs) -->
+  <section class="section container" aria-labelledby="cta-title">
+    <div class="s-head reveal">
+      <p class="s-lead">Faire vivre l'édition 2026</p>
+      <h2 class="s-title" id="cta-title">Prendre part.</h2>
+    </div>
+    <div class="callto__panel reveal">
+      <div class="callto__grid">
+        <div class="callto__col">
+          <h3>Vous venez</h3>
+          <p>Réservez votre place : 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.</p>
+          <a class="btn btn--cta" href="https://wa.me/50955792024?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20pour%20Vacances%20en%20livres%202026.">Réserver ma place <span class="arw" aria-hidden="true">→</span></a>
+        </div>
+        <div class="callto__col">
+          <h3>Vous soutenez</h3>
+          <p>Associez votre nom à l'événement de l'été et à la démocratisation de la lecture en Haïti.</p>
+          <a class="btn btn--ghost-invert" href="https://wa.me/50955792024?text=Bonjour%2C%20nous%20souhaitons%20recevoir%20le%20dossier%20partenaires%20de%20Vacances%20en%20livres%202026.">Recevoir le dossier <span class="arw" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <p class="fname">Vacances en livres</p>
+        <p class="ftag script">Restez connectés</p>
+        <p>Samedi 15 août 2026 · Palais Municipal de Delmas.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/50955792024">WhatsApp · +509 5579-2024</a></li>
+          <li><a href="tel:+50931215441">Téléphone · +509 3121-5441</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Réseaux</h4>
+        <ul>
+          <li><a href="#" rel="noopener">Facebook</a></li>
+          <li><a href="#" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Colophon</h4>
+        <p class="foot__colophon">© 2026 Coalition Vacances en livres.<br>Préversion en construction.</p>
+      </div>
+    </div>
+    <p class="foot__bar">Une nouvelle aventure culturelle commence bientôt.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var d = document;
+
+  /* Author placeholders 01–30 (kept out of markup weight) */
+  var list = d.getElementById('authors-list');
+  if (list) {
+    var html = '';
+    for (var n = 1; n <= 30; n++) {
+      var no = (n < 10 ? '0' : '') + n;
+      html += '<li class="author" style="--i:' + ((n - 1) % 6) + '">' +
+        '<figure>' +
+          '<div class="author__frame" role="img" aria-label="Auteur invité numéro ' + n + ', portrait à venir">' +
+            '<span class="author__no" aria-hidden="true">' + no + '</span>' +
+            '<span class="author__tag" aria-hidden="true">à venir</span>' +
+          '</div>' +
+          '<figcaption>' +
+            '<p class="author__name">Auteur à confirmer</p>' +
+            '<p class="author__book">Titre à venir</p>' +
+          '</figcaption>' +
+        '</figure></li>';
+    }
+    list.innerHTML = html;
+  }
+
+  /* Mobile nav toggle */
+  var nav = d.getElementById('site-nav');
+  var toggle = nav && nav.querySelector('.nav__toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('nav--open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('nav--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* Reveal on scroll — enriches content that is already visible without JS.
+     Failsafe timeout guarantees visibility even if the observer never fires. */
+  var revs = [].slice.call(d.querySelectorAll('.reveal'));
+  function showAll() { revs.forEach(function (el) { el.classList.add('is-in'); }); }
+  if (!('IntersectionObserver' in window)) {
+    showAll();
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    revs.forEach(function (el) { io.observe(el); });
+    window.setTimeout(showAll, 2500); /* nothing ships blank */
+  }
+
+  /* Active section in nav */
+  var links = {};
+  nav && nav.querySelectorAll('.nav__links a').forEach(function (a) {
+    var id = a.getAttribute('href').slice(1); links[id] = a;
+  });
+  var secObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var id = e.target.id;
+      Object.keys(links).forEach(function (k) {
+        if (links[k]) links[k].removeAttribute('aria-current');
+      });
+      if (links[id]) links[id].setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['evenement', 'programme', 'sponsors', 'infos'].forEach(function (id) {
+    var s = d.getElementById(id); if (s) secObserver.observe(s);
+  });
+
+  /* Nav elevates once the page is scrolled */
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle('nav--scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

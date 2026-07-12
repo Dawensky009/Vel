@@ -1,0 +1,26 @@
+{
+  "name": "vacances-en-livres",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site officiel de Vacances en livres — L'événement de l'été, le 15 août 2026 au Palais Municipal de Delmas (Haïti).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

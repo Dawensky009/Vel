@@ -1,0 +1,88 @@
+/* ============================================================================
+   Vacances en livres — Design tokens
+   Color strategy: Restrained. Cream page, navy ink, sun on CTAs only.
+   Green = signature + "gratuit". Red = rarissime. No color outside these.
+   Contrast (WCAG, verified): navy/cream 13.6:1 · ink-muted/cream 6.4:1 ·
+   navy/sun 10.6:1 · green/cream 4.4:1 (large only) · red/cream 4.7:1.
+   Sun is NEVER text on cream (1.3:1) — background + navy text only.
+   ========================================================================== */
+
+:root {
+  /* --- Brand (locked, hex; OKLCH equivalents in comments) --------------- */
+  --vel-navy:       #1B1464;  /* oklch(0.278 0.145 274) — ink, footer      */
+  --vel-green-palm: #347D2B;  /* oklch(0.526 0.135 143) — signature, badge */
+  --vel-sun:        #FECE01;  /* oklch(0.856 0.169  92) — CTAs only        */
+  --vel-cream:      #F4EDE0;  /* oklch(0.941 0.021  84) — page background   */
+  --vel-accent-red: #C0392B;  /* oklch(0.552 0.176  28) — rarissime        */
+
+  /* --- Derived tones (navy/cream hue family only; contrast-checked) ----- */
+  --vel-ink:        var(--vel-navy);       /* body + headings              */
+  --vel-ink-muted:  #524B83;   /* secondary text — 6.4:1 on cream          */
+  --vel-line:       #DAD3D1;   /* hairline divider (navy 12% over cream)   */
+  --vel-line-strong:#C9C2C7;   /* table rules (navy 20% over cream)        */
+  --vel-panel:      #EDE4D4;   /* faintly recessed cream surface           */
+  --vel-navy-soft:  #2A2170;   /* navy hover / lifted navy                 */
+  --vel-sun-deep:   #E9BC00;   /* sun hover (still navy text)              */
+  --vel-cream-70:   rgba(244, 237, 224, 0.70); /* muted cream ON navy      */
+  --vel-cream-55:   rgba(244, 237, 224, 0.55);
+  --vel-cream-12:   rgba(244, 237, 224, 0.12); /* inset frame on navy      */
+  --vel-nav-bg:     rgba(244, 237, 224, 0.82); /* sticky nav, blurred      */
+  --vel-focus:      var(--vel-navy);       /* focus ring reads on cream    */
+
+  /* --- Typography ------------------------------------------------------- */
+  --font-display: 'Alegreya', Georgia, 'Times New Roman', serif;
+  --font-body:    'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-script:  'Caveat', 'Segoe Script', ui-rounded, cursive;
+
+  /* Fluid modular scale — ratio ~1.25, heading max ≤ 4.75rem (<6rem cap) */
+  --step--1: clamp(0.83rem, 0.80rem + 0.15vw, 0.92rem);
+  --step-0:  clamp(1.02rem, 0.98rem + 0.20vw, 1.13rem);   /* body ~17-18px */
+  --step-1:  clamp(1.22rem, 1.14rem + 0.40vw, 1.45rem);
+  --step-2:  clamp(1.48rem, 1.34rem + 0.70vw, 1.90rem);
+  --step-3:  clamp(1.85rem, 1.60rem + 1.20vw, 2.60rem);   /* H2            */
+  --step-4:  clamp(2.35rem, 1.90rem + 2.20vw, 3.60rem);
+  --step-5:  clamp(2.90rem, 2.20rem + 3.40vw, 4.75rem);   /* H1 hero       */
+
+  --lh-tight: 1.06;
+  --lh-snug:  1.2;
+  --lh-body:  1.62;
+  --tracking-display: -0.02em;   /* ≥ -0.04em floor */
+
+  --measure:      66ch;   /* prose measure */
+  --measure-tight:52ch;
+
+  /* --- Space (fluid) ---------------------------------------------------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  clamp(3rem, 5vw, 4.5rem);
+  --space-section: clamp(3.75rem, 8vw, 7rem);
+  --gutter:    clamp(1.25rem, 5vw, 2.5rem);
+  --container: 1120px;
+
+  /* --- Radii (subtle; no big rounding) ---------------------------------- */
+  --radius-xs: 3px;
+  --radius:    6px;
+  --radius-lg: 10px;
+
+  /* --- Shadows (quiet, warm-neutral) ------------------------------------ */
+  --shadow-sm: 0 1px 2px rgba(27, 20, 100, 0.06);
+  --shadow-md: 0 6px 20px -8px rgba(27, 20, 100, 0.16);
+  --shadow-lg: 0 24px 60px -24px rgba(27, 20, 100, 0.28);
+
+  /* --- Motion ----------------------------------------------------------- */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast: 140ms;
+  --dur-mid:  260ms;
+  --dur-slow: 620ms;
+
+  /* --- Semantic z-index scale ------------------------------------------- */
+  --z-base: 0;
+  --z-sticky: 100;   /* nav */
+  --z-menu: 200;     /* mobile menu panel */
+  --z-overlay: 300;
+}
