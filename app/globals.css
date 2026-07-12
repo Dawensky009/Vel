@@ -191,11 +191,22 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
 .nav--scrolled { box-shadow: 0 8px 24px -16px rgba(27, 20, 100, 0.32); border-bottom-color: var(--vel-line-strong); }
 .nav__inner { display: flex; align-items: center; gap: var(--space-md); min-height: 4.5rem; }
 .wordmark {
-  font-family: var(--font-display); font-weight: 800;
-  font-size: 1.65rem; letter-spacing: -0.02em; text-decoration: none;
-  color: var(--vel-navy); line-height: 1; margin-right: auto;
+  display: inline-flex; align-items: center; overflow: hidden;
+  margin-right: auto; text-decoration: none; line-height: 0;
+  /* Solid cream painted directly behind the logo so `multiply` has a stable
+     backdrop (the nav's backdrop-filter would otherwise isolate the blend).
+     Cream-on-cream = invisible chip; the JPEG's white then vanishes. The clip
+     crops the JPEG's heavy baked-in margins so the mark reads at a proper size. */
+  background: var(--vel-cream);
+  border-radius: var(--radius);
+  height: 48px;
+  isolation: isolate;
 }
-.wordmark em { color: var(--vel-green-palm); font-style: italic; }
+.wordmark__img {
+  height: 74px; width: auto; display: block;
+  margin: 0 -5px 0 -8px;      /* trim asymmetric side whitespace */
+  mix-blend-mode: multiply;   /* white → cream (invisible) */
+}
 .nav__links ul { list-style: none; display: flex; gap: clamp(0.75rem, 2vw, 1.75rem); padding: 0; }
 .nav__links a {
   text-decoration: none; color: var(--vel-navy); font-weight: 600;

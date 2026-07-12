@@ -45,7 +45,15 @@ export default function Nav() {
     <header className={cls} id="site-nav">
       <div className="nav__inner container">
         <a className="wordmark" href="#top" aria-label="Vacances en livres, accueil">
-          V<em>el</em>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="wordmark__img"
+            src="/Logo_vel.jpeg"
+            alt="Vacances en livres"
+            width={1080}
+            height={1044}
+            decoding="async"
+          />
         </a>
         <button
           className="nav__toggle"

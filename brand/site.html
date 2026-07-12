@@ -140,11 +140,16 @@
   .nav--scrolled { box-shadow: 0 8px 24px -16px rgba(27, 20, 100, 0.32); border-bottom-color: var(--vel-line-strong); }
   .nav__inner { display: flex; align-items: center; gap: var(--space-md); min-height: 4.5rem; }
   .wordmark {
-    font-family: var(--font-display); font-weight: 800;
-    font-size: 1.65rem; letter-spacing: -0.02em; text-decoration: none;
-    color: var(--vel-navy); line-height: 1; margin-right: auto;
+    display: inline-flex; align-items: center; overflow: hidden;
+    margin-right: auto; text-decoration: none; line-height: 0;
+    background: var(--vel-cream); border-radius: var(--radius);
+    height: 48px; isolation: isolate;
   }
-  .wordmark em { color: var(--vel-green-palm); font-style: italic; }
+  .wordmark__img {
+    height: 74px; width: auto; display: block;
+    margin: 0 -5px 0 -8px;
+    mix-blend-mode: multiply;
+  }
   .nav__links ul { list-style: none; display: flex; gap: clamp(0.75rem, 2vw, 1.75rem); padding: 0; }
   .nav__links a {
     text-decoration: none; color: var(--vel-navy); font-weight: 600;
@@ -369,7 +374,7 @@
 
 <header class="nav" id="site-nav">
   <div class="nav__inner container">
-    <a class="wordmark" href="#top" aria-label="Vacances en livres, accueil">V<em>el</em></a>
+    <a class="wordmark" href="#top" aria-label="Vacances en livres, accueil"><img class="wordmark__img" src="../Ressources/Logo_vel.jpeg" alt="Vacances en livres" width="1080" height="1044" decoding="async"></a>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
       <span aria-hidden="true">☰</span> Menu
     </button>
