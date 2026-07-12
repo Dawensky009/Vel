@@ -51,3 +51,23 @@ export interface Communique {
   extrait: string;
   corpsHtml: string; // rendered HTML from the markdown body
 }
+
+export interface Membre {
+  nom: string;
+  role: string;
+  photo?: string; // path under /public
+  bio?: string;
+}
+
+export interface Valeur {
+  titre: string;
+  texte: string;
+}
+
+export interface Organisation {
+  nom: string;
+  mission: string;
+  paragraphs: string[];
+  valeurs: Valeur[];
+  staff: Membre[];
+}

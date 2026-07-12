@@ -625,6 +625,41 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .rich li { margin-top: 0.4em; }
 .rich hr { border: 0; border-top: 1px solid var(--vel-line); margin: 2em 0; }
 
+/* ============ À propos (organisation + staff) ============ */
+
+.about__mission {
+  font-family: var(--font-display); font-style: italic; font-weight: 800;
+  font-size: var(--step-2); color: var(--vel-green-palm);
+  max-width: 26ch; line-height: 1.15; margin-bottom: var(--space-lg);
+}
+.about__cta { font-size: var(--step-1); max-width: var(--measure); }
+.about__cta a { color: var(--vel-green-palm); font-weight: 700; text-underline-offset: 3px; }
+.about__cta a:hover { text-decoration-color: var(--vel-sun); }
+
+/* Valeurs */
+.valeurs { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: 1fr; }
+@media (min-width: 720px) { .valeurs { grid-template-columns: repeat(3, 1fr); } }
+.valeur { background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius-lg); padding: var(--space-lg); }
+.valeur h3 { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy); }
+.valeur p { margin-top: 0.5rem; color: var(--vel-ink-muted); font-size: var(--step-0); }
+
+/* Staff */
+.staff { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1.25rem, 3vw, 2rem); grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 560px) { .staff { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 920px) { .staff { grid-template-columns: repeat(6, 1fr); } }
+.staff__member { text-align: center; }
+.staff__avatar {
+  position: relative; width: 100%; max-width: 140px; aspect-ratio: 1;
+  margin-inline: auto; border-radius: 50%; overflow: clip;
+  background: var(--vel-navy); display: grid; place-items: center;
+  box-shadow: inset 0 0 0 1px var(--vel-cream-12);
+}
+.staff__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.staff__avatar span { color: var(--vel-cream-55); font-size: 0.7rem; font-style: italic; padding: 0 0.5rem; }
+.staff__name { margin-top: var(--space-sm); font-weight: 700; color: var(--vel-navy); font-size: var(--step-0); }
+.staff__role { color: var(--vel-green-palm); font-weight: 600; font-size: var(--step--1); margin-top: 0.15rem; }
+.staff__cap { margin-top: var(--space-lg); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
+
 /* ---------- Reveal motion (enriches an already-visible default) ---------- */
 .has-js .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out-expo); }
 .has-js .reveal.is-in { opacity: 1; transform: none; }

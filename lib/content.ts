@@ -6,7 +6,14 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { editions } from "@/content/editions";
 import { publishers } from "@/content/publishers";
-import type { Edition, Communique, MaisonEdition, Personne } from "./types";
+import { organisation } from "@/content/organisation";
+import type {
+  Edition,
+  Communique,
+  MaisonEdition,
+  Personne,
+  Organisation,
+} from "./types";
 
 const COMMUNIQUES_DIR = path.join(process.cwd(), "content", "communiques");
 
@@ -27,6 +34,12 @@ export function getUpcomingEdition(): Edition {
 export function getGuestOfHonour(annee?: string): Personne | undefined {
   const ed = annee ? getEdition(annee) : getUpcomingEdition();
   return ed?.guest;
+}
+
+/* ---------- Organisation ---------- */
+
+export function getOrganisation(): Organisation {
+  return organisation;
 }
 
 /* ---------- Maisons d'édition ---------- */

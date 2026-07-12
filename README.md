@@ -32,6 +32,7 @@ npm run build && npm run start
 | `/` | Home hub : hero du prochain événement, communiqué à la une, invité d'honneur, maisons d'édition, dernières actualités, billetterie, infos |
 | `/actualites` · `/actualites/[slug]` | Communiqués officiels (liste + article) |
 | `/editions` · `/editions/[annee]` | Archive des éditions + détail complet d'une édition |
+| `/a-propos` | L'organisation (mission, valeurs) et le staff |
 | `/api/health` | Endpoint Node.js (monitoring) |
 
 ## Publier du contenu
@@ -48,6 +49,7 @@ votre backend — les pages ne changent pas.**
 - **Maisons d'édition :** `content/publishers.ts` (remplacer les emplacements « à
   confirmer » par les vrais éditeurs + logos).
 - **Invité d'honneur :** champ `guest` sur l'édition dans `content/editions.ts`.
+- **Organisation & staff (page À propos) :** éditer `content/organisation.ts` (mission, valeurs, membres du staff avec rôles et portraits).
 
 Les types du modèle de contenu sont dans **`lib/types.ts`** — c'est le contrat que le futur
 backend devra respecter.
