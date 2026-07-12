@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getOrganisation } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "À propos — Vacances en livres",
+  title: "À propos · Vacances en livres",
   description:
     "La coalition Vacances en livres : une coalition d'organisations culturelles haïtiennes qui œuvre à démocratiser la lecture en Haïti. Découvrez l'organisation et le staff.",
 };
@@ -64,7 +64,7 @@ export default function AProposPage() {
               className="staff__member"
               style={{ ["--i"]: i } as React.CSSProperties}
             >
-              <div className="staff__avatar" role="img" aria-label={`${m.nom} — ${m.role}`}>
+              <div className="staff__avatar" role="img" aria-label={`${m.nom}, ${m.role}`}>
                 {m.photo ? (
                   <Image src={m.photo} alt="" fill sizes="140px" style={{ objectFit: "cover" }} />
                 ) : (

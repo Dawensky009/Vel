@@ -23,9 +23,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { annee } = await params;
   const e = getEdition(annee);
-  if (!e) return { title: "Édition — Vacances en livres" };
+  if (!e) return { title: "Édition · Vacances en livres" };
   return {
-    title: `${e.titre} ${e.annee} — ${e.tagline}`,
+    title: `${e.titre} ${e.annee} · ${e.tagline}`,
     description: e.resume,
   };
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import VideoEmbed from "@/components/VideoEmbed";
+import PhotoGallery from "@/components/PhotoGallery";
 import { getActivite, getActivites, formatDate } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -16,8 +16,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const a = getActivite(slug);
-  if (!a) return { title: "Activité — Vacances en livres" };
-  return { title: `${a.titre} — Vacances en livres`, description: a.resume };
+  if (!a) return { title: "Activité · Vacances en livres" };
+  return { title: `${a.titre} · Vacances en livres`, description: a.resume };
 }
 
 export default async function ActivitePage({
@@ -75,19 +75,10 @@ export default async function ActivitePage({
           <h2 className="act__h2 reveal" id="act-images">
             En images
           </h2>
-          <div className="act__media-grid stagger reveal">
-            {a.images.map((src, i) => (
-              <figure key={i} className="zoom" style={{ ["--i"]: i } as React.CSSProperties}>
-                <Image
-                  src={src}
-                  alt=""
-                  fill
-                  sizes="(min-width: 720px) 33vw, 100vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </figure>
-            ))}
-          </div>
+          <PhotoGallery
+            photos={a.images.map((src) => ({ src, alt: a.titre }))}
+            layout="grid"
+          />
         </section>
       ) : null}
 

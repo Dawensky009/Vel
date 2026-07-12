@@ -733,6 +733,42 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .contact__info p { color: var(--vel-ink-muted); font-size: var(--step-0); }
 .contact__info p + p { margin-top: var(--space-sm); }
 
+/* ============ Galerie cliquable + lightbox ============ */
+
+.photo-btn {
+  display: block; position: relative; width: 100%; height: 100%;
+  margin: 0; padding: 0; border: 0; background: var(--vel-panel);
+  border-radius: var(--radius); overflow: clip; cursor: pointer;
+}
+.photo-btn img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out-quart); }
+.photo-btn:hover img { transform: scale(1.05); }
+.photo-btn:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 2px; }
+.act__media-grid .photo-btn { aspect-ratio: 4 / 3; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: var(--z-overlay);
+  display: grid; place-items: center;
+  background: rgba(27, 20, 100, 0.92);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  padding: clamp(1rem, 4vw, 3rem);
+  animation: lb-in var(--dur-mid) ease;
+}
+@keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+.lightbox__fig { margin: 0; display: grid; gap: 0.75rem; justify-items: center; max-width: 100%; }
+.lightbox__img { display: block; max-width: min(1100px, 92vw); max-height: 82vh; width: auto; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+.lightbox__cap { color: var(--vel-cream-70); font-size: var(--step--1); font-style: italic; text-align: center; max-width: 60ch; }
+.lightbox__close, .lightbox__nav {
+  position: absolute; border: 0; cursor: pointer; display: grid; place-items: center;
+  border-radius: 50%; background: rgba(244, 237, 224, 0.92); color: var(--vel-navy);
+  transition: background-color var(--dur-fast) ease;
+}
+.lightbox__close { top: clamp(0.75rem, 2vw, 1.5rem); right: clamp(0.75rem, 2vw, 1.5rem); width: 46px; height: 46px; font-size: 1.7rem; line-height: 1; }
+.lightbox__nav { top: 50%; transform: translateY(-50%); width: 46px; height: 46px; font-size: 2rem; line-height: 1; }
+.lightbox__prev { left: clamp(0.5rem, 2vw, 1.5rem); }
+.lightbox__next { right: clamp(0.5rem, 2vw, 1.5rem); }
+.lightbox__close:hover, .lightbox__nav:hover { background: var(--vel-sun); }
+.lightbox__close:focus-visible, .lightbox__nav:focus-visible { outline: 3px solid var(--vel-sun); outline-offset: 3px; }
+
 /* ---------- Reveal motion (enriches an already-visible default) ---------- */
 .has-js .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out-expo); }
 .has-js .reveal.is-in { opacity: 1; transform: none; }

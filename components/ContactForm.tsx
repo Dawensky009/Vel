@@ -86,7 +86,7 @@ export default function ContactForm() {
         </span>
       </button>
       <p className="cform__note">
-        Le formulaire ouvre WhatsApp avec votre message pré-rempli — le canal le plus
+        Le formulaire ouvre WhatsApp avec votre message pré-rempli, le canal le plus
         rapide pour nous joindre. Vous pouvez aussi nous contacter directement ci-contre.
       </p>
     </form>

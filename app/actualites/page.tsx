@@ -3,7 +3,7 @@ import CommuniqueCard from "@/components/CommuniqueCard";
 import { getCommuniques } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Actualités — Vacances en livres",
+  title: "Actualités · Vacances en livres",
   description:
     "Les communiqués officiels et actualités de Vacances en livres : date, lieu, invités, partenaires et réservations.",
 };

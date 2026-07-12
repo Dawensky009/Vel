@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Vacances en livres",
+  title: "Contact · Vacances en livres",
   description:
     "Contactez la coalition Vacances en livres : réservation, partenariat, presse ou bénévolat. Réponse rapide par WhatsApp.",
 };
@@ -32,7 +32,7 @@ export default function ContactPage() {
               <a href="tel:+50931215441">+509 3121-5441</a>
             </li>
           </ul>
-          <p>Palais Municipal de Delmas — Delmas, Ouest, Haïti.</p>
+          <p>Palais Municipal de Delmas, Delmas, Ouest, Haïti.</p>
           <p>
             Suivez-nous :{" "}
             <a href="#" rel="noopener">

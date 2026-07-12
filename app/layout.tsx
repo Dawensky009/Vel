@@ -33,14 +33,14 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Vacances en livres — L'événement de l'été · 15 août 2026, Delmas",
+  title: "Vacances en livres · L'événement de l'été · 15 août 2026, Delmas",
   description: DESCRIPTION,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
     siteName: "Vacances en livres",
-    title: "Vacances en livres — L'événement de l'été",
+    title: "Vacances en livres · L'événement de l'été",
     description:
       "Trente auteurs en signature au Palais Municipal de Delmas, le 15 août 2026. 500 HTG · gratuit pour les enfants de 14 ans et moins.",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vacances en livres — L'événement de l'été",
+    title: "Vacances en livres · L'événement de l'été",
     description:
       "Trente auteurs en signature au Palais Municipal de Delmas, le 15 août 2026.",
     images: ["/Annonces.jpeg"],

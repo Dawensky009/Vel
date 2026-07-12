@@ -3,9 +3,9 @@ import Timeline from "@/components/Timeline";
 import { getActivites } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Agenda — Vacances en livres",
+  title: "Agenda · Vacances en livres",
   description:
-    "L'agenda de Vacances en livres : conférences de presse, ateliers, lancements et l'événement — les temps forts de l'année, en images et en vidéos.",
+    "L'agenda de Vacances en livres : conférences de presse, ateliers, lancements et l'événement, les temps forts de l'année, en images et en vidéos.",
 };
 
 export default function AgendaPage() {

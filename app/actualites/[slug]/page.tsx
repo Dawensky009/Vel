@@ -15,8 +15,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const c = getCommunique(slug);
-  if (!c) return { title: "Communiqué — Vacances en livres" };
-  return { title: `${c.titre} — Vacances en livres`, description: c.extrait };
+  if (!c) return { title: "Communiqué · Vacances en livres" };
+  return { title: `${c.titre} · Vacances en livres`, description: c.extrait };
 }
 
 export default async function CommuniquePage({

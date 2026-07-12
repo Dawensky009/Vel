@@ -1,6 +1,6 @@
-import Image from "next/image";
+import PhotoGallery, { type Photo } from "./PhotoGallery";
 
-const SHOTS = [
+const SHOTS: Photo[] = [
   { cls: "g1", src: "/images/book-blanket.jpg", alt: "Des mains tenant un livre ouvert sur un plaid chaud." },
   { cls: "g2", src: "/images/boy-reading.jpg", alt: "Un enfant suit du doigt les lignes d'un livre." },
   { cls: "g3", src: "/images/pages-cream.jpg", alt: "Les pages d'un livre ouvert en éventail, tons crème." },
@@ -18,22 +18,10 @@ export default function Gallery() {
           En <em>images</em>.
         </h2>
       </div>
-      <div className="gallery stagger reveal">
-        {SHOTS.map((s, i) => (
-          <figure key={s.cls} className={`${s.cls} zoom`} style={{ ["--i"]: i } as React.CSSProperties}>
-            <Image
-              src={s.src}
-              alt={s.alt}
-              fill
-              sizes="(min-width: 720px) 45vw, 50vw"
-              style={{ objectFit: "cover" }}
-            />
-          </figure>
-        ))}
-      </div>
+      <PhotoGallery photos={SHOTS} layout="mosaic" />
       <p className="gallery__cap">
-        Images d&apos;ambiance — les vraies photos de l&apos;édition 2026 les
-        remplaceront.
+        Images d&apos;ambiance : les vraies photos de l&apos;édition 2026 les
+        remplaceront. Cliquez pour agrandir.
       </p>
     </section>
   );

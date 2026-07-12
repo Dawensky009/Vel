@@ -3,7 +3,7 @@ import EditionCard from "@/components/EditionCard";
 import { getEditions } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Éditions — Vacances en livres",
+  title: "Éditions · Vacances en livres",
   description:
     "Toutes les éditions de Vacances en livres : l'édition à venir et les archives des éditions passées.",
 };

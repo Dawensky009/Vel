@@ -1,7 +1,7 @@
 import type { Edition } from "@/lib/types";
 
 // Éditions de Vacances en livres. Ajoutez ici les futures éditions et les
-// éditions passées (statut "passe") — l'archive et les pages se remplissent seules.
+// éditions passées (statut "passe") : l'archive et les pages se remplissent seules.
 export const editions: Edition[] = [
   {
     annee: "2026",
@@ -41,7 +41,7 @@ export const editions: Edition[] = [
       {
         url: "https://www.youtube.com/embed/muuWRKYi09s",
         categorie: "Reportage",
-        titre: "Vidéo d'illustration sur l'importance de la lecture — à remplacer par le reportage officiel.",
+        titre: "Vidéo d'illustration sur l'importance de la lecture, à remplacer par le reportage officiel.",
       },
       {
         url: "https://www.youtube.com/embed/D9Ihs241zeg",

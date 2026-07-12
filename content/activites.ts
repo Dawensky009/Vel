@@ -23,7 +23,7 @@ export const activites: Activite[] = [
     videos: [
       {
         url: "https://www.youtube.com/embed/5czA_L_eOp4",
-        titre: "Vidéo d'illustration sur la lecture — à remplacer par la captation officielle.",
+        titre: "Vidéo d'illustration sur la lecture, à remplacer par la captation officielle.",
       },
     ],
   },
@@ -70,13 +70,13 @@ export const activites: Activite[] = [
       "Les animateurs préparent les ateliers « dessine ton propre livre » et les espaces enfants du 15 août.",
     couverture: "/images/boy-reading.jpg",
     paragraphs: [
-      "En amont de l'événement, l'équipe met au point les ateliers jeunesse et l'espace dédié aux enfants — au cœur d'une journée pensée pour les familles.",
+      "En amont de l'événement, l'équipe met au point les ateliers jeunesse et l'espace dédié aux enfants, au cœur d'une journée pensée pour les familles.",
     ],
     images: ["/images/boy-reading.jpg", "/images/child-dusk.jpg"],
   },
   {
     slug: "vacances-en-livres-2026",
-    titre: "Vacances en livres — la journée",
+    titre: "Vacances en livres : la journée",
     type: "Événement",
     date: "2026-08-15",
     edition: "2026",
@@ -87,7 +87,7 @@ export const activites: Activite[] = [
     couverture: "/images/hero-reading.jpg",
     paragraphs: [
       "Le 15 août, le Palais Municipal de Delmas devient une bibliothèque de quartier à ciel ouvert, de 9h00 à 18h30.",
-      "Retrouvez tout le détail — programme, tarifs, infos pratiques — sur la page de l'édition 2026.",
+      "Retrouvez tout le détail (programme, tarifs, infos pratiques) sur la page de l'édition 2026.",
     ],
     images: ["/images/hero-reading.jpg", "/images/pages-cream.jpg", "/images/hand-book.jpg"],
   },

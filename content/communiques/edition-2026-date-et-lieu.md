@@ -11,7 +11,7 @@ La coalition **Vacances en livres** a le plaisir d'annoncer officiellement la te
 ## Quand et où
 
 - **Date :** samedi 15 août 2026, de 9h00 à 18h30
-- **Lieu :** Palais Municipal de Delmas — Delmas, Ouest, Haïti
+- **Lieu :** Palais Municipal de Delmas, Delmas, Ouest, Haïti
 - **Entrée :** 500 HTG par adulte, **gratuit** pour les enfants de 14 ans et moins
 
 ## Une journée entière avec les livres

@@ -10,7 +10,7 @@ La réservation pour l'édition 2026 de **Vacances en livres** est ouverte. Voic
 
 ## Les tarifs
 
-- **Individuel adulte :** 500 HTG — accès à toute la journée
+- **Individuel adulte :** 500 HTG, accès à toute la journée
 - **Enfants de 14 ans et moins :** gratuit, accompagnés d'un adulte muni d'un billet
 - **Groupes scolaires (dès 10 enfants) :** sur demande
 

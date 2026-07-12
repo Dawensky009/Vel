@@ -6,8 +6,8 @@ export const organisation: Organisation = {
   nom: "Coalition Vacances en livres",
   mission: "Démocratiser l'accès à la lecture en Haïti.",
   paragraphs: [
-    "Vacances en livres est portée par une coalition d'organisations culturelles haïtiennes — libraires, éditeurs, bibliothèques associatives et enseignants — réunis autour d'une conviction simple : la lecture n'est pas un luxe.",
-    "Chaque été, le temps d'une journée, la coalition transforme un lieu public en bibliothèque de quartier à ciel ouvert : trente auteurs en signature, des tables rondes, des ateliers jeunesse, et des familles qui repartent avec des livres. L'entrée reste accessible — 500 HTG, gratuite pour les enfants de 14 ans et moins.",
+    "Vacances en livres est portée par une coalition d'organisations culturelles haïtiennes (libraires, éditeurs, bibliothèques associatives et enseignants), réunis autour d'une conviction simple : la lecture n'est pas un luxe.",
+    "Chaque été, le temps d'une journée, la coalition transforme un lieu public en bibliothèque de quartier à ciel ouvert : trente auteurs en signature, des tables rondes, des ateliers jeunesse, et des familles qui repartent avec des livres. L'entrée reste accessible : 500 HTG, gratuite pour les enfants de 14 ans et moins.",
     "Au-delà de l'événement, la coalition travaille à rapprocher le public haïtien du livre : accompagner les auteurs, soutenir les libraires et les maisons d'édition, et donner aux enfants le goût de lire.",
   ],
   valeurs: [
