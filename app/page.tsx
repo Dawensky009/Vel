@@ -1,8 +1,10 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import EventStory from "@/components/EventStory";
+import Gallery from "@/components/Gallery";
 import Programme from "@/components/Programme";
 import Sponsors from "@/components/Sponsors";
+import FeatureBand from "@/components/FeatureBand";
 import Billetterie from "@/components/Billetterie";
 import Infos from "@/components/Infos";
 import Faq from "@/components/Faq";
@@ -20,8 +22,10 @@ export default function Home() {
       <main id="main">
         <Hero />
         <EventStory />
+        <Gallery />
         <Programme />
         <Sponsors />
+        <FeatureBand />
         <Billetterie />
         <Infos />
         <Faq />

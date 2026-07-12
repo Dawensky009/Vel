@@ -1,10 +1,12 @@
 # Design
 
-Visual system for Vacances en livres. The direction is locked (distilled from nine prior rejections); this file records it so future work stays on-brand. Tokens live in `brand/tokens.css`; the page is `brand/site.html`.
+Visual system for Vacances en livres. The brand direction is locked (distilled from nine prior rejections); this file records it so future work stays on-brand. The live site is a **Next.js app** (`app/` + `components/`); tokens and styles live in `app/globals.css`. The original static prototype remains in `brand/`.
 
 ## Theme
 
 A tidy neighborhood library in late-afternoon light — everything in its place, nothing shouts, you want to sit and read. Editorial and text-forward (Gallimard, The New York Review of Books, Poilâne), never a SaaS landing, a saturated Caribbean poster, or an over-styled magazine. Cream paper, navy ink, one warm accent rationed to calls-to-action.
+
+**Evolution (client-directed, July 2026).** At the client's request the site moved from pure editorial restraint to an **imagery-led, immersive** treatment: full-bleed photography, a photo gallery, parallax, and scroll motion. The brand system (palette, type, tokens) is unchanged and still governs — photography and motion now carry the impact the restrained version lacked. Navy **legibility scrims** over photos are the one accepted departure from the "no gradient" rule: functional (text contrast on images), not decorative.
 
 ## Color
 
@@ -29,13 +31,13 @@ A three-family system, each with one job. All bans on lookalike defaults (Fraunc
 
 - **Alegreya** (`--font-display`) — hero and section headings at 800, literary italics at 400 for quotes and accents. Argentine warmth; the art direction lives here. Headings carry a trailing period as an editorial tic.
 - **Manrope** (`--font-body`) — body, UI, nav, labels, all numbers and prices. Weights 400/500/600/700/800.
-- **Caveat** (`--font-script`) — signature only, **≤ 4 uses on the whole page**: the hero "Stay Focus" accent, the footer "Restez connectés", and the closing line. Never for running text.
+- **Caveat** (`--font-script`) — signature only, **≤ 4 uses on the whole page**: the hero "Stay Focus", the band "L'été, en famille", the footer "Restez connectés". Never for running text.
 
-**Scale:** fluid `clamp()` modular scale, ratio ~1.25, hero capped at 4.75rem (below the 6rem ceiling); display tracking `-0.02em` (above the −0.04em floor). Prose measure 52–66ch. Loaded from Google Fonts with preconnect and `display=swap`; self-hosting a subset is the later performance pass.
+**Scale:** fluid `clamp()` modular scale, ratio ~1.25, display headings capped ≤ 5rem; display tracking `-0.02em` (above the −0.04em floor). Prose measure 52–66ch. **Self-hosted via `next/font`** (Alegreya / Manrope / Caveat, `display=swap`).
 
 ## Layout
 
-Container `min(100% − gutters, 1120px)`, fluid gutters via `clamp()`. Sections separated by a hairline and generous fluid vertical rhythm (`--space-section`). The hero is **typographic-led**: a large left-aligned Alegreya statement + sun CTA on the left, balanced on the right by a compact **"la journée" infographic** — a date/place header over a vertical timeline of the day (sun dots on a connecting rule). Never a centered symmetric hero. The provided poster is **not** rendered on the page (it clashed with the restraint); it stays the OG/share image only. Grids are breakpoint-free where possible (`repeat(auto-fit, minmax(…, 1fr))`) for the practical-info cards. Cards are used only where they earn it; dividers and whitespace do most of the structural work. **No side-stripe accents** (`border-left`), ever — full borders, tints, or nothing. **No stats grid** — the day is shown as an editorial timeline, not big-number cells.
+Container `min(100% − gutters, 1120px)`, fluid gutters via `clamp()`. Sections separated by a hairline and generous fluid vertical rhythm (`--space-section`). The hero is **full-bleed immersive**: a warm reading photograph under a navy legibility scrim, Ken Burns zoom, title + CTA overlaid, and a cream **"la journée" timeline card** floating over the image (date/place header + a vertical timeline, sun dots on a connecting rule). Full-bleed sections (hero, feature band) break the container; content sections keep it. Never a centered symmetric hero. The provided poster stays the OG/share image only. Grids are breakpoint-free where possible (`repeat(auto-fit, minmax(…, 1fr))`); the gallery is a 6-tile mosaic (2-col on mobile). **No side-stripe accents** (`border-left`), ever. **No stats grid** — the day is an editorial timeline, not big-number cells.
 
 ## Components
 
@@ -48,6 +50,10 @@ Container `min(100% − gutters, 1120px)`, fluid gutters via `clamp()`. Sections
 - **Map** — lazy OpenStreetMap iframe in a bordered frame with a "repère à confirmer" note.
 - **Footer** — navy ground, cream text, contacts / réseaux / colophon.
 
+## Imagery
+
+Curated warm photography (an open book in warm light, a natural-light library corner, hands and pages, a child reading at golden dusk) — on-palette, dignified, never generic-corporate. Served through **`next/image`** (responsive `srcset`, lazy below the fold, hero `priority` for LCP), stored in `public/images/`. Placeholders until the coalition supplies real edition/venue/author photos; alt text and captions are written in the brand voice. Placements: full-bleed hero, a two-column L'événement figure (clip-path reveal + hover zoom), a six-tile gallery mosaic ("En images"), and a full-bleed parallax band ("les enfants entrent gratuitement").
+
 ## Motion
 
-Reveal-on-scroll that **enriches an already-visible default** — content is fully visible without JS (`.has-js` gate), an IntersectionObserver adds a short translate/fade, a 2.5s failsafe guarantees nothing ships blank, and `prefers-reduced-motion: reduce` collapses everything to instant. Staggering is limited to the author grid and programme lists; there is no uniform site-wide fade reflex. Easing is `ease-out-expo`; no bounce, no elastic. Hover affordances (CTA arrow nudge, nav underline) are quick and quiet.
+Motion is now a real layer — but still orchestrated, `prefers-reduced-motion`-safe, and GPU-friendly (transform / opacity / clip-path; no layout animation). Content stays visible without JS (`.has-js` gate + IntersectionObserver reveals + 2.5s failsafe). Premium moments: hero Ken Burns + entrance, image clip-path wipes, staggered gallery + timeline, hover zoom on photos, nav elevation on scroll, and a lightweight custom **parallax** (`components/Parallax.tsx`, rAF-throttled, fully disabled under reduced motion) on the full-bleed band. Easing `ease-out-expo`; no bounce/elastic. **No heavy animation library** — kept lean for 3G/4G Haiti.

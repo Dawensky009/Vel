@@ -412,6 +412,104 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .foot__colophon { color: var(--vel-cream-70); font-size: var(--step--1); }
 .foot__bar { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(244,237,224,0.18); color: var(--vel-cream-70); font-size: var(--step--1); }
 
+/* ============ Imagery + immersive (vitrine visuelle) ============ */
+
+/* --- Immersive full-bleed hero --- */
+.hero-im {
+  position: relative; min-height: min(90vh, 800px);
+  display: flex; align-items: flex-end;
+  overflow: clip; isolation: isolate; color: var(--vel-cream);
+}
+.hero-im__media { position: absolute; inset: 0; z-index: 0; }
+.hero-im__media img { width: 100%; height: 100%; object-fit: cover; }
+.has-js .hero-im__media img { animation: kenburns 24s ease-out both; will-change: transform; }
+@keyframes kenburns { from { transform: scale(1.09); } to { transform: scale(1); } }
+.hero-im__scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(27,20,100,0.88) 4%, rgba(27,20,100,0.52) 40%, rgba(27,20,100,0.14) 74%, rgba(27,20,100,0.30) 100%);
+}
+.hero-im__inner {
+  position: relative; z-index: 2; width: 100%;
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+  display: grid; gap: clamp(1.75rem, 4vw, 3rem); align-items: end;
+}
+@media (min-width: 980px) { .hero-im__inner { grid-template-columns: 1.6fr auto; } }
+.hero-im__script { color: var(--vel-sun); font-size: clamp(1.7rem, 3.6vw, 2.5rem); display: inline-block; margin-bottom: 0.3rem; }
+.hero-im h1 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.7rem, 6.4vw, 5rem); line-height: 1.02;
+  letter-spacing: var(--tracking-display); color: var(--vel-cream);
+  max-width: 16ch; text-shadow: 0 2px 30px rgba(27,20,100,0.4);
+}
+.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); }
+.hero-im__deck { font-size: var(--step-1); color: rgba(244,237,224,0.9); max-width: 40ch; margin-top: var(--space-md); line-height: 1.45; }
+.hero-im__facts { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: var(--space-md); font-size: var(--step--1); color: rgba(244,237,224,0.82); }
+.hero-im__facts b { color: var(--vel-cream); font-weight: 700; }
+.hero-im__cta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; }
+.hero-im__free { font-size: var(--step--1); color: rgba(244,237,224,0.85); }
+.hero-im__free b { color: var(--vel-sun); font-weight: 700; }
+
+/* Cream timeline card floating over the hero image */
+.hero-card {
+  background: var(--vel-cream); color: var(--vel-ink);
+  border-radius: var(--radius-lg); padding: clamp(1.4rem, 2.5vw, 1.9rem);
+  box-shadow: var(--shadow-lg); width: min(340px, 100%);
+}
+.hero-card__date { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-navy); line-height: 1; }
+.hero-card__sub { color: var(--vel-ink-muted); font-size: var(--step--1); margin-top: 0.3rem; line-height: 1.4; }
+.hero-card .tl { list-style: none; margin: var(--space-sm) 0 0; padding: var(--space-sm) 0 0; border-top: 1px solid var(--vel-line); position: relative; }
+.hero-card .tl::before { content: ""; position: absolute; left: 5px; top: 1.35rem; bottom: 0.9rem; width: 2px; background: var(--vel-line-strong); }
+.hero-card .tl li { position: relative; padding: 0.4rem 0 0.4rem 1.75rem; }
+.hero-card .tl li::before { content: ""; position: absolute; left: 0; top: 0.7rem; width: 11px; height: 11px; border-radius: 50%; background: var(--vel-sun); box-shadow: 0 0 0 3px var(--vel-cream); }
+.hero-card .tl time { display: inline-block; min-width: 3.2em; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--vel-navy); font-size: var(--step--1); }
+.hero-card .tl span { color: var(--vel-ink-muted); font-size: var(--step--1); }
+.has-js .hero-card .tl li { opacity: 0; animation: tl-in 0.55s var(--ease-out-expo) forwards; animation-delay: calc(var(--i, 0) * 90ms + 0.35s); }
+@keyframes tl-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+
+/* --- Feature image blocks --- */
+.figbox { position: relative; overflow: clip; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.figbox img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.figbox--tall { aspect-ratio: 4 / 5; }
+.figbox figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem 1.1rem 0.9rem; font-size: var(--step--1); color: var(--vel-cream); background: linear-gradient(to top, rgba(27,20,100,0.7), transparent); font-style: italic; }
+.has-js .reveal-img { clip-path: inset(0 0 100% 0); transition: clip-path var(--dur-slow) var(--ease-out-expo); }
+.has-js .reveal-img.is-in { clip-path: inset(0 0 0 0); }
+.zoom { overflow: clip; }
+.zoom img { transition: transform 0.65s var(--ease-out-quart); }
+.zoom:hover img { transform: scale(1.05); }
+
+/* L'événement: prose + image */
+.ev2 { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+@media (min-width: 880px) { .ev2 { grid-template-columns: 1fr 0.82fr; } }
+
+/* --- Gallery mosaic --- */
+.gallery { display: grid; gap: clamp(0.5rem, 1.4vw, 0.9rem); grid-template-columns: repeat(2, 1fr); grid-auto-rows: 42vw; }
+.gallery figure { margin: 0; position: relative; overflow: clip; border-radius: var(--radius); background: var(--vel-panel); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (min-width: 720px) {
+  .gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 12.2vw; }
+  .g1 { grid-column: span 3; grid-row: span 2; }
+  .g2 { grid-column: span 3; }
+  .g3 { grid-column: span 3; }
+  .g4 { grid-column: span 2; }
+  .g5 { grid-column: span 2; }
+  .g6 { grid-column: span 2; }
+}
+.gallery__cap { margin-top: var(--space-md); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
+
+/* --- Full-bleed parallax band --- */
+.band { position: relative; overflow: clip; min-height: min(72vh, 640px); display: flex; align-items: center; isolation: isolate; color: var(--vel-cream); }
+.band__media { position: absolute; inset: -12% 0; z-index: 0; }
+.band__media img { width: 100%; height: 100%; object-fit: cover; }
+.band__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(105deg, rgba(27,20,100,0.86) 8%, rgba(27,20,100,0.5) 52%, rgba(27,20,100,0.22) 100%); }
+.band__inner { position: relative; z-index: 2; padding-block: clamp(3rem, 8vw, 5.5rem); }
+.band__lead { color: var(--vel-sun); font-family: var(--font-script); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1; margin-bottom: 0.5rem; }
+.band__q { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 4.4vw, 3.3rem); line-height: 1.12; max-width: 22ch; text-wrap: balance; text-shadow: 0 2px 30px rgba(27,20,100,0.4); }
+.band__q em { font-style: italic; color: var(--vel-sun); }
+.band__sub { margin-top: var(--space-md); font-size: var(--step-1); color: rgba(244,237,224,0.88); max-width: 44ch; }
+
+/* parallax inner (driven by Parallax component) */
+.parallax { transform: translate3d(0, var(--py, 0px), 0); will-change: transform; }
+
 /* ---------- Reveal motion (enriches an already-visible default) ---------- */
 .has-js .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out-expo); }
 .has-js .reveal.is-in { opacity: 1; transform: none; }
@@ -422,4 +520,9 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   html { scroll-behavior: auto; }
   .has-js .reveal, .has-js .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .btn, .nav__links a::after, .faq summary::after { transition: none !important; }
+  .has-js .hero-im__media img { animation: none !important; }
+  .has-js .hero-card .tl li { opacity: 1 !important; animation: none !important; }
+  .has-js .reveal-img { clip-path: none !important; transition: none !important; }
+  .zoom img { transition: none !important; }
+  .parallax { transform: none !important; }
 }
