@@ -46,7 +46,9 @@ votre backend — les pages ne changent pas.**
   (frontmatter `titre`, `date`, `categorie`, `extrait` + corps Markdown). Il apparaît
   automatiquement dans `/actualites` et sur la home.
 - **Ajouter / modifier une édition :** éditer `content/editions.ts` (une édition à venir,
-  des éditions passées avec `statut: "passe"` remplissent l'archive).
+  des éditions passées avec `statut: "passe"` remplissent l'archive). Chaque édition peut
+  porter des `videos` (avec `categorie: "Interview"` / `"Reportage"` — affichées en sections
+  « En vidéo » et « Interviews » sur la page de l'édition) et une `galerie` d'images.
 - **Maisons d'édition :** `content/publishers.ts` (remplacer les emplacements « à
   confirmer » par les vrais éditeurs + logos).
 - **Invité d'honneur :** champ `guest` sur l'édition dans `content/editions.ts`.

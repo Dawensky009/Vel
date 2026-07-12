@@ -35,5 +35,19 @@ export const editions: Edition[] = [
       { heure: "14h00", label: "Rencontres, voix de la diaspora" },
       { heure: "17h30", label: "Lecture publique & clôture" },
     ],
+    // Vidéos & interviews de l'événement. Illustrations à remplacer par les vraies
+    // captations (reportage, interviews d'auteurs) après l'événement.
+    videos: [
+      {
+        url: "https://www.youtube.com/embed/yp8T5AX0ng0",
+        categorie: "Reportage",
+        titre: "Reportage sur la culture du livre en Haïti — vidéo d'illustration, à remplacer.",
+      },
+      {
+        url: "https://www.youtube.com/embed/yp8T5AX0ng0",
+        categorie: "Interview",
+        titre: "Interview d'un auteur invité — exemple à remplacer par la vraie captation.",
+      },
+    ],
   },
 ];

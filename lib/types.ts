@@ -39,6 +39,8 @@ export interface Edition {
   guest?: Personne; // invité d'honneur
   maisonsEdition?: string[]; // publisher slugs
   timeline?: TimelineItem[];
+  videos?: MediaVideo[]; // vidéos & interviews de l'événement
+  galerie?: string[]; // images de l'événement (chemins /public)
 }
 
 export interface Communique {
@@ -55,6 +57,7 @@ export interface Communique {
 export interface MediaVideo {
   url: string; // embeddable URL (YouTube/Facebook/Vimeo)
   titre?: string;
+  categorie?: string; // "Interview", "Reportage", "Table ronde"…
 }
 
 export interface Activite {

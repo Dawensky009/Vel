@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import EditionHeader from "@/components/EditionHeader";
 import Gallery from "@/components/Gallery";
+import EditionMedia from "@/components/EditionMedia";
 import Programme from "@/components/Programme";
 import Sponsors from "@/components/Sponsors";
 import FeatureBand from "@/components/FeatureBand";
@@ -44,6 +45,7 @@ export default async function EditionPage({
       {annee === "2026" ? (
         <>
           <Gallery />
+          <EditionMedia videos={e.videos} upcoming={e.statut === "a-venir"} />
           <Programme />
           <Sponsors />
           <FeatureBand />
