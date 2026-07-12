@@ -1,12 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * Scroll-reveal that only enriches content already visible without JS.
+ * Re-scans on route change (shared in the layout across all pages).
  * A failsafe timeout guarantees nothing stays hidden if the observer never fires.
  */
 export default function RevealController() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
     const showAll = () => els.forEach((el) => el.classList.add("is-in"));
@@ -35,7 +39,7 @@ export default function RevealController() {
       io.disconnect();
       window.clearTimeout(t);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

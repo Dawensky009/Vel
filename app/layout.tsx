@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Alegreya, Manrope, Caveat } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import RevealController from "@/components/RevealController";
 
 const alegreya = Alegreya({
   subsets: ["latin"],
@@ -84,7 +87,13 @@ export default function RootLayout({
               "document.documentElement.className=document.documentElement.className.replace('no-js','has-js')",
           }}
         />
-        {children}
+        <a className="skip" href="#main">
+          Aller au contenu
+        </a>
+        <Nav />
+        <main id="main">{children}</main>
+        <Footer />
+        <RevealController />
       </body>
     </html>
   );
