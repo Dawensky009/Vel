@@ -22,8 +22,8 @@ export const activites: Activite[] = [
     images: ["/images/library-corner.jpg", "/images/hand-book.jpg", "/images/poetry.jpg"],
     videos: [
       {
-        url: "https://www.youtube.com/embed/yp8T5AX0ng0",
-        titre: "Vidéo d'illustration — à remplacer par la captation officielle.",
+        url: "https://www.youtube.com/embed/5czA_L_eOp4",
+        titre: "Vidéo d'illustration sur la lecture — à remplacer par la captation officielle.",
       },
     ],
   },

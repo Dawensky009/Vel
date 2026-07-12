@@ -11,6 +11,7 @@ const LINKS = [
   { href: "/agenda", label: "Agenda" },
   { href: "/editions", label: "Éditions" },
   { href: "/a-propos", label: "À propos" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {

@@ -39,14 +39,14 @@ export const editions: Edition[] = [
     // captations (reportage, interviews d'auteurs) après l'événement.
     videos: [
       {
-        url: "https://www.youtube.com/embed/yp8T5AX0ng0",
+        url: "https://www.youtube.com/embed/muuWRKYi09s",
         categorie: "Reportage",
-        titre: "Reportage sur la culture du livre en Haïti — vidéo d'illustration, à remplacer.",
+        titre: "Vidéo d'illustration sur l'importance de la lecture — à remplacer par le reportage officiel.",
       },
       {
-        url: "https://www.youtube.com/embed/yp8T5AX0ng0",
+        url: "https://www.youtube.com/embed/D9Ihs241zeg",
         categorie: "Interview",
-        titre: "Interview d'un auteur invité — exemple à remplacer par la vraie captation.",
+        titre: "Exemple d'intervention (à remplacer par les vraies interviews d'auteurs de l'événement).",
       },
     ],
   },

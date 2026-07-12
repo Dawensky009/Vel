@@ -34,6 +34,7 @@ npm run build && npm run start
 | `/agenda` · `/agenda/[slug]` | Timeline des activités de l'année + détail (images + vidéos) |
 | `/editions` · `/editions/[annee]` | Archive des éditions + détail complet d'une édition |
 | `/a-propos` | L'organisation (mission, valeurs) et le staff |
+| `/contact` | Formulaire de contact (envoi via WhatsApp) + coordonnées |
 | `/api/health` | Endpoint Node.js (monitoring) |
 
 ## Publier du contenu
