@@ -507,6 +507,16 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 }
 .gallery__cap { margin-top: var(--space-md); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
 
+/* --- Press conference: text left, photo cluster right --- */
+.pressconf { display: grid; gap: clamp(1.75rem, 4vw, 3rem); align-items: center; }
+@media (min-width: 880px) { .pressconf { grid-template-columns: 0.82fr 1.08fr; } }
+.pressconf__text .prose { margin-top: var(--space-sm); }
+.pressconf__link { margin-top: var(--space-md); font-weight: 600; }
+.pressconf__media .act__media-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.5rem, 1.2vw, 0.85rem);
+}
+
 /* --- Full-bleed parallax band --- */
 .band { position: relative; overflow: clip; min-height: min(72vh, 640px); display: flex; align-items: center; isolation: isolate; color: var(--vel-cream); }
 .band__media { position: absolute; inset: -12% 0; z-index: 0; }

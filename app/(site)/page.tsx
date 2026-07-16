@@ -1,16 +1,14 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import HomeReel from "@/components/HomeReel";
-import CommuniqueFeature from "@/components/CommuniqueFeature";
-import GuestOfHonour from "@/components/GuestOfHonour";
 import EventStory from "@/components/EventStory";
+import HomeReel from "@/components/HomeReel";
+import GuestOfHonour from "@/components/GuestOfHonour";
 import PublishersList from "@/components/PublishersList";
 import CommuniqueCard from "@/components/CommuniqueCard";
 import Billetterie from "@/components/Billetterie";
 import Infos from "@/components/Infos";
 import {
   getUpcomingEdition,
-  getFeaturedCommunique,
   getCommuniques,
   getGuestOfHonour,
   getPublishers,
@@ -18,7 +16,6 @@ import {
 
 export default function Home() {
   const edition = getUpcomingEdition();
-  const featured = getFeaturedCommunique();
   const latest = getCommuniques().slice(0, 3);
   const guest = getGuestOfHonour();
   const pubs = getPublishers(edition.maisonsEdition);
@@ -26,12 +23,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-
-      <HomeReel />
-
-      {featured ? <CommuniqueFeature c={featured} /> : null}
-
-      {guest ? <GuestOfHonour guest={guest} /> : null}
 
       <EventStory />
 
@@ -42,7 +33,13 @@ export default function Home() {
         </Link>
       </p>
 
+      <HomeReel />
+
+      {/* Réapparaissent automatiquement dès que la donnée est renseignée. */}
+      {guest ? <GuestOfHonour guest={guest} /> : null}
       <PublishersList items={pubs} />
+
+      <Billetterie />
 
       <section className="section container" aria-labelledby="news-title">
         <div className="s-head reveal">
@@ -63,7 +60,6 @@ export default function Home() {
         </p>
       </section>
 
-      <Billetterie />
       <Infos />
     </>
   );
