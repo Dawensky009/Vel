@@ -25,6 +25,24 @@ npm run dev      # http://localhost:3000
 npm run build && npm run start
 ```
 
+## Mode maintenance (aperçu privé)
+
+Le site peut afficher une page **« en préparation »** à tous les visiteurs tandis que le
+propriétaire continue de voir le vrai site. Géré par `middleware.ts` via 2 variables
+d'environnement (voir [`.env.example`](./.env.example)) :
+
+1. Dans **Vercel → Settings → Environment Variables** (Production) :
+   `MAINTENANCE_MODE=on` et `MAINTENANCE_BYPASS_TOKEN=<longue chaîne aléatoire>`, puis
+   redéployer.
+2. Le propriétaire ouvre **une fois** `https://vacancesenlivres.org/?apercu=<jeton>` : un
+   cookie retient l'appareil et laisse voir le vrai site partout. `?apercu=off` pour ressortir.
+3. **Au lancement :** passer `MAINTENANCE_MODE` à autre chose que `on` (ou le supprimer) et
+   redéployer → site 100 % public. Aucun changement de code.
+
+En local (`npm run dev`), la variable est absente : le vrai site s'affiche toujours. Pour
+tester la page maintenance en local, créer un `.env.local` (ignoré par git) avec les 2
+variables. `/api/health` n'est jamais bloqué (monitoring).
+
 ## Routes
 
 | Route | Contenu |
@@ -62,7 +80,8 @@ backend devra respecter.
 ## Structure
 
 ```
-app/            layout partagé (nav/footer), globals.css, pages (home, actualites, editions), api/health
+app/            layout racine (html/polices) ; (site)/ = chrome partagé + pages ; maintenance/ ; api/health ; globals.css
+middleware.ts   garde le mode maintenance (voir section dédiée)
 components/     Nav, Hero, sections (EventStory, Gallery, Programme, Sponsors, FeatureBand,
                Billetterie, Infos, Faq, PrendrePart, Footer), Parallax, RevealController,
                + hub (CommuniqueFeature, CommuniqueCard, GuestOfHonour, PublishersList,

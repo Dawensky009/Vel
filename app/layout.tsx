@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Alegreya, Manrope, Caveat } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import RevealController from "@/components/RevealController";
 
 const alegreya = Alegreya({
   subsets: ["latin"],
@@ -27,7 +24,7 @@ const caveat = Caveat({
   display: "swap",
 });
 
-const SITE_URL = "https://vacancesenlivres.ht";
+const SITE_URL = "https://vacancesenlivres.org";
 const DESCRIPTION =
   "Vacances en livres : trente auteurs en signature au Palais Municipal de Delmas, le samedi 15 août 2026. 500 HTG par adulte, gratuit pour les enfants de 14 ans et moins.";
 
@@ -87,13 +84,7 @@ export default function RootLayout({
               "document.documentElement.className=document.documentElement.className.replace('no-js','has-js')",
           }}
         />
-        <a className="skip" href="#main">
-          Aller au contenu
-        </a>
-        <Nav />
-        <main id="main">{children}</main>
-        <Footer />
-        <RevealController />
+        {children}
       </body>
     </html>
   );

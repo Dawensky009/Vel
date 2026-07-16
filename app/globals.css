@@ -786,4 +786,52 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   .parallax { transform: none !important; }
   .feature, .ccard, .ecard, .ecard__media img { transition: none !important; }
   .tl-card, .tl-card__media img { transition: none !important; }
+  .has-js .maint__inner { animation: none !important; }
+}
+
+/* ---------- Maintenance / holding page (rendered without site chrome) ---------- */
+.maint {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-xl) var(--gutter);
+  text-align: center;
+}
+.maint__inner {
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+/* Cream painted behind the logo so `multiply` erases the JPEG's white; the clip
+   crops its baked-in margins (same technique as the nav wordmark, larger). */
+.maint__logo {
+  display: inline-flex; align-items: center; justify-content: center;
+  overflow: hidden; isolation: isolate;
+  background: var(--vel-cream); border-radius: var(--radius);
+  height: 96px; margin-bottom: var(--space-2xs);
+}
+.maint__logo-img {
+  height: 150px; width: auto; display: block;
+  margin: 0 -10px;            /* trim asymmetric side whitespace */
+  mix-blend-mode: multiply;   /* white → cream (invisible) */
+}
+.maint__lead { margin-bottom: 0; }
+.maint__title { font-size: var(--step-4); }
+.maint__text { margin-inline: auto; }
+.maint__meta {
+  font-weight: 600; color: var(--vel-ink-muted); font-size: var(--step--1);
+}
+.maint__cta { margin-top: var(--space-xs); }
+.has-js .maint__inner {
+  animation: maint-in var(--dur-slow) var(--ease-out-expo) both;
+}
+@keyframes maint-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (min-width: 640px) {
+  .maint__logo { height: 112px; }
+  .maint__logo-img { height: 176px; }
 }
