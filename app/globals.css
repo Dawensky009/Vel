@@ -449,6 +449,17 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .hero-im__free { font-size: var(--step--1); color: rgba(244,237,224,0.85); }
 .hero-im__free b { color: var(--vel-sun); font-weight: 700; }
 
+/* Signature entrance: hero content rises in sequence on load (JS-gated) */
+.has-js .hero-rise {
+  opacity: 0;
+  animation: hero-rise 0.72s var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 0.12s);
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
 /* Cream timeline card floating over the hero image */
 .hero-card {
   background: var(--vel-cream); color: var(--vel-ink);
@@ -787,6 +798,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   .feature, .ccard, .ecard, .ecard__media img { transition: none !important; }
   .tl-card, .tl-card__media img { transition: none !important; }
   .has-js .maint__inner { animation: none !important; }
+  .has-js .hero-rise { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
 /* ---------- Maintenance / holding page (rendered without site chrome) ---------- */

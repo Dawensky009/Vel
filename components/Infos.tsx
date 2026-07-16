@@ -30,7 +30,9 @@ export default function Infos() {
         <div className="info-card">
           <h3>Contact</h3>
           <p>
-            <a href="https://wa.me/50955792024">+509 5579-2024 (WhatsApp)</a>
+            <a href="https://wa.me/50955792024" target="_blank" rel="noopener noreferrer">
+              +509 5579-2024 (WhatsApp)
+            </a>
             <br />
             <a href="tel:+50931215441">+509 3121-5441</a>
           </p>
@@ -47,8 +49,7 @@ export default function Infos() {
           src={OSM_SRC}
         />
         <figcaption className="map__note">
-          Emplacement approximatif du Palais Municipal de Delmas. Repère exact à
-          confirmer.
+          Palais Municipal de Delmas, commune de Delmas (Ouest, Haïti).
         </figcaption>
       </figure>
     </section>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import HomeReel from "@/components/HomeReel";
 import CommuniqueFeature from "@/components/CommuniqueFeature";
 import GuestOfHonour from "@/components/GuestOfHonour";
 import EventStory from "@/components/EventStory";
@@ -25,6 +26,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      <HomeReel />
 
       {featured ? <CommuniqueFeature c={featured} /> : null}
 

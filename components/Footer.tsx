@@ -12,7 +12,9 @@ export default function Footer() {
             <h4>Contact</h4>
             <ul>
               <li>
-                <a href="https://wa.me/50955792024">WhatsApp · +509 5579-2024</a>
+                <a href="https://wa.me/50955792024" target="_blank" rel="noopener noreferrer">
+                  WhatsApp · +509 5579-2024
+                </a>
               </li>
               <li>
                 <a href="tel:+50931215441">Téléphone · +509 3121-5441</a>
@@ -21,26 +23,11 @@ export default function Footer() {
           </div>
           <div>
             <h4>Réseaux</h4>
-            <ul>
-              <li>
-                <a href="#" rel="noopener">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" rel="noopener">
-                  Instagram
-                </a>
-              </li>
-            </ul>
+            <p className="foot__colophon">Bientôt sur Facebook et Instagram.</p>
           </div>
           <div>
             <h4>Colophon</h4>
-            <p className="foot__colophon">
-              © 2026 Coalition Vacances en livres.
-              <br />
-              Préversion en construction.
-            </p>
+            <p className="foot__colophon">© 2026 Coalition Vacances en livres.</p>
           </div>
         </div>
         <p className="foot__bar">Une nouvelle aventure culturelle commence bientôt.</p>

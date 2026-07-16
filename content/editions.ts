@@ -16,19 +16,12 @@ export const editions: Edition[] = [
     affiche: "/Annonces.jpeg",
     resume:
       "Trente auteurs en signature, un palais ouvert au public, une journée entière à passer avec les livres. 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
-    guest: {
-      nom: "Invité d'honneur à annoncer",
-      role: "En signature le 15 août",
-      bio: "Le nom de l'invité d'honneur de l'édition 2026 sera dévoilé dans un prochain communiqué officiel.",
-    },
-    maisonsEdition: [
-      "a-confirmer-1",
-      "a-confirmer-2",
-      "a-confirmer-3",
-      "a-confirmer-4",
-      "a-confirmer-5",
-      "a-confirmer-6",
-    ],
+    // Invité d'honneur : renseigner { nom, role, bio, photo } pour afficher la
+    // section sur la home. Laissé vide tant que le nom n'est pas confirmé.
+    guest: undefined,
+    // Maisons d'édition : ajouter ici les slugs confirmés (voir content/publishers.ts).
+    // Vide = la section « Maisons d'édition » reste masquée (pas de « à confirmer »).
+    maisonsEdition: [],
     timeline: [
       { heure: "9h00", label: "Ouverture officielle" },
       { heure: "10h30", label: "Tables rondes & signatures" },

@@ -59,10 +59,15 @@ export default function Billetterie() {
             gourdes ou en dollars.
           </p>
           <p className="pay__soon">
-            La réservation en ligne ouvre le 20 juillet. Chaque inscription est
-            confirmée sous 24 heures.
+            Réservez dès maintenant par WhatsApp. Chaque inscription est confirmée
+            sous 24 heures.
           </p>
-          <a className="btn btn--cta btn--block" href={WA_RESERVE}>
+          <a
+            className="btn btn--cta btn--block"
+            href={WA_RESERVE}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Réserver ma place{" "}
             <span className="arw" aria-hidden="true">
               →
