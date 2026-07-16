@@ -35,14 +35,14 @@ export default function Hero() {
             className="hero-rise"
             style={{ ["--i"]: 1 } as React.CSSProperties}
           >
-            Vacances en livres. <em>L&apos;événement de l&apos;été.</em>
+            Vacances en livres. <em>Le rendez-vous du livre.</em>
           </h1>
           <p
             className="hero-im__deck hero-rise"
             style={{ ["--i"]: 2 } as React.CSSProperties}
           >
-            Trente auteurs, un palais qui s&apos;ouvre au public, une journée à passer
-            avec les livres.
+            La première édition ouvre le 15 août 2026 : trente auteurs, un palais qui
+            s&apos;ouvre au public, une journée entière à passer avec les livres.
           </p>
           <p
             className="hero-im__facts hero-rise"

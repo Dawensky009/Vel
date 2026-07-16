@@ -491,6 +491,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 /* L'événement: prose + image */
 .ev2 { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
 @media (min-width: 880px) { .ev2 { grid-template-columns: 1fr 0.82fr; } }
+.ev2__more { margin-top: var(--space-md); font-weight: 600; }
 
 /* --- Gallery mosaic --- */
 .gallery { display: grid; gap: clamp(0.5rem, 1.4vw, 0.9rem); grid-template-columns: repeat(2, 1fr); grid-auto-rows: 42vw; }
