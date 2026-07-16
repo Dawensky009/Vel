@@ -40,9 +40,9 @@
   --step-0:  clamp(1.02rem, 0.98rem + 0.20vw, 1.13rem);
   --step-1:  clamp(1.22rem, 1.14rem + 0.40vw, 1.45rem);
   --step-2:  clamp(1.48rem, 1.34rem + 0.70vw, 1.90rem);
-  --step-3:  clamp(1.85rem, 1.60rem + 1.20vw, 2.60rem);
-  --step-4:  clamp(2.35rem, 1.90rem + 2.20vw, 3.60rem);
-  --step-5:  clamp(2.90rem, 2.20rem + 3.40vw, 4.75rem);
+  --step-3:  clamp(1.7rem, 1.52rem + 0.95vw, 2.3rem);
+  --step-4:  clamp(2.05rem, 1.72rem + 1.75vw, 3.1rem);
+  --step-5:  clamp(2.4rem, 1.95rem + 2.6vw, 4rem);
 
   --lh-tight: 1.06;
   --lh-snug:  1.2;
@@ -434,10 +434,10 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   display: grid; gap: clamp(1.75rem, 4vw, 3rem); align-items: end;
 }
 @media (min-width: 980px) { .hero-im__inner { grid-template-columns: 1.6fr auto; } }
-.hero-im__script { color: var(--vel-sun); font-size: clamp(1.7rem, 3.6vw, 2.5rem); display: inline-block; margin-bottom: 0.3rem; }
+.hero-im__script { color: var(--vel-sun); font-size: clamp(1.45rem, 3vw, 2.1rem); display: inline-block; margin-bottom: 0.3rem; }
 .hero-im h1 {
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(2.7rem, 6.4vw, 5rem); line-height: 1.02;
+  font-size: clamp(2.2rem, 5.2vw, 3.9rem); line-height: 1.05;
   letter-spacing: var(--tracking-display); color: var(--vel-cream);
   max-width: 16ch; text-shadow: 0 2px 30px rgba(27,20,100,0.4);
 }

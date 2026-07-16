@@ -14,17 +14,24 @@ export const activites: Activite[] = [
     statut: "passe",
     resume:
       "La coalition dévoile la date, le lieu et les grandes lignes de l'édition 2026 devant la presse.",
-    couverture: "/images/library-corner.jpg",
+    couverture: "/images/evenement/cp-06-panel.jpg",
     paragraphs: [
       "La coalition Vacances en livres a présenté officiellement son édition 2026 lors d'une conférence de presse : date, lieu, tarifs et premières annonces sur la programmation.",
       "Journalistes, partenaires et membres de la coalition étaient réunis pour lancer la campagne de l'été et rappeler l'ambition du projet : rapprocher le public haïtien du livre.",
     ],
-    images: ["/images/library-corner.jpg", "/images/hand-book.jpg", "/images/poetry.jpg"],
-    videos: [
-      {
-        url: "https://www.youtube.com/embed/5czA_L_eOp4",
-        titre: "Vidéo d'illustration sur la lecture, à remplacer par la captation officielle.",
-      },
+    images: [
+      "/images/evenement/cp-01-banniere.jpg",
+      "/images/evenement/cp-02-stand-livres.jpg",
+      "/images/evenement/cp-03-livres.jpg",
+      "/images/evenement/cp-04-coalition.jpg",
+      "/images/evenement/cp-05-panel-large.jpg",
+      "/images/evenement/cp-06-panel.jpg",
+      "/images/evenement/cp-07-panel-micros.jpg",
+      "/images/evenement/cp-08-intervention.jpg",
+      "/images/evenement/cp-09-prise-parole.jpg",
+      "/images/evenement/cp-10-tribune.jpg",
+      "/images/evenement/cp-11-presentation.jpg",
+      "/images/evenement/cp-12-presse.jpg",
     ],
   },
   {

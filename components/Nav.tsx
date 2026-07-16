@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/", label: "Accueil" },
   { href: "/actualites", label: "Actualités" },
   { href: "/agenda", label: "Agenda" },
   { href: "/editions", label: "Éditions" },

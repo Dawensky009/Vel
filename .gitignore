@@ -39,3 +39,6 @@ next-env.d.ts
 
 # skills CLI manifest (tooling)
 /skills-lock.json
+
+# Raw high-res source photos (resized versions live in public/images/evenement/)
+Ressources/IMAGES/
