@@ -14,6 +14,7 @@ const SUJETS = [
 
 export default function ContactForm() {
   const [nom, setNom] = useState("");
+  const [telephone, setTelephone] = useState("");
   const [sujet, setSujet] = useState(SUJETS[0]);
   const [message, setMessage] = useState("");
   const [touched, setTouched] = useState(false);
@@ -25,7 +26,10 @@ export default function ContactForm() {
     e.preventDefault();
     setTouched(true);
     if (!nomOk || !msgOk) return;
-    const body = `Bonjour, je suis ${nom.trim()}.\n\n${message.trim()}`;
+    const tel = telephone.trim();
+    const body = `Bonjour, je suis ${nom.trim()}.${
+      tel ? `\nTéléphone : ${tel}` : ""
+    }\n\n${message.trim()}`;
     const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
       sujet
     )}&body=${encodeURIComponent(body)}`;
@@ -51,6 +55,19 @@ export default function ContactForm() {
             Merci d&apos;indiquer votre nom.
           </p>
         ) : null}
+      </div>
+
+      <div className="cform__row">
+        <label htmlFor="cf-tel">Téléphone (facultatif)</label>
+        <input
+          id="cf-tel"
+          name="telephone"
+          type="tel"
+          value={telephone}
+          onChange={(e) => setTelephone(e.target.value)}
+          autoComplete="tel"
+          inputMode="tel"
+        />
       </div>
 
       <div className="cform__row">

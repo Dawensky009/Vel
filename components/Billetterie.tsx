@@ -38,13 +38,6 @@ export default function Billetterie() {
                 <span className="badge-free">Gratuit</span>
               </td>
             </tr>
-            <tr>
-              <td className="tk-offer">
-                Groupes scolaires, dès 10 enfants
-                <small>Visite guidée organisée avec l&apos;organisation.</small>
-              </td>
-              <td className="tk-price">Sur demande</td>
-            </tr>
           </tbody>
         </table>
         <div className="pay reveal">

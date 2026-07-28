@@ -31,16 +31,6 @@ export default function Faq() {
           </div>
         </details>
         <details>
-          <summary>Je viens avec un groupe scolaire, comment procéder ?</summary>
-          <div className="faq__a">
-            <p>
-              À partir de 10 enfants, écrivez-nous à{" "}
-              <a href={EMAIL}>contact@vacancesenlivres.org</a>. Nous organisons une visite
-              guidée et un accueil adapté.
-            </p>
-          </div>
-        </details>
-        <details>
           <summary>Je suis journaliste ou blogueur, y a-t-il un accès presse ?</summary>
           <div className="faq__a">
             <p>
