@@ -51,21 +51,6 @@ export const activites: Activite[] = [
     images: ["/images/book-blanket.jpg", "/images/pages-cream.jpg"],
   },
   {
-    slug: "ouverture-billetterie",
-    titre: "Ouverture de la billetterie",
-    type: "Annonce",
-    date: "2026-07-08",
-    edition: "2026",
-    statut: "passe",
-    resume:
-      "Les réservations sont ouvertes : 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
-    couverture: "/images/pages-bokeh.jpg",
-    paragraphs: [
-      "La billetterie de l'édition 2026 est ouverte. La réservation se fait par WhatsApp ; le paiement par MonCash ou sur place, en gourdes comme en dollars.",
-    ],
-    images: ["/images/pages-bokeh.jpg"],
-  },
-  {
     slug: "ateliers-jeunesse-preparation",
     titre: "Préparation des ateliers jeunesse",
     type: "Atelier",
@@ -93,7 +78,7 @@ export const activites: Activite[] = [
       "Le grand jour : trente auteurs en signature, tables rondes, ateliers jeunesse et lecture publique en clôture.",
     couverture: "/images/hero-reading.jpg",
     paragraphs: [
-      "Le 15 août, le Palais Municipal de Delmas devient une bibliothèque de quartier à ciel ouvert, de 9h00 à 18h30.",
+      "Le 15 août, le Palais Municipal de Delmas devient une bibliothèque de quartier à ciel ouvert, de 9h00 à 21h00.",
       "Retrouvez tout le détail (programme, tarifs, infos pratiques) sur la page de l'édition 2026.",
     ],
     images: ["/images/hero-reading.jpg", "/images/pages-cream.jpg", "/images/hand-book.jpg"],

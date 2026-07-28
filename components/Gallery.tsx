@@ -1,27 +1,28 @@
 import PhotoGallery, { type Photo } from "./PhotoGallery";
 
+// Vraies photos de la conférence de presse de lancement (en attendant celles du
+// 15 août). D'autres seront ajoutées au fil de l'édition.
 const SHOTS: Photo[] = [
-  { cls: "g1", src: "/images/book-blanket.jpg", alt: "Des mains tenant un livre ouvert sur un plaid chaud." },
-  { cls: "g2", src: "/images/boy-reading.jpg", alt: "Un enfant suit du doigt les lignes d'un livre." },
-  { cls: "g3", src: "/images/pages-cream.jpg", alt: "Les pages d'un livre ouvert en éventail, tons crème." },
-  { cls: "g4", src: "/images/hand-book.jpg", alt: "Une main tenant un livre ouvert en plein air." },
-  { cls: "g5", src: "/images/pages-bokeh.jpg", alt: "Gros plan sur les pages d'un livre, lumières en arrière-plan." },
-  { cls: "g6", src: "/images/poetry.jpg", alt: "Un recueil de poésie ouvert entre les mains d'un lecteur." },
+  { cls: "g1", src: "/images/evenement/cp-05-panel-large.jpg", alt: "La coalition présente l'édition 2026 devant la presse." },
+  { cls: "g2", src: "/images/evenement/cp-07-panel-micros.jpg", alt: "Le panel de la conférence de presse, micros en avant." },
+  { cls: "g3", src: "/images/evenement/cp-10-tribune.jpg", alt: "Prise de parole à la tribune." },
+  { cls: "g4", src: "/images/evenement/cp-02-stand-livres.jpg", alt: "Le stand et les ouvrages présentés." },
+  { cls: "g5", src: "/images/evenement/cp-11-presentation.jpg", alt: "Présentation de l'édition 2026." },
+  { cls: "g6", src: "/images/evenement/cp-03-livres.jpg", alt: "Une sélection de livres présentée au lancement." },
 ];
 
 export default function Gallery() {
   return (
     <section className="section container" aria-labelledby="amb-title">
       <div className="s-head reveal">
-        <p className="s-lead">Ce que sera la journée</p>
+        <p className="s-lead">La conférence de presse de lancement</p>
         <h2 className="s-title" id="amb-title">
           En <em>images</em>
         </h2>
       </div>
       <PhotoGallery photos={SHOTS} layout="mosaic" />
       <p className="gallery__cap">
-        Images d&apos;ambiance : les vraies photos de l&apos;édition 2026 les
-        remplaceront. Cliquez pour agrandir.
+        Les photos du 15 août viendront enrichir cette galerie. Cliquez pour agrandir.
       </p>
     </section>
   );

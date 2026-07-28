@@ -1,4 +1,4 @@
-const WHATSAPP = "https://wa.me/50955792024";
+const EMAIL = "mailto:contact@vacancesenlivres.org";
 
 export default function Faq() {
   return (
@@ -21,22 +21,12 @@ export default function Faq() {
           </div>
         </details>
         <details>
-          <summary>Comment payer avec MonCash ?</summary>
+          <summary>Comment acheter mon billet ?</summary>
           <div className="faq__a">
             <p>
-              Envoyez 500 HTG par adulte au numéro Digicel de la coalition, +509
-              5579-2024, puis transmettez la capture de confirmation sur WhatsApp. Nous
-              validons la réservation sous 24 heures.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>Puis-je payer sur place le jour J ?</summary>
-          <div className="faq__a">
-            <p>
-              Oui. Le paiement à l&apos;entrée est possible le 15 août, en gourdes ou en
-              dollars. Réserver en ligne à l&apos;avance reste conseillé pour éviter
-              l&apos;attente.
+              Les billets s&apos;achètent sur place, le jour de l&apos;événement, en
+              gourdes ou en dollars (500 HTG par adulte). Les points de vente seront
+              communiqués prochainement.
             </p>
           </div>
         </details>
@@ -44,9 +34,9 @@ export default function Faq() {
           <summary>Je viens avec un groupe scolaire, comment procéder ?</summary>
           <div className="faq__a">
             <p>
-              À partir de 10 enfants, écrivez-nous sur{" "}
-              <a href={WHATSAPP}>WhatsApp</a>. Nous organisons une visite guidée et un
-              accueil adapté.
+              À partir de 10 enfants, écrivez-nous à{" "}
+              <a href={EMAIL}>contact@vacancesenlivres.org</a>. Nous organisons une visite
+              guidée et un accueil adapté.
             </p>
           </div>
         </details>
@@ -54,26 +44,17 @@ export default function Faq() {
           <summary>Je suis journaliste ou blogueur, y a-t-il un accès presse ?</summary>
           <div className="faq__a">
             <p>
-              Oui. Contactez la coalition sur <a href={WHATSAPP}>WhatsApp</a> pour
+              Oui. Écrivez-nous à <a href={EMAIL}>contact@vacancesenlivres.org</a> pour
               recevoir votre accréditation presse avant l&apos;événement.
             </p>
           </div>
         </details>
         <details>
-          <summary>Le site est-il accessible aux personnes à mobilité réduite ?</summary>
+          <summary>Le lieu est-il accessible aux personnes à mobilité réduite ?</summary>
           <div className="faq__a">
             <p>
               Le Palais Municipal de Delmas est de plain-pied et accessible. Un membre
               de l&apos;équipe peut vous accompagner : signalez-le-nous à l&apos;avance.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>Puis-je transférer mon billet ?</summary>
-          <div className="faq__a">
-            <p>
-              Votre réservation est nominative mais transférable à un proche. Prévenez-
-              nous sur WhatsApp pour mettre à jour le nom.
             </p>
           </div>
         </details>

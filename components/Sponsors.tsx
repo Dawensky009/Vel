@@ -1,5 +1,3 @@
-const WHATSAPP = "https://wa.me/50955792024";
-
 export default function Sponsors() {
   return (
     <section className="section container" id="sponsors" aria-labelledby="sp-title">
@@ -10,31 +8,13 @@ export default function Sponsors() {
         </h2>
       </div>
       <p className="sponsors__intro reveal">
-        Vacances en livres est rendu possible par le soutien d&apos;entreprises et
-        d&apos;institutions qui croient à la démocratisation de la lecture en Haïti. La
-        coalition les remercie.
+        Vacances en Livres est rendu possible par le soutien d&apos;entreprises et
+        d&apos;institutions qui croient à la démocratisation de la lecture en Haïti.
       </p>
-      <div className="tiers reveal">
-        <div className="tier">
-          <p className="tier__label">Partenaire principal</p>
-          <p className="tier__names">Coalition Vacances en livres</p>
-        </div>
-        <div className="tier tier--sub">
-          <p className="tier__label">Partenaires officiels</p>
-          <p className="tier__names">À confirmer · À confirmer · À confirmer</p>
-        </div>
-        <div className="tier tier--soft">
-          <p className="tier__label">Soutiens</p>
-          <p className="tier__names">
-            À confirmer · À confirmer · À confirmer · À confirmer · À confirmer · À
-            confirmer
-          </p>
-        </div>
-      </div>
       <p className="sponsors__cta reveal">
-        Vous souhaitez rejoindre les sponsors 2026 ?{" "}
-        <a href={WHATSAPP}>Écrivez-nous sur WhatsApp</a> pour recevoir le dossier
-        partenaires.
+        Les partenaires de l&apos;édition 2026 seront annoncés prochainement. Vous
+        souhaitez les rejoindre ?{" "}
+        <a href="mailto:contact@vacancesenlivres.org">Écrivez-nous à contact@vacancesenlivres.org</a>.
       </p>
     </section>
   );

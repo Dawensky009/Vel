@@ -1,8 +1,3 @@
-const WA_RESERVE =
-  "https://wa.me/50955792024?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20pour%20Vacances%20en%20livres%202026.";
-const WA_DOSSIER =
-  "https://wa.me/50955792024?text=Bonjour%2C%20nous%20souhaitons%20recevoir%20le%20dossier%20partenaires%20de%20Vacances%20en%20livres%202026.";
-
 export default function PrendrePart() {
   return (
     <section className="section container" aria-labelledby="cta-title">
@@ -17,11 +12,12 @@ export default function PrendrePart() {
           <div className="callto__col">
             <h3>Vous venez</h3>
             <p>
-              Réservez votre place : 500 HTG l&apos;adulte, gratuit pour les enfants de
-              14 ans et moins.
+              Rendez-vous le samedi 15 août 2026 au Palais Municipal de Delmas. Entrée
+              500 HTG, gratuit pour les enfants de 14 ans et moins ; billets en vente sur
+              place.
             </p>
-            <a className="btn btn--cta" href={WA_RESERVE}>
-              Réserver ma place{" "}
+            <a className="btn btn--cta" href="#programme">
+              Voir le programme{" "}
               <span className="arw" aria-hidden="true">
                 →
               </span>
@@ -33,8 +29,8 @@ export default function PrendrePart() {
               Associez votre nom à l&apos;événement de l&apos;été et à la démocratisation
               de la lecture en Haïti.
             </p>
-            <a className="btn btn--ghost-invert" href={WA_DOSSIER}>
-              Recevoir le dossier{" "}
+            <a className="btn btn--ghost-invert" href="mailto:contact@vacancesenlivres.org">
+              Devenir partenaire{" "}
               <span className="arw" aria-hidden="true">
                 →
               </span>
