@@ -30,7 +30,7 @@ export default function GuestOfHonour({ guests }: { guests: Personne[] }) {
           >
             <div className="guest-card__photo">
               {g.photo ? (
-                <Image src={g.photo} alt={g.nom} fill sizes="96px" style={{ objectFit: "cover" }} />
+                <Image src={g.photo} alt={g.nom} fill sizes="150px" style={{ objectFit: "cover" }} />
               ) : (
                 <span className="guest-card__initials" aria-hidden="true">
                   {initials(g.nom)}

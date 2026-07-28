@@ -589,7 +589,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .guests { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1rem, 3vw, 1.75rem); grid-template-columns: 1fr; }
 @media (min-width: 620px) { .guests { grid-template-columns: repeat(2, 1fr); } }
 .guest-card { display: flex; gap: var(--space-md); align-items: center; background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius-lg); padding: clamp(1rem, 2.5vw, 1.5rem); }
-.guest-card__photo { position: relative; flex: none; width: clamp(72px, 18vw, 96px); aspect-ratio: 1; border-radius: 50%; overflow: clip; background: var(--vel-navy); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
+.guest-card__photo { position: relative; flex: none; width: clamp(104px, 26vw, 132px); aspect-ratio: 3 / 4; border-radius: var(--radius); overflow: clip; background: var(--vel-navy); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
 .guest-card__initials { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-cream); letter-spacing: 0.02em; }
 .guest-card__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy); line-height: 1.15; }
 .guest-card__role { color: var(--vel-green-palm); font-weight: 600; font-size: var(--step--1); margin-top: 0.25rem; }
