@@ -18,8 +18,16 @@ export const editions: Edition[] = [
       "30 auteurs et plus en signature, un palais ouvert au public, une journée entière à passer avec les livres. 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
     // Invités d'honneur (portraits à ajouter dès réception : champ `photo`).
     guests: [
-      { nom: "Emmanuel Ménard", role: "Ministre de la Culture et de la Communication" },
-      { nom: "Wilson Jeudy", role: "Maire de Delmas" },
+      {
+        nom: "Emmanuel Ménard",
+        role: "Ministre de la Culture et de la Communication",
+        photo: "/images/invites/emmanuel-menard.jpg",
+      },
+      {
+        nom: "Wilson Jeudy",
+        role: "Maire de Delmas",
+        photo: "/images/invites/wilson-jeudy.jpg",
+      },
     ],
     // Maisons d'édition confirmées (voir content/publishers.ts).
     maisonsEdition: ["correctpro"],

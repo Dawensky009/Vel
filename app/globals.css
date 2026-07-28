@@ -449,7 +449,8 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   letter-spacing: var(--tracking-display); color: var(--vel-cream);
   max-width: 16ch; text-shadow: 0 2px 30px rgba(27,20,100,0.4);
 }
-.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); }
+.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); font-size: 0.8em; line-height: 1.1; margin-top: 0.12em; text-wrap: balance; }
+.nowrap { white-space: nowrap; }
 .hero-im__deck { font-size: var(--step-1); color: rgba(244,237,224,0.9); max-width: 40ch; margin-top: var(--space-md); line-height: 1.45; }
 .hero-im__facts { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: var(--space-md); font-size: var(--step--1); color: rgba(244,237,224,0.82); }
 .hero-im__facts b { color: var(--vel-cream); font-weight: 700; }

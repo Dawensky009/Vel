@@ -32,13 +32,13 @@ export default function EventStory() {
         </div>
         <figure className="figbox figbox--tall zoom reveal reveal-img">
           <Image
-            src="/images/library-corner.jpg"
-            alt="Un coin de bibliothèque baigné de lumière naturelle : étagères de livres, fenêtre et plantes."
+            src="/images/evenement/cp-11-presentation.jpg"
+            alt="L'Organisation Vacances en Livres présente l'édition 2026 à la presse."
             fill
             sizes="(min-width: 880px) 42vw, 92vw"
             style={{ objectFit: "cover" }}
           />
-          <figcaption>Une bibliothèque de quartier, lumière de fin d&apos;après-midi.</figcaption>
+          <figcaption>L&apos;Organisation Vacances en Livres présente l&apos;édition 2026.</figcaption>
         </figure>
       </div>
     </section>

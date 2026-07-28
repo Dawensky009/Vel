@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact · Vacances en livres",
   description:
-    "Contactez la coalition Vacances en livres : réservation, partenariat, presse ou bénévolat. Réponse rapide par WhatsApp.",
+    "Contactez l'Organisation Vacances en Livres : partenariat, presse ou bénévolat. Nous répondons par e-mail.",
 };
 
 export default function ContactPage() {

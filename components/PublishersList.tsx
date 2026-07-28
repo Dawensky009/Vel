@@ -24,7 +24,7 @@ export default function PublishersList({ items }: { items: MaisonEdition[] }) {
           </li>
         ))}
       </ul>
-      <p className="pubs__cap">Liste en cours de confirmation avec la coalition.</p>
+      <p className="pubs__cap">D&apos;autres maisons d&apos;édition seront annoncées prochainement.</p>
     </section>
   );
 }

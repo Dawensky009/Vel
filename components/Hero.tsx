@@ -6,7 +6,7 @@ const HERO_SLIDES: Slide[] = [
   { src: "/images/evenement/cp-03-livres.jpg", alt: "" },
   { src: "/images/evenement/cp-05-panel-large.jpg", alt: "" },
   { src: "/images/evenement/cp-08-intervention.jpg", alt: "" },
-  { src: "/images/evenement/cp-04-coalition.jpg", alt: "" },
+  { src: "/images/evenement/cp-04-equipe.jpg", alt: "" },
   { src: "/images/evenement/cp-09-prise-parole.jpg", alt: "" },
   { src: "/images/evenement/cp-06-panel.jpg", alt: "" },
 ];
@@ -39,7 +39,10 @@ export default function Hero() {
             className="hero-rise"
             style={{ ["--i"]: 1 } as React.CSSProperties}
           >
-            Vacances en livres <em>Le rendez-vous du livre</em>
+            Vacances en livres{" "}
+            <em>
+              Le <span className="nowrap">rendez-vous</span> du livre
+            </em>
           </h1>
           <p
             className="hero-im__deck hero-rise"

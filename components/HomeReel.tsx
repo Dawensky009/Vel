@@ -3,8 +3,8 @@ import PhotoGallery, { type Photo } from "./PhotoGallery";
 
 // Four real photos from the launch press conference, as a tidy cluster.
 const SHOTS: Photo[] = [
-  { src: "/images/evenement/cp-05-panel-large.jpg", alt: "La coalition présente l'édition 2026 devant la presse." },
-  { src: "/images/evenement/cp-04-coalition.jpg", alt: "Les membres de la coalition Vacances en livres réunis." },
+  { src: "/images/evenement/cp-05-panel-large.jpg", alt: "L'organisation présente l'édition 2026 devant la presse." },
+  { src: "/images/evenement/cp-04-equipe.jpg", alt: "Les membres de l'Organisation Vacances en Livres réunis." },
   { src: "/images/evenement/cp-09-prise-parole.jpg", alt: "Un intervenant au micro devant les journalistes." },
   { src: "/images/evenement/cp-12-presse.jpg", alt: "Journalistes et caméras couvrant l'annonce." },
 ];

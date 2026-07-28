@@ -13,17 +13,17 @@ export const activites: Activite[] = [
     lieu: "Palais Municipal de Delmas",
     statut: "passe",
     resume:
-      "La coalition dévoile la date, le lieu et les grandes lignes de l'édition 2026 devant la presse.",
+      "L'organisation dévoile la date, le lieu et les grandes lignes de l'édition 2026 devant la presse.",
     couverture: "/images/evenement/cp-06-panel.jpg",
     paragraphs: [
-      "La coalition Vacances en livres a présenté officiellement son édition 2026 lors d'une conférence de presse : date, lieu, tarifs et premières annonces sur la programmation.",
-      "Journalistes, partenaires et membres de la coalition étaient réunis pour lancer la campagne de l'été et rappeler l'ambition du projet : rapprocher le public haïtien du livre.",
+      "L'Organisation Vacances en Livres a présenté officiellement son édition 2026 lors d'une conférence de presse : date, lieu, tarifs et premières annonces sur la programmation.",
+      "Journalistes, partenaires et membres de l'organisation étaient réunis pour lancer la campagne de l'été et rappeler l'ambition du projet : rapprocher le public haïtien du livre.",
     ],
     images: [
       "/images/evenement/cp-01-banniere.jpg",
       "/images/evenement/cp-02-stand-livres.jpg",
       "/images/evenement/cp-03-livres.jpg",
-      "/images/evenement/cp-04-coalition.jpg",
+      "/images/evenement/cp-04-equipe.jpg",
       "/images/evenement/cp-05-panel-large.jpg",
       "/images/evenement/cp-06-panel.jpg",
       "/images/evenement/cp-07-panel-micros.jpg",
@@ -43,7 +43,7 @@ export const activites: Activite[] = [
     lieu: "Delmas",
     statut: "passe",
     resume:
-      "Éditeurs et libraires échangent avec la coalition sur leur participation à l'édition 2026.",
+      "Éditeurs et libraires échangent avec l'organisation sur leur participation à l'édition 2026.",
     couverture: "/images/book-blanket.jpg",
     paragraphs: [
       "Une rencontre de travail a réuni maisons d'édition et libraires autour de leur présence à l'événement : espaces, catalogues et accompagnement des auteurs en signature.",

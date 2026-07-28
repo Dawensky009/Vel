@@ -1,7 +1,7 @@
 import type { Organisation } from "@/lib/types";
 
 // L'organisation et le staff. Remplacez les membres « À confirmer » par les vrais
-// noms et portraits dès que la coalition les valide.
+// noms et portraits dès que l'organisation les valide.
 export const organisation: Organisation = {
   nom: "Organisation Vacances en Livres",
   mission: "Démocratiser l'accès à la lecture en Haïti.",
