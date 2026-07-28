@@ -1,25 +1,28 @@
-import Image from "next/image";
 import Link from "next/link";
+import HeroCarousel, { type Slide } from "./HeroCarousel";
+
+// Real photos from the launch press conference (team photos will be added later).
+const HERO_SLIDES: Slide[] = [
+  { src: "/images/evenement/cp-03-livres.jpg", alt: "" },
+  { src: "/images/evenement/cp-05-panel-large.jpg", alt: "" },
+  { src: "/images/evenement/cp-08-intervention.jpg", alt: "" },
+  { src: "/images/evenement/cp-04-coalition.jpg", alt: "" },
+  { src: "/images/evenement/cp-09-prise-parole.jpg", alt: "" },
+  { src: "/images/evenement/cp-06-panel.jpg", alt: "" },
+];
 
 const TIMELINE: [string, string][] = [
-  ["9h00", "Ouverture officielle"],
-  ["10h30", "Tables rondes & signatures"],
-  ["14h00", "Rencontres, voix de la diaspora"],
-  ["17h30", "Lecture publique & clôture"],
+  ["8h00", "Montée du drapeau"],
+  ["9h00", "Ouverture au public"],
+  ["12h30", "Invités d'honneur & plaques"],
+  ["20h00", "Performance de Nanm"],
 ];
 
 export default function Hero() {
   return (
     <section className="hero-im" aria-labelledby="hero-title">
       <div className="hero-im__media">
-        <Image
-          src="/images/evenement/cp-03-livres.jpg"
-          alt="Une sélection de livres présentée au lancement de l'édition 2026."
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-        />
+        <HeroCarousel slides={HERO_SLIDES} />
       </div>
       <div className="hero-im__scrim" aria-hidden="true" />
 
@@ -49,7 +52,7 @@ export default function Hero() {
             className="hero-im__facts hero-rise"
             style={{ ["--i"]: 3 } as React.CSSProperties}
           >
-            <b>Sam. 15 août 2026</b> · Palais Municipal, Delmas · 9h00 – 18h30
+            <b>Sam. 15 août 2026</b> · Palais Municipal, Delmas · 9h00 – 21h00
           </p>
           <div
             className="hero-im__cta hero-rise"

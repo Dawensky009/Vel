@@ -422,8 +422,16 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 }
 .hero-im__media { position: absolute; inset: 0; z-index: 0; }
 .hero-im__media img { width: 100%; height: 100%; object-fit: cover; }
-.has-js .hero-im__media img { animation: kenburns 24s ease-out both; will-change: transform; }
+.has-js .hero-im__media > img { animation: kenburns 24s ease-out both; will-change: transform; }
 @keyframes kenburns { from { transform: scale(1.09); } to { transform: scale(1); } }
+
+/* Defiling hero gallery (crossfade) */
+.hero-carousel { position: absolute; inset: 0; }
+.hero-carousel__slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s var(--ease-out-quart); }
+.hero-carousel__slide.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel__slide { transition: none; }
+}
 .hero-im__scrim {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(to top, rgba(27,20,100,0.88) 4%, rgba(27,20,100,0.52) 40%, rgba(27,20,100,0.14) 74%, rgba(27,20,100,0.30) 100%);
