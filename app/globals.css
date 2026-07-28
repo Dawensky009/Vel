@@ -599,7 +599,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(0.6rem, 1.5vw, 1rem); grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 620px) { .pubs { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 900px) { .pubs { grid-template-columns: repeat(6, 1fr); } }
-.pub { aspect-ratio: 3 / 2; display: grid; place-items: center; text-align: center; padding: 0.75rem; background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius); }
+.pub { aspect-ratio: 3 / 2; display: grid; place-items: center; text-align: center; padding: 0.9rem; background: #fff; border: 1px solid var(--vel-line); border-radius: var(--radius); }
 .pub__name { font-weight: 600; font-size: var(--step--1); color: var(--vel-ink-muted); line-height: 1.3; }
 .pub__logo { position: relative; width: 100%; height: 100%; }
 .pubs__cap { margin-top: var(--space-md); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
@@ -730,7 +730,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 @media (min-width: 820px) { .videos { grid-template-columns: repeat(2, 1fr); } }
 .video { margin: 0; }
 .video__frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: clip; box-shadow: var(--shadow-md); background: var(--vel-navy); }
-.video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__frame iframe, .video__frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
 .video__cap { margin-top: 0.6rem; font-size: var(--step--1); color: var(--vel-ink-muted); font-style: italic; }
 
 /* ============ Contact ============ */

@@ -55,9 +55,10 @@ export interface Communique {
 }
 
 export interface MediaVideo {
-  url: string; // embeddable URL (YouTube/Facebook/Vimeo)
+  url: string; // URL d'intégration (YouTube/Facebook/Vimeo) ou fichier local (/videos/….mp4)
   titre?: string;
-  categorie?: string; // "Interview", "Reportage", "Table ronde"…
+  categorie?: string; // "Interview", "Reportage", "Spot", "Table ronde"…
+  poster?: string; // image d'aperçu (vidéos locales)
 }
 
 export interface Activite {

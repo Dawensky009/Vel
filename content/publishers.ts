@@ -6,6 +6,7 @@ export const publishers: MaisonEdition[] = [
   {
     slug: "correctpro",
     nom: "CorrectPro",
+    logo: "/images/editeurs/correctpro.jpg",
     site: "https://www.correctproht.com",
     description: "Maison d'édition partenaire de l'édition 2026.",
   },

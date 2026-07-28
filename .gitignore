@@ -41,4 +41,4 @@ next-env.d.ts
 /skills-lock.json
 
 # Raw high-res source photos (resized versions live in public/images/evenement/)
-Ressources/IMAGES/
+Ressources/

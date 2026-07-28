@@ -41,14 +41,10 @@ export const editions: Edition[] = [
     // captations (reportage, interviews d'auteurs) après l'événement.
     videos: [
       {
-        url: "https://www.youtube.com/embed/muuWRKYi09s",
-        categorie: "Reportage",
-        titre: "Vidéo d'illustration sur l'importance de la lecture, à remplacer par le reportage officiel.",
-      },
-      {
-        url: "https://www.youtube.com/embed/D9Ihs241zeg",
-        categorie: "Interview",
-        titre: "Exemple d'intervention (à remplacer par les vraies interviews d'auteurs de l'événement).",
+        url: "/videos/vel-spot-2026.mp4",
+        poster: "/videos/vel-spot-2026.jpg",
+        categorie: "Spot",
+        titre: "Spot officiel de Vacances en Livres 2026.",
       },
     ],
   },
