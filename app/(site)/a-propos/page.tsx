@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 
 export default function AProposPage() {
   const org = getOrganisation();
+  // Masqué tant que l'équipe n'est pas confirmée ; réapparaît dès qu'un membre
+  // a un vrai nom ou une photo.
+  const staffReady = org.staff.some(
+    (m) => Boolean(m.photo) || (m.nom.trim() !== "" && m.nom.trim() !== "À confirmer")
+  );
 
   return (
     <>
@@ -51,37 +56,39 @@ export default function AProposPage() {
         </ul>
       </section>
 
-      <section className="section container" aria-labelledby="staff-title">
-        <div className="s-head reveal">
-          <p className="s-lead">Celles et ceux qui la portent</p>
-          <h2 className="s-title" id="staff-title">
-            Le <em>staff</em>
-          </h2>
-        </div>
-        <ul className="staff stagger reveal">
-          {org.staff.map((m, i) => (
-            <li
-              key={m.role}
-              className="staff__member"
-              style={{ ["--i"]: i } as React.CSSProperties}
-            >
-              <div className="staff__avatar" role="img" aria-label={`${m.nom}, ${m.role}`}>
-                {m.photo ? (
-                  <Image src={m.photo} alt="" fill sizes="140px" style={{ objectFit: "cover" }} />
-                ) : (
-                  <span aria-hidden="true">photo à venir</span>
-                )}
-              </div>
-              <p className="staff__name">{m.nom}</p>
-              <p className="staff__role">{m.role}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="staff__cap">
-          Les noms et portraits de l&apos;équipe seront ajoutés à mesure des
-          confirmations.
-        </p>
-      </section>
+      {staffReady ? (
+        <section className="section container" aria-labelledby="staff-title">
+          <div className="s-head reveal">
+            <p className="s-lead">Celles et ceux qui la portent</p>
+            <h2 className="s-title" id="staff-title">
+              Le <em>staff</em>
+            </h2>
+          </div>
+          <ul className="staff stagger reveal">
+            {org.staff.map((m, i) => (
+              <li
+                key={m.role}
+                className="staff__member"
+                style={{ ["--i"]: i } as React.CSSProperties}
+              >
+                <div className="staff__avatar" role="img" aria-label={`${m.nom}, ${m.role}`}>
+                  {m.photo ? (
+                    <Image src={m.photo} alt="" fill sizes="140px" style={{ objectFit: "cover" }} />
+                  ) : (
+                    <span aria-hidden="true">photo à venir</span>
+                  )}
+                </div>
+                <p className="staff__name">{m.nom}</p>
+                <p className="staff__role">{m.role}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="staff__cap">
+            Les noms et portraits de l&apos;équipe seront ajoutés à mesure des
+            confirmations.
+          </p>
+        </section>
+      ) : null}
 
       <section className="section container">
         <p className="about__cta reveal">
