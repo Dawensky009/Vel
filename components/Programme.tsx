@@ -38,7 +38,7 @@ export default function Programme() {
       <div className="s-head reveal">
         <p className="s-lead">Le déroulé de la journée</p>
         <h2 className="s-title" id="prog-title">
-          Programme.
+          Programme
         </h2>
       </div>
       <div className="prog">

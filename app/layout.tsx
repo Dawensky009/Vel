@@ -26,7 +26,7 @@ const caveat = Caveat({
 
 const SITE_URL = "https://vacancesenlivres.org";
 const DESCRIPTION =
-  "Vacances en livres : trente auteurs en signature au Palais Municipal de Delmas, le samedi 15 août 2026. 500 HTG par adulte, gratuit pour les enfants de 14 ans et moins.";
+  "Vacances en livres : 30 auteurs et plus en signature au Palais Municipal de Delmas, le samedi 15 août 2026. 500 HTG par adulte, gratuit pour les enfants de 14 ans et moins.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Vacances en livres",
     title: "Vacances en livres · L'événement de l'été",
     description:
-      "Trente auteurs en signature au Palais Municipal de Delmas, le 15 août 2026. 500 HTG · gratuit pour les enfants de 14 ans et moins.",
+      "30 auteurs et plus en signature au Palais Municipal de Delmas, le 15 août 2026. 500 HTG · gratuit pour les enfants de 14 ans et moins.",
     images: [
       {
         url: "/Annonces.jpeg",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vacances en livres · L'événement de l'été",
     description:
-      "Trente auteurs en signature au Palais Municipal de Delmas, le 15 août 2026.",
+      "30 auteurs et plus en signature au Palais Municipal de Delmas, le 15 août 2026.",
     images: ["/Annonces.jpeg"],
   },
 };

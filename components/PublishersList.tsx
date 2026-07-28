@@ -8,7 +8,7 @@ export default function PublishersList({ items }: { items: MaisonEdition[] }) {
       <div className="s-head reveal">
         <p className="s-lead">Elles font vivre l&apos;événement</p>
         <h2 className="s-title" id="pub-title">
-          Maisons <em>d&apos;édition</em>.
+          Maisons <em>d&apos;édition</em>
         </h2>
       </div>
       <ul className="pubs stagger reveal">

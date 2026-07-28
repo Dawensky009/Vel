@@ -9,7 +9,7 @@ export default function PrendrePart() {
       <div className="s-head reveal">
         <p className="s-lead">Faire vivre l&apos;édition 2026</p>
         <h2 className="s-title" id="cta-title">
-          Prendre part.
+          Prendre part
         </h2>
       </div>
       <div className="callto__panel reveal">

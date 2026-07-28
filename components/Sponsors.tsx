@@ -6,7 +6,7 @@ export default function Sponsors() {
       <div className="s-head reveal">
         <p className="s-lead">Ils rendent 2026 possible</p>
         <h2 className="s-title" id="sp-title">
-          Sponsors.
+          Sponsors
         </h2>
       </div>
       <p className="sponsors__intro reveal">

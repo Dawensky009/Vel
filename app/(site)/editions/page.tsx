@@ -16,7 +16,7 @@ export default function EditionsPage() {
     <section className="section container page-top">
       <div className="s-head reveal">
         <p className="s-lead">Toutes les éditions</p>
-        <h1 className="s-title">Éditions.</h1>
+        <h1 className="s-title">Éditions</h1>
       </div>
       <div className="editions-grid stagger reveal">
         {items.map((e, i) => (

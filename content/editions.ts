@@ -10,12 +10,12 @@ export const editions: Edition[] = [
     statut: "a-venir",
     dateLabel: "Samedi 15 août 2026",
     dateISO: "2026-08-15",
-    horaires: "9h00 – 18h30",
+    horaires: "9h00 – 21h00",
     lieu: "Palais Municipal de Delmas",
-    ville: "Delmas, Ouest, Haïti",
+    ville: "69, rue Charbonnière, Delmas 33",
     affiche: "/Annonces.jpeg",
     resume:
-      "Trente auteurs en signature, un palais ouvert au public, une journée entière à passer avec les livres. 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
+      "30 auteurs et plus en signature, un palais ouvert au public, une journée entière à passer avec les livres. 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
     // Invité d'honneur : renseigner { nom, role, bio, photo } pour afficher la
     // section sur la home. Laissé vide tant que le nom n'est pas confirmé.
     guest: undefined,

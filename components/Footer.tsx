@@ -12,22 +12,36 @@ export default function Footer() {
             <h4>Contact</h4>
             <ul>
               <li>
-                <a href="https://wa.me/50955792024" target="_blank" rel="noopener noreferrer">
-                  WhatsApp · +509 5579-2024
-                </a>
+                <a href="tel:+50958178138">Téléphone · +509 5817-8138</a>
               </li>
               <li>
-                <a href="tel:+50931215441">Téléphone · +509 3121-5441</a>
+                <a href="mailto:contact@vacancesenlivres.org">contact@vacancesenlivres.org</a>
               </li>
             </ul>
           </div>
           <div>
             <h4>Réseaux</h4>
-            <p className="foot__colophon">Bientôt sur Facebook et Instagram.</p>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61592470383766" target="_blank" rel="noopener noreferrer">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/vacancesenlivres/" target="_blank" rel="noopener noreferrer">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@vacancesenlivres" target="_blank" rel="noopener noreferrer">
+                  TikTok
+                </a>
+              </li>
+            </ul>
           </div>
           <div>
             <h4>Colophon</h4>
-            <p className="foot__colophon">© 2026 Coalition Vacances en livres.</p>
+            <p className="foot__colophon">© 2026 Organisation Vacances en Livres.</p>
           </div>
         </div>
         <p className="foot__bar">Une nouvelle aventure culturelle commence bientôt.</p>

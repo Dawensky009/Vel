@@ -15,7 +15,7 @@ export default function AgendaPage() {
     <section className="section container page-top">
       <div className="s-head reveal">
         <p className="s-lead">Les temps forts de l&apos;année</p>
-        <h1 className="s-title">Agenda.</h1>
+        <h1 className="s-title">Agenda</h1>
       </div>
       {items.length ? (
         <Timeline items={items} />

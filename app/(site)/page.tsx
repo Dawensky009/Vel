@@ -45,7 +45,7 @@ export default function Home() {
         <div className="s-head reveal">
           <p className="s-lead">Suivez l&apos;événement</p>
           <h2 className="s-title" id="news-title">
-            Dernières <em>actualités</em>.
+            Dernières <em>actualités</em>
           </h2>
         </div>
         <div className="news-grid stagger reveal">

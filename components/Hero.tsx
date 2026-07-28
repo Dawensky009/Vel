@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const TIMELINE: [string, string][] = [
   ["9h00", "Ouverture officielle"],
@@ -35,13 +36,13 @@ export default function Hero() {
             className="hero-rise"
             style={{ ["--i"]: 1 } as React.CSSProperties}
           >
-            Vacances en livres. <em>Le rendez-vous du livre.</em>
+            Vacances en livres <em>Le rendez-vous du livre</em>
           </h1>
           <p
             className="hero-im__deck hero-rise"
             style={{ ["--i"]: 2 } as React.CSSProperties}
           >
-            La première édition ouvre le 15 août 2026 : trente auteurs, un palais qui
+            La première édition ouvre le 15 août 2026 : 30 auteurs et plus, un palais qui
             s&apos;ouvre au public, une journée entière à passer avec les livres.
           </p>
           <p
@@ -54,14 +55,14 @@ export default function Hero() {
             className="hero-im__cta hero-rise"
             style={{ ["--i"]: 4 } as React.CSSProperties}
           >
-            <a className="btn btn--cta" href="#reserver">
-              Réserver ma place · 500 HTG{" "}
+            <Link className="btn btn--cta" href="/agenda">
+              Voir le programme{" "}
               <span className="arw" aria-hidden="true">
                 →
               </span>
-            </a>
+            </Link>
             <span className="hero-im__free">
-              <b>Gratuit</b> pour vos enfants jusqu&apos;à 14 ans.
+              <b>500 HTG</b> · gratuit pour les enfants jusqu&apos;à 14 ans.
             </span>
           </div>
         </div>

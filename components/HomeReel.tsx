@@ -16,12 +16,12 @@ export default function HomeReel() {
         <div className="pressconf__text reveal">
           <p className="s-lead">Déjà une réalité</p>
           <h2 className="s-title" id="reel-title">
-            La conférence de <em>presse</em>.
+            La conférence de <em>presse</em>
           </h2>
           <p className="prose">
             L&apos;édition 2026 a été officiellement présentée à la presse au Palais
             Municipal de Delmas : date, lieu, tarifs et premières annonces, devant les
-            journalistes et les partenaires de la coalition.
+            journalistes et les partenaires de l&apos;organisation.
           </p>
           <p className="pressconf__link">
             <Link href="/agenda">Voir l&apos;agenda et toutes les photos →</Link>

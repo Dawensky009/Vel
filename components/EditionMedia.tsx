@@ -18,7 +18,7 @@ export default function EditionMedia({
         <div className="s-head reveal">
           <p className="s-lead">Revivez l&apos;événement</p>
           <h2 className="s-title" id="ed-media-title">
-            En <em>vidéo</em>.
+            En <em>vidéo</em>
           </h2>
         </div>
         <p className="prose reveal">
@@ -37,7 +37,7 @@ export default function EditionMedia({
           <div className="s-head reveal">
             <p className="s-lead">Revivez l&apos;événement</p>
             <h2 className="s-title" id="ed-videos-title">
-              En <em>vidéo</em>.
+              En <em>vidéo</em>
             </h2>
           </div>
           <div className="videos reveal">
@@ -53,7 +53,7 @@ export default function EditionMedia({
           <div className="s-head reveal">
             <p className="s-lead">Paroles d&apos;auteurs et d&apos;organisateurs</p>
             <h2 className="s-title" id="ed-interviews-title">
-              <em>Interviews</em>.
+              <em>Interviews</em>
             </h2>
           </div>
           <div className="videos reveal">

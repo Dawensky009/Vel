@@ -13,7 +13,7 @@ export default function ContactPage() {
       <div className="s-head reveal">
         <p className="s-lead">Une question, un partenariat ?</p>
         <h1 className="s-title" id="contact-title">
-          Contact.
+          Contact
         </h1>
       </div>
 
@@ -24,23 +24,27 @@ export default function ContactPage() {
           <h2>Nous joindre</h2>
           <ul>
             <li>
-              <span>WhatsApp</span>
-              <a href="https://wa.me/50955792024">+509 5579-2024</a>
+              <span>Téléphone</span>
+              <a href="tel:+50958178138">+509 5817-8138</a>
             </li>
             <li>
-              <span>Téléphone</span>
-              <a href="tel:+50931215441">+509 3121-5441</a>
+              <span>E-mail</span>
+              <a href="mailto:contact@vacancesenlivres.org">contact@vacancesenlivres.org</a>
             </li>
           </ul>
-          <p>Palais Municipal de Delmas, Delmas, Ouest, Haïti.</p>
+          <p>Palais Municipal de Delmas, 69 rue Charbonnière, Delmas 33.</p>
           <p>
             Suivez-nous :{" "}
-            <a href="#" rel="noopener">
+            <a href="https://www.facebook.com/profile.php?id=61592470383766" target="_blank" rel="noopener noreferrer">
               Facebook
             </a>{" "}
             ·{" "}
-            <a href="#" rel="noopener">
+            <a href="https://www.instagram.com/vacancesenlivres/" target="_blank" rel="noopener noreferrer">
               Instagram
+            </a>{" "}
+            ·{" "}
+            <a href="https://www.tiktok.com/@vacancesenlivres" target="_blank" rel="noopener noreferrer">
+              TikTok
             </a>
             .
           </p>

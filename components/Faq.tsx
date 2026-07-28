@@ -6,7 +6,7 @@ export default function Faq() {
       <div className="s-head reveal">
         <p className="s-lead">Ce qu&apos;on nous demande</p>
         <h2 className="s-title" id="faq-title">
-          Questions <em>fréquentes</em>.
+          Questions <em>fréquentes</em>
         </h2>
       </div>
       <div className="faq reveal">

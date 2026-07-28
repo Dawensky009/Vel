@@ -68,12 +68,6 @@ export default function Nav() {
             ))}
           </ul>
         </nav>
-        <Link className="btn btn--cta nav__cta" href="/#reserver">
-          Réserver{" "}
-          <span className="arw" aria-hidden="true">
-            →
-          </span>
-        </Link>
       </div>
     </header>
   );

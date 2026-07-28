@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { getOrganisation } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "À propos · Vacances en livres",
   description:
-    "La coalition Vacances en livres : une coalition d'organisations culturelles haïtiennes qui œuvre à démocratiser la lecture en Haïti. Découvrez l'organisation et le staff.",
+    "L'Organisation Vacances en Livres œuvre à démocratiser l'accès à la lecture en Haïti. Découvrez l'organisation, ses valeurs et son équipe.",
 };
 
 export default function AProposPage() {
@@ -18,18 +17,20 @@ export default function AProposPage() {
         <div className="s-head reveal">
           <p className="s-lead">L&apos;organisation</p>
           <h1 className="s-title" id="about-title">
-            À <em>propos</em>.
+            À <em>propos</em>
           </h1>
         </div>
         <div className="about reveal">
           <p className="about__mission">{org.mission}</p>
-          <div className="prose">
-            {org.paragraphs.map((p, i) => (
-              <p key={i} className={i === 0 ? "prose__lead" : undefined}>
-                {p}
-              </p>
-            ))}
-          </div>
+          {org.paragraphs.length ? (
+            <div className="prose">
+              {org.paragraphs.map((p, i) => (
+                <p key={i} className={i === 0 ? "prose__lead" : undefined}>
+                  {p}
+                </p>
+              ))}
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -37,7 +38,7 @@ export default function AProposPage() {
         <div className="s-head reveal">
           <p className="s-lead">Ce qui nous guide</p>
           <h2 className="s-title" id="valeurs-title">
-            Nos <em>valeurs</em>.
+            Nos <em>valeurs</em>
           </h2>
         </div>
         <ul className="valeurs stagger reveal">
@@ -54,7 +55,7 @@ export default function AProposPage() {
         <div className="s-head reveal">
           <p className="s-lead">Celles et ceux qui la portent</p>
           <h2 className="s-title" id="staff-title">
-            Le <em>staff</em>.
+            Le <em>staff</em>
           </h2>
         </div>
         <ul className="staff stagger reveal">
@@ -85,8 +86,10 @@ export default function AProposPage() {
       <section className="section container">
         <p className="about__cta reveal">
           Une question, un partenariat ?{" "}
-          <a href="https://wa.me/50955792024">Écrivez-nous sur WhatsApp</a> ou{" "}
-          <Link href="/#reserver">réservez votre place</Link>.
+          <a href="mailto:contact@vacancesenlivres.org">
+            Écrivez-nous à contact@vacancesenlivres.org
+          </a>
+          .
         </p>
       </section>
     </>

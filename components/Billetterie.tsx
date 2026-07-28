@@ -1,13 +1,10 @@
-const WA_RESERVE =
-  "https://wa.me/50955792024?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20pour%20Vacances%20en%20livres%202026.";
-
 export default function Billetterie() {
   return (
-    <section className="section container" id="reserver" aria-labelledby="bill-title">
+    <section className="section container" id="tarifs" aria-labelledby="bill-title">
       <div className="s-head reveal">
         <p className="s-lead">Un tarif juste, pensé pour les familles</p>
         <h2 className="s-title" id="bill-title">
-          Billetterie.
+          Tarifs
         </h2>
       </div>
       <div className="bill__grid">
@@ -44,35 +41,23 @@ export default function Billetterie() {
             <tr>
               <td className="tk-offer">
                 Groupes scolaires, dès 10 enfants
-                <small>Visite guidée organisée avec la coalition.</small>
+                <small>Visite guidée organisée avec l&apos;organisation.</small>
               </td>
               <td className="tk-price">Sur demande</td>
             </tr>
           </tbody>
         </table>
         <div className="pay reveal">
-          <h3>Modes de paiement</h3>
+          <h3>Billets en vente sur place</h3>
           <p>
-            Deux options : <strong>MonCash</strong> vers le numéro Digicel de la
-            coalition (+509 5579-2024), puis envoi de la capture sur WhatsApp pour
-            valider la réservation. Ou <strong>paiement sur place</strong> le jour J, en
-            gourdes ou en dollars.
+            Les billets s&apos;achètent <strong>directement sur place</strong>, le jour de
+            l&apos;événement. Les points de vente seront communiqués prochainement.
           </p>
           <p className="pay__soon">
-            Réservez dès maintenant par WhatsApp. Chaque inscription est confirmée
-            sous 24 heures.
+            Une question sur les tarifs ou les groupes scolaires ? Écrivez-nous à{" "}
+            <a href="mailto:contact@vacancesenlivres.org">contact@vacancesenlivres.org</a> ou
+            appelez le +509 5817-8138.
           </p>
-          <a
-            className="btn btn--cta btn--block"
-            href={WA_RESERVE}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Réserver ma place{" "}
-            <span className="arw" aria-hidden="true">
-              →
-            </span>
-          </a>
         </div>
       </div>
     </section>

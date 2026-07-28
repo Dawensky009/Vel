@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "50955792024";
+const CONTACT_EMAIL = "contact@vacancesenlivres.org";
 
 const SUJETS = [
   "Renseignement général",
-  "Réservation / billetterie",
   "Devenir partenaire / sponsor",
   "Maison d'édition",
   "Presse / média",
@@ -26,9 +25,11 @@ export default function ContactForm() {
     e.preventDefault();
     setTouched(true);
     if (!nomOk || !msgOk) return;
-    const text = `Bonjour, je suis ${nom.trim()}.\nSujet : ${sujet}\n\n${message.trim()}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    const body = `Bonjour, je suis ${nom.trim()}.\n\n${message.trim()}`;
+    const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      sujet
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = url;
   }
 
   return (
@@ -80,14 +81,14 @@ export default function ContactForm() {
       </div>
 
       <button type="submit" className="btn btn--cta">
-        Envoyer sur WhatsApp{" "}
+        Envoyer par e-mail{" "}
         <span className="arw" aria-hidden="true">
           →
         </span>
       </button>
       <p className="cform__note">
-        Le formulaire ouvre WhatsApp avec votre message pré-rempli, le canal le plus
-        rapide pour nous joindre. Vous pouvez aussi nous contacter directement ci-contre.
+        Le formulaire ouvre votre messagerie avec votre message pré-rempli, adressé à
+        contact@vacancesenlivres.org. Vous pouvez aussi nous joindre directement ci-contre.
       </p>
     </form>
   );

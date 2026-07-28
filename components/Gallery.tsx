@@ -15,7 +15,7 @@ export default function Gallery() {
       <div className="s-head reveal">
         <p className="s-lead">Ce que sera la journée</p>
         <h2 className="s-title" id="amb-title">
-          En <em>images</em>.
+          En <em>images</em>
         </h2>
       </div>
       <PhotoGallery photos={SHOTS} layout="mosaic" />

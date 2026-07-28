@@ -15,7 +15,7 @@ export default function ActualitesPage() {
     <section className="section container page-top">
       <div className="s-head reveal">
         <p className="s-lead">Communications officielles</p>
-        <h1 className="s-title">Actualités.</h1>
+        <h1 className="s-title">Actualités</h1>
       </div>
       {items.length ? (
         <div className="news-grid stagger reveal">
