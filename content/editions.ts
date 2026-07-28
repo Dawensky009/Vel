@@ -16,12 +16,13 @@ export const editions: Edition[] = [
     affiche: "/Annonces.jpeg",
     resume:
       "30 auteurs et plus en signature, un palais ouvert au public, une journée entière à passer avec les livres. 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
-    // Invité d'honneur : renseigner { nom, role, bio, photo } pour afficher la
-    // section sur la home. Laissé vide tant que le nom n'est pas confirmé.
-    guest: undefined,
-    // Maisons d'édition : ajouter ici les slugs confirmés (voir content/publishers.ts).
-    // Vide = la section « Maisons d'édition » reste masquée (pas de « à confirmer »).
-    maisonsEdition: [],
+    // Invités d'honneur (portraits à ajouter dès réception : champ `photo`).
+    guests: [
+      { nom: "Emmanuel Ménard", role: "Ministre de la Culture et de la Communication" },
+      { nom: "Wilson Jeudy", role: "Maire de Delmas" },
+    ],
+    // Maisons d'édition confirmées (voir content/publishers.ts).
+    maisonsEdition: ["correctpro"],
     timeline: [
       { heure: "9h00", label: "Ouverture officielle" },
       { heure: "10h30", label: "Tables rondes & signatures" },

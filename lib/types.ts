@@ -36,7 +36,7 @@ export interface Edition {
   ville?: string; // "Delmas, Ouest, Haïti"
   affiche?: string; // poster path
   resume: string; // short description (archive card / home)
-  guest?: Personne; // invité d'honneur
+  guests?: Personne[]; // invités d'honneur
   maisonsEdition?: string[]; // publisher slugs
   timeline?: TimelineItem[];
   videos?: MediaVideo[]; // vidéos & interviews de l'événement

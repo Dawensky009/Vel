@@ -33,9 +33,9 @@ export function getUpcomingEdition(): Edition {
   return editions.find((e) => e.statut === "a-venir") ?? getEditions()[0];
 }
 
-export function getGuestOfHonour(annee?: string): Personne | undefined {
+export function getGuestsOfHonour(annee?: string): Personne[] {
   const ed = annee ? getEdition(annee) : getUpcomingEdition();
-  return ed?.guest;
+  return ed?.guests ?? [];
 }
 
 /* ---------- Activités (agenda / timeline) ---------- */

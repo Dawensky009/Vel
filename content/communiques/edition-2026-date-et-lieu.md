@@ -3,21 +3,17 @@ titre: "L'édition 2026 se tiendra le 15 août au Palais Municipal de Delmas"
 date: "2026-07-01"
 edition: "2026"
 categorie: "Communiqué officiel"
-extrait: "La coalition Vacances en livres confirme la date et le lieu de son édition 2026 : le samedi 15 août, au Palais Municipal de Delmas."
+extrait: "La première édition de Vacances en Livres se tiendra le samedi 15 août 2026, au Palais Municipal de Delmas (69, rue Charbonnière, Delmas 33)."
 ---
 
-La coalition **Vacances en livres** a le plaisir d'annoncer officiellement la tenue de son édition 2026, *L'événement de l'été*.
+La première édition de **Vacances en Livres** se tiendra le **samedi 15 août 2026**, au Palais municipal de Delmas, situé au **69, rue Charbonnière, Delmas 33**.
 
-## Quand et où
+L'événement accueillera le public autour d'une programmation consacrée au livre, aux auteurs et aux expressions culturelles et artistiques. Au programme : exposition et vente d'ouvrages, rencontres avec des auteurs, séances de dédicace, activités pour enfants, animations musicales et prestations artistiques.
 
-- **Date :** samedi 15 août 2026, de 9h00 à 18h30
-- **Lieu :** Palais Municipal de Delmas, Delmas, Ouest, Haïti
-- **Entrée :** 500 HTG par adulte, **gratuit** pour les enfants de 14 ans et moins
+La programmation publique débutera à **8h00** avec la montée du drapeau. Les **ventes de livres** seront ouvertes de **9h00 à 17h00**, tandis que les **activités artistiques** se poursuivront en soirée jusqu'à **21h00**.
 
-## Une journée entière avec les livres
+L'entrée est fixée à **500 gourdes** et demeure **gratuite pour les enfants de moins de 14 ans**.
 
-Le temps d'une journée, le Palais Municipal de Delmas devient une bibliothèque de quartier à ciel ouvert. **Trente auteurs** seront en signature, aux côtés de tables rondes, d'ateliers jeunesse et d'une lecture publique en clôture.
+Vacances en Livres 2026 invite les familles, les jeunes, les lecteurs et les passionnés de culture à prendre part à cette grande célébration du livre.
 
-La coalition qui porte le projet rassemble libraires, éditeurs, bibliothèques associatives et enseignants réunis autour d'une même conviction : la lecture n'est pas un luxe.
-
-Le programme détaillé, la liste des auteurs et l'invité d'honneur seront précisés dans les prochains communiqués. Restez connectés.
+**Vacances en Livres 2026** · L'événement de l'été

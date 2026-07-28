@@ -10,14 +10,14 @@ import Infos from "@/components/Infos";
 import {
   getUpcomingEdition,
   getCommuniques,
-  getGuestOfHonour,
+  getGuestsOfHonour,
   getPublishers,
 } from "@/lib/content";
 
 export default function Home() {
   const edition = getUpcomingEdition();
   const latest = getCommuniques().slice(0, 3);
-  const guest = getGuestOfHonour();
+  const guests = getGuestsOfHonour();
   const pubs = getPublishers(edition.maisonsEdition);
 
   return (
@@ -35,8 +35,7 @@ export default function Home() {
 
       <HomeReel />
 
-      {/* Réapparaissent automatiquement dès que la donnée est renseignée. */}
-      {guest ? <GuestOfHonour guest={guest} /> : null}
+      {guests.length ? <GuestOfHonour guests={guests} /> : null}
       <PublishersList items={pubs} />
 
       <Billetterie />

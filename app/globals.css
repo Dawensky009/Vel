@@ -576,14 +576,15 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .ccard__excerpt { margin-top: 0.6rem; color: var(--vel-ink-muted); font-size: var(--step-0); flex: 1; }
 .ccard__more { margin-top: var(--space-md); color: var(--vel-green-palm); font-weight: 700; font-size: var(--step--1); }
 
-/* Invité d'honneur */
-.guest { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: center; }
-@media (min-width: 640px) { .guest { grid-template-columns: auto 1fr; } }
-.guest__photo { position: relative; width: clamp(150px, 40vw, 210px); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: clip; background: var(--vel-navy); display: grid; place-items: center; box-shadow: var(--shadow-md); }
-.guest__ph { color: var(--vel-cream-55); font-size: var(--step--1); font-style: italic; }
-.guest__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-navy); }
-.guest__role { color: var(--vel-green-palm); font-weight: 600; font-size: var(--step-0); margin-top: 0.2rem; }
-.guest__bio { color: var(--vel-ink-muted); font-size: var(--step-0); margin-top: var(--space-sm); max-width: 54ch; }
+/* Invités d'honneur (cartes) */
+.guests { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1rem, 3vw, 1.75rem); grid-template-columns: 1fr; }
+@media (min-width: 620px) { .guests { grid-template-columns: repeat(2, 1fr); } }
+.guest-card { display: flex; gap: var(--space-md); align-items: center; background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius-lg); padding: clamp(1rem, 2.5vw, 1.5rem); }
+.guest-card__photo { position: relative; flex: none; width: clamp(72px, 18vw, 96px); aspect-ratio: 1; border-radius: 50%; overflow: clip; background: var(--vel-navy); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
+.guest-card__initials { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-cream); letter-spacing: 0.02em; }
+.guest-card__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy); line-height: 1.15; }
+.guest-card__role { color: var(--vel-green-palm); font-weight: 600; font-size: var(--step--1); margin-top: 0.25rem; }
+.guest-card__bio { color: var(--vel-ink-muted); font-size: var(--step--1); margin-top: 0.4rem; }
 
 /* Maisons d'édition */
 .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(0.6rem, 1.5vw, 1rem); grid-template-columns: repeat(2, 1fr); }

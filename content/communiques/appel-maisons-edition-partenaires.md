@@ -1,19 +1,19 @@
 ---
-titre: "Appel aux maisons d'édition, libraires et partenaires"
+titre: "Appel à participation : maisons d'édition, auteurs et professionnels du livre"
 date: "2026-07-05"
 edition: "2026"
 categorie: "Partenaires"
-extrait: "La coalition invite les maisons d'édition, les libraires et les sponsors à rejoindre l'édition 2026 et à faire vivre la lecture en Haïti."
+extrait: "Le Comité d'organisation lance un appel à participation aux maisons d'édition, auteurs et professionnels du livre. Inscriptions du 15 au 31 juillet 2026."
 ---
 
-À l'approche de l'édition 2026, la coalition **Vacances en livres** lance un appel aux **maisons d'édition**, **libraires** et **partenaires** qui souhaitent s'associer à l'événement.
+Dans le cadre de la première édition de **Vacances en Livres**, prévue le **samedi 15 août 2026** au Palais municipal de Delmas, le Comité d'organisation lance un appel à participation à l'intention des **maisons d'édition, auteurs, autrices et professionnels du livre**.
 
-## Devenir partenaire éditorial
+Les inscriptions seront ouvertes **du 15 au 31 juillet 2026**.
 
-Les maisons d'édition présentes disposeront d'un espace pour présenter leurs catalogues, rencontrer le public et accompagner leurs auteurs en signature. La liste des éditeurs participants sera publiée à mesure des confirmations.
+L'événement offrira un espace consacré à la présentation et à la vente d'ouvrages, aux rencontres avec le public, aux séances de dédicace et à la découverte de nouvelles publications. Cette initiative vise à valoriser la création littéraire et éditoriale, à rapprocher les auteurs de leurs lecteurs et à promouvoir la lecture auprès des familles et des jeunes.
 
-## Devenir sponsor
+Les maisons d'édition et les auteurs intéressés sont invités à transmettre leur manifestation d'intérêt ainsi que les informations relatives aux ouvrages qu'ils souhaitent présenter.
 
-L'événement est rendu possible par le soutien d'entreprises et d'institutions qui croient à la démocratisation de la lecture. Plusieurs formules d'accompagnement sont proposées.
+Pour toute information ou demande de participation : **contact@vacancesenlivres.org**
 
-Pour recevoir le **dossier partenaires**, écrivez à la coalition sur WhatsApp au **+509 5579-2024**.
+**Vacances en Livres 2026** · L'événement de l'été

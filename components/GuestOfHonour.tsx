@@ -1,37 +1,50 @@
 import Image from "next/image";
 import type { Personne } from "@/lib/types";
 
-export default function GuestOfHonour({ guest }: { guest: Personne }) {
+function initials(nom: string) {
+  return nom
+    .split(/\s+/)
+    .map((w) => w[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
+export default function GuestOfHonour({ guests }: { guests: Personne[] }) {
+  if (!guests.length) return null;
   return (
     <section className="section container" aria-labelledby="guest-title">
       <div className="s-head reveal">
-        <p className="s-lead">Prochain événement</p>
+        <p className="s-lead">Ils honorent la première édition</p>
         <h2 className="s-title" id="guest-title">
-          Invité <em>d&apos;honneur</em>.
+          Invités <em>d&apos;honneur</em>
         </h2>
       </div>
-      <div className="guest reveal">
-        <div className="guest__photo">
-          {guest.photo ? (
-            <Image
-              src={guest.photo}
-              alt={guest.nom}
-              fill
-              sizes="220px"
-              style={{ objectFit: "cover" }}
-            />
-          ) : (
-            <span className="guest__ph" aria-hidden="true">
-              à venir
-            </span>
-          )}
-        </div>
-        <div className="guest__body">
-          <p className="guest__name">{guest.nom}</p>
-          {guest.role ? <p className="guest__role">{guest.role}</p> : null}
-          {guest.bio ? <p className="guest__bio">{guest.bio}</p> : null}
-        </div>
-      </div>
+      <ul className="guests stagger reveal">
+        {guests.map((g, i) => (
+          <li
+            key={g.nom}
+            className="guest-card"
+            style={{ ["--i"]: i } as React.CSSProperties}
+          >
+            <div className="guest-card__photo">
+              {g.photo ? (
+                <Image src={g.photo} alt={g.nom} fill sizes="96px" style={{ objectFit: "cover" }} />
+              ) : (
+                <span className="guest-card__initials" aria-hidden="true">
+                  {initials(g.nom)}
+                </span>
+              )}
+            </div>
+            <div className="guest-card__body">
+              <p className="guest-card__name">{g.nom}</p>
+              {g.role ? <p className="guest-card__role">{g.role}</p> : null}
+              {g.bio ? <p className="guest-card__bio">{g.bio}</p> : null}
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
