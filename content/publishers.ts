@@ -10,4 +10,16 @@ export const publishers: MaisonEdition[] = [
     site: "https://www.correctproht.com",
     description: "Maison d'édition partenaire de l'édition 2026.",
   },
+  {
+    slug: "edisyon-freda",
+    nom: "Edisyon Freda",
+    logo: "/images/editeurs/freda.jpg",
+    description: "Maison d'édition partenaire de l'édition 2026.",
+  },
+  {
+    slug: "couleur-dencre",
+    nom: "Éditions couleur d'encre",
+    logo: "/images/editeurs/couleur-dencre.jpg",
+    description: "Maison d'édition partenaire de l'édition 2026.",
+  },
 ];

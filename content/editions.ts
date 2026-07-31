@@ -30,7 +30,7 @@ export const editions: Edition[] = [
       },
     ],
     // Maisons d'édition confirmées (voir content/publishers.ts).
-    maisonsEdition: ["correctpro"],
+    maisonsEdition: ["correctpro", "edisyon-freda", "couleur-dencre"],
     timeline: [
       { heure: "9h00", label: "Ouverture officielle" },
       { heure: "10h30", label: "Tables rondes & signatures" },
