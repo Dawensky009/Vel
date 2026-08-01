@@ -17,7 +17,6 @@ const ANIMATIONS: Slot[] = [
   ["11h30 – 12h00", "La Bande à Pipo : atelier, danse et animation pour enfants."],
   ["18h15 – 19h15", "Performance de Ricot et ses amis."],
   ["19h20 – 19h45", "Prestation de l'artiste Hugues."],
-  ["20h00 – 21h00", "Performance de Nanm."],
 ];
 
 function Part({ title, slots }: { title: string; slots: Slot[] }) {
