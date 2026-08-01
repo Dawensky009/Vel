@@ -434,7 +434,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 }
 .hero-im__scrim {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to top, rgba(27,20,100,0.88) 4%, rgba(27,20,100,0.52) 40%, rgba(27,20,100,0.14) 74%, rgba(27,20,100,0.30) 100%);
+  background: linear-gradient(to top, rgba(27,20,100,0.94) 0%, rgba(27,20,100,0.80) 48%, rgba(27,20,100,0.62) 100%);
 }
 .hero-im__inner {
   position: relative; z-index: 2;
@@ -442,17 +442,17 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   display: grid; gap: clamp(1.75rem, 4vw, 3rem); align-items: end;
 }
 @media (min-width: 980px) { .hero-im__inner { grid-template-columns: 1.6fr auto; } }
-.hero-im__script { color: var(--vel-sun); font-size: clamp(1.45rem, 3vw, 2.1rem); display: inline-block; margin-bottom: 0.3rem; }
+.hero-im__script { color: var(--vel-sun); font-size: clamp(1.45rem, 3vw, 2.1rem); display: inline-block; margin-bottom: 0.3rem; text-shadow: 0 1px 8px rgba(27,20,100,0.55); }
 .hero-im h1 {
   font-family: var(--font-display); font-weight: 800;
   font-size: clamp(2.2rem, 5.2vw, 3.9rem); line-height: 1.05;
   letter-spacing: var(--tracking-display); color: var(--vel-cream);
-  max-width: 16ch; text-shadow: 0 2px 30px rgba(27,20,100,0.4);
+  max-width: 16ch; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 20px rgba(27,20,100,0.5);
 }
-.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); font-size: 0.8em; line-height: 1.1; margin-top: 0.12em; text-wrap: balance; }
+.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); font-size: 0.8em; line-height: 1.1; margin-top: 0.12em; text-wrap: balance; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 14px rgba(27,20,100,0.5); }
 .nowrap { white-space: nowrap; }
-.hero-im__deck { font-size: var(--step-1); color: rgba(244,237,224,0.9); max-width: 40ch; margin-top: var(--space-md); line-height: 1.45; }
-.hero-im__facts { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: var(--space-md); font-size: var(--step--1); color: rgba(244,237,224,0.82); }
+.hero-im__deck { font-size: var(--step-1); color: rgba(244,237,224,0.98); max-width: 40ch; margin-top: var(--space-md); line-height: 1.45; text-shadow: 0 1px 3px rgba(0,0,0,0.45); }
+.hero-im__facts { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: var(--space-md); font-size: var(--step--1); color: rgba(244,237,224,0.95); text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
 .hero-im__facts b { color: var(--vel-cream); font-weight: 700; }
 .hero-im__cta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; }
 .hero-im__free { font-size: var(--step--1); color: rgba(244,237,224,0.85); }
