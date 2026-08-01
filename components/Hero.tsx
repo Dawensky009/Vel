@@ -15,7 +15,7 @@ const TIMELINE: [string, string][] = [
   ["8h00", "Montée du drapeau"],
   ["9h00", "Ouverture au public"],
   ["12h30", "Invités d'honneur & plaques"],
-  ["Dès 18h", "Performances artistiques"],
+  ["17h – 20h", "Performances artistiques"],
 ];
 
 export default function Hero() {

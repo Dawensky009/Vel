@@ -24,6 +24,10 @@ export default function ContactPage() {
           <h2>Nous joindre</h2>
           <ul>
             <li>
+              <span>WhatsApp</span>
+              <a href="https://wa.me/50947504572" target="_blank" rel="noopener noreferrer">+509 4750-4572</a>
+            </li>
+            <li>
               <span>Téléphone</span>
               <a href="tel:+50958178138">+509 5817-8138</a>
             </li>

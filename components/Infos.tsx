@@ -27,6 +27,10 @@ export default function Infos() {
         <div className="info-card">
           <h3>Contact</h3>
           <p>
+            <a href="https://wa.me/50947504572" target="_blank" rel="noopener noreferrer">
+              WhatsApp · +509 4750-4572
+            </a>
+            <br />
             <a href="tel:+50958178138">+509 5817-8138</a>
             <br />
             <a href="mailto:contact@vacancesenlivres.org">contact@vacancesenlivres.org</a>

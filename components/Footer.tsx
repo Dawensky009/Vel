@@ -6,11 +6,20 @@ export default function Footer() {
           <div className="foot__brand">
             <p className="fname">Vacances en livres</p>
             <p className="ftag script">Restez connectés</p>
-            <p>Samedi 15 août 2026 · Palais Municipal de Delmas.</p>
+            <p>
+              Samedi 15 août 2026
+              <br />
+              Palais Municipal de Delmas.
+            </p>
           </div>
           <div>
             <h4>Contact</h4>
             <ul>
+              <li>
+                <a href="https://wa.me/50947504572" target="_blank" rel="noopener noreferrer">
+                  WhatsApp · +509 4750-4572
+                </a>
+              </li>
               <li>
                 <a href="tel:+50958178138">Téléphone · +509 5817-8138</a>
               </li>
@@ -41,10 +50,10 @@ export default function Footer() {
           </div>
           <div>
             <h4>Colophon</h4>
-            <p className="foot__colophon">© 2026 Organisation Vacances en Livres.</p>
+            <p className="foot__colophon">© 2026 VACANCES EN LIVRES. Tous droits réservés.</p>
           </div>
         </div>
-        <p className="foot__bar">Une nouvelle aventure culturelle commence bientôt.</p>
+        <p className="foot__bar">L&apos;événement de l&apos;été</p>
       </div>
     </footer>
   );

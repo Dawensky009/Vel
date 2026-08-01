@@ -527,6 +527,17 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   gap: clamp(0.5rem, 1.2vw, 0.85rem);
 }
 
+/* Home highlights (« Au rendez-vous ») */
+.highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(0.6rem, 1.5vw, 1rem); grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 640px) { .highlights { grid-template-columns: repeat(4, 1fr); } }
+.highlight { display: flex; align-items: center; gap: 0.6rem; background: var(--vel-panel); border: 1px solid var(--vel-line); border-radius: var(--radius); padding: 0.85rem 1rem; font-weight: 600; color: var(--vel-navy); font-size: var(--step--1); line-height: 1.25; }
+.highlight::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--vel-sun); }
+
+/* Points de vente (billetterie) */
+.pdv { list-style: decimal; margin: var(--space-sm) 0 0; padding: 0 0 0 1.4rem; display: grid; gap: 0.5rem; }
+.pdv li { color: var(--vel-ink); font-weight: 600; }
+.pdv small { display: block; font-weight: 400; color: var(--vel-ink-muted); font-size: var(--step--1); margin-top: 0.1rem; }
+
 /* --- Full-bleed parallax band --- */
 .band { position: relative; overflow: clip; min-height: min(72vh, 640px); display: flex; align-items: center; isolation: isolate; color: var(--vel-cream); }
 .band__media { position: absolute; inset: -12% 0; z-index: 0; }

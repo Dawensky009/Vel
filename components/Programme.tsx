@@ -8,15 +8,13 @@ const AUTEURS: Slot[] = [
   ["12h30 – 13h30", "Remise des plaques d'honneur et prises de parole des invités d'honneur."],
   ["13h30 – 14h00", "Prises de parole des institutions partenaires."],
   ["Toute la journée", "Visite des stands, découverte des ouvrages, rencontres avec les auteurs et séances de dédicace."],
-  ["17h00", "Clôture des ventes de livres."],
+  ["16h00", "Clôture des ventes de livres."],
 ];
 
 // Volet « Animations culturelles et artistiques »
 const ANIMATIONS: Slot[] = [
   ["9h00 – 11h30", "Animation musicale avec T-Sax et T-Sax Band."],
-  ["11h30 – 12h00", "La Bande à Pipo : atelier, danse et animation pour enfants."],
-  ["18h15 – 19h15", "Performance de Ricot et ses amis."],
-  ["19h20 – 19h45", "Prestation de l'artiste Hugues."],
+  ["17h00 – 20h00", "Performances artistiques avec Ricot et ses amis."],
 ];
 
 function Part({ title, slots }: { title: string; slots: Slot[] }) {

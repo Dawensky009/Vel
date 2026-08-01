@@ -41,15 +41,29 @@ export default function Billetterie() {
           </tbody>
         </table>
         <div className="pay reveal">
-          <h3>Billets en vente sur place</h3>
-          <p>
-            Les billets s&apos;achètent <strong>directement sur place</strong>, le jour de
-            l&apos;événement. Les points de vente seront communiqués prochainement.
-          </p>
+          <h3>Nos 7 points de vente</h3>
+          <p>Procurez-vous vos billets dans l&apos;un de nos points de vente :</p>
+          <ol className="pdv">
+            <li>
+              Kinam Hôtel <small>À proximité du Commissariat de Pétion-Ville</small>
+            </li>
+            <li>
+              Entre-Nous Restaurant <small>1, Delmas 79</small>
+            </li>
+            <li>
+              Espas CorrectPro <small>7, Catalpa 1, Delmas 75</small>
+            </li>
+            <li>
+              La Lorraine <small>Café 36</small>
+            </li>
+            <li>Télévision Nationale d&apos;Haïti</li>
+            <li>El Rancho</li>
+            <li>Palais Municipal de Delmas</li>
+          </ol>
           <p className="pay__soon">
-            Une question sur les tarifs ou les groupes scolaires ? Écrivez-nous à{" "}
+            Une question ? Écrivez-nous à{" "}
             <a href="mailto:contact@vacancesenlivres.org">contact@vacancesenlivres.org</a> ou
-            appelez le +509 5817-8138.
+            sur WhatsApp au +509 4750-4572.
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import EventStory from "@/components/EventStory";
+import HomeHighlights from "@/components/HomeHighlights";
 import HomeReel from "@/components/HomeReel";
 import GuestOfHonour from "@/components/GuestOfHonour";
 import PublishersList from "@/components/PublishersList";
@@ -25,6 +26,8 @@ export default function Home() {
       <Hero />
 
       <EventStory />
+
+      <HomeHighlights />
 
       <p className="home-more container reveal">
         <Link href="/editions/2026">
