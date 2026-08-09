@@ -10,9 +10,10 @@ import Infos from "@/components/Infos";
 import Faq from "@/components/Faq";
 import PrendrePart from "@/components/PrendrePart";
 import AuthorsCatalog from "@/components/AuthorsCatalog";
+import LivresEnVente from "@/components/LivresEnVente";
 import ScrollProgress from "@/components/ScrollProgress";
 import EditionDots from "@/components/EditionDots";
-import { getEdition, getEditions, getLivres } from "@/lib/content";
+import { getEdition, getEditions, getLivres, getLivresEnVente } from "@/lib/content";
 
 export function generateStaticParams() {
   return getEditions().map((e) => ({ annee: e.annee }));
@@ -32,9 +33,12 @@ export async function generateMetadata({
   };
 }
 
+// « En vente » n'entre dans le sommaire que si la section existe : une puce
+// pointant vers une ancre absente serait un lien mort.
 const CHAPTERS = [
   { id: "programme", label: "Programme" },
   { id: "auteurs", label: "Auteurs" },
+  ...(getLivresEnVente().length ? [{ id: "en-vente", label: "En vente" }] : []),
   { id: "galerie", label: "Images" },
   { id: "video", label: "Vidéo" },
   { id: "tarifs", label: "Tarifs" },
@@ -63,6 +67,8 @@ export default async function EditionPage({
           <Programme />
 
           <AuthorsCatalog livres={getLivres()} />
+
+          <LivresEnVente livres={getLivresEnVente()} />
 
           <div id="galerie" className="ed-anchor">
             <Gallery />

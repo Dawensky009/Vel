@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import BookCard from "./BookCard";
+import BooksCarousel from "./BooksCarousel";
 import type { Livre } from "@/lib/types";
 
 /**
  * Catalogue des auteurs de l'édition : compteur, filtres par genre
- * (chips accessibles, aria-pressed) et grille en révélation échelonnée.
+ * (chips accessibles, aria-pressed) et rail horizontal de cartes.
  * Sans JS : tous les titres restent visibles (le filtre est un enrichissement).
  */
 export default function AuthorsCatalog({ livres }: { livres: Livre[] }) {
@@ -57,13 +57,11 @@ export default function AuthorsCatalog({ livres }: { livres: Livre[] }) {
         ))}
       </div>
 
-      <div className="cat-grid" key={active}>
-        {shown.map((l, i) => (
-          <div className="cat-cell" style={{ ["--i" as string]: i }} key={l.titre}>
-            <BookCard livre={l} />
-          </div>
-        ))}
-      </div>
+      <BooksCarousel
+        livres={shown}
+        resetKey={active}
+        label={`Auteurs et livres en signatures — ${active === "Tous" ? "tous les genres" : active}`}
+      />
     </section>
   );
 }

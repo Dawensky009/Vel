@@ -463,6 +463,8 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); font-size: 0.8em; line-height: 1.1; margin-top: 0.12em; text-wrap: balance; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 14px rgba(var(--vel-navy-rgb),0.5); }
 .nowrap { white-space: nowrap; }
 .hero-im__deck { font-size: var(--step-1); color: rgba(244,237,224,0.98); max-width: 40ch; margin-top: var(--space-md); line-height: 1.45; text-shadow: 0 1px 3px rgba(0,0,0,0.45); }
+/* Sur mobile, on allège le hero : le deck est masqué (les faits + la carte suffisent) */
+@media (max-width: 767px) { .hero-im__deck { display: none; } }
 .hero-im__facts { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: var(--space-md); font-size: var(--step--1); color: rgba(244,237,224,0.95); text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
 .hero-im__facts b { color: var(--vel-cream); font-weight: 700; }
 .hero-im__cta { margin-top: var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; }
@@ -687,12 +689,43 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .cat-chip[aria-pressed="true"] { background: var(--vel-navy); color: var(--vel-cream); border-color: var(--vel-navy); }
 .cat-chip[aria-pressed="true"] .cat-chip__n { color: var(--vel-sun); }
 
-.cat-grid { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: repeat(2, 1fr); }
-@media (min-width: 720px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1000px) { .cat-grid { grid-template-columns: repeat(4, 1fr); } }
-.has-js .cat-cell { opacity: 0; animation: cat-in 0.5s var(--ease-out-expo) forwards; animation-delay: calc(var(--i, 0) * 40ms); }
+/* ── Rail horizontal de cartes livres (« carousel cards ») ──
+   Le défilement est natif : doigt, trackpad et clavier fonctionnent sans JS.
+   Les flèches et la barre de position sont un enrichissement. */
+.bcar { position: relative; }
+.bcar__bar { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm); }
+.bcar__bar[hidden] { display: none; }
+/* Bornée : au-delà, la barre passerait sous le sommaire flottant (.edots)
+   qui occupe le bord droit de la page édition. */
+.bcar__progress { position: relative; flex: 1 1 auto; max-width: 26rem; height: 3px; background: var(--vel-line); border-radius: 999px; }
+/* Le curseur suit le défilement image par image : on le pilote en transform
+   (composité) plutôt qu'en left/width, qui relanceraient la mise en page à
+   chaque événement de scroll. Pas de transition — le scroll cadence déjà. */
+.bcar__progress span { position: absolute; inset: 0; background: var(--vel-green-palm); border-radius: 999px; transform-origin: left center; }
+.bcar__nav { display: flex; gap: 0.5rem; flex: 0 0 auto; }
+.bcar__btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--vel-line-strong); background: #fff; color: var(--vel-navy); cursor: pointer; display: grid; place-items: center; transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-quart); }
+.bcar__btn:hover:not(:disabled) { background: var(--vel-navy); color: var(--vel-cream); border-color: var(--vel-navy); }
+.bcar__btn:active:not(:disabled) { transform: scale(0.94); }
+.bcar__btn:disabled { opacity: 0.3; cursor: default; }
+.bcar__btn:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 3px; }
+.bcar__viewport {
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.bcar__viewport::-webkit-scrollbar { display: none; }
+.bcar__viewport:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 4px; border-radius: var(--radius-lg); }
+/* overflow-x calcule overflow-y en `auto` : sans cette réserve verticale, le
+   soulèvement au survol et l'ombre des cartes seraient rognés. */
+.bcar__track { display: flex; gap: clamp(1rem, 2.5vw, 1.75rem); list-style: none; margin: 0; padding: 0.6rem 0 1.7rem; }
+.bcar__item { flex: 0 0 auto; display: flex; width: clamp(208px, 44vw, 264px); scroll-snap-align: start; }
+.bcar__item > * { width: 100%; }
+.has-js .bcar__item { opacity: 0; animation: cat-in 0.5s var(--ease-out-expo) forwards; animation-delay: calc(min(var(--i, 0), 6) * 55ms); }
 @keyframes cat-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .has-js .cat-cell { opacity: 1; animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .bcar__viewport { scroll-behavior: auto; }
+  .has-js .bcar__item { opacity: 1; animation: none; }
+}
 
 /* ── Système de cartes VEL : image « montée » sur une plaque marine ── */
 .book-card { display: flex; flex-direction: column; height: 100%; background: #fff; border-radius: var(--radius-lg); overflow: clip; box-shadow: 0 1px 2px rgba(var(--vel-navy-rgb),0.05), 0 12px 30px -18px rgba(var(--vel-navy-rgb),0.22); transition: transform var(--dur-mid) var(--ease-out-quart), box-shadow var(--dur-mid) var(--ease-out-quart); }

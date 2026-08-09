@@ -1,5 +1,14 @@
 import type { Livre } from "@/lib/types";
 
+// ── Deux catalogues distincts ────────────────────────────────────────────
+// `livres`        → « Auteurs & livres en signatures » : l'auteur est présent
+//                   sur place le 15 août pour dédicacer.
+// `livresEnVente` → « Livres en vente » : titres vendus sur les stands sans
+//                   séance de signature. En attente de la liste du client.
+// Les deux tableaux ont exactement la même forme (type `Livre`) et alimentent
+// le même rail de cartes ; il suffit de remplir le second pour que la section
+// apparaisse.
+
 // Auteurs & livres de l'édition 2026 — une entrée = une carte.
 // Couvertures optimisées dans /images/livres/. Ajoutez `photo` (portrait de
 // l'auteur) et `description` quand ils sont fournis.
@@ -122,3 +131,9 @@ export const livres: Livre[] = [
     note: "Haïti au carrefour du développement",
   },
 ];
+
+// Livres en vente sur les stands (sans séance de signature).
+// Tant que ce tableau est vide, la section ne s'affiche pas : rien d'inachevé
+// ne part en ligne. Ajoutez les titres sur le même modèle que ci-dessus —
+// `titre`, `auteur`, `prix` et `couverture` suffisent — et la section apparaît.
+export const livresEnVente: Livre[] = [];

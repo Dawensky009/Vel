@@ -8,7 +8,7 @@ import { editions } from "@/content/editions";
 import { publishers } from "@/content/publishers";
 import { organisation } from "@/content/organisation";
 import { activites } from "@/content/activites";
-import { livres } from "@/content/livres";
+import { livres, livresEnVente } from "@/content/livres";
 import type {
   Edition,
   Communique,
@@ -60,8 +60,14 @@ export function getOrganisation(): Organisation {
 
 /* ---------- Auteurs & livres ---------- */
 
+/** Titres dont l'auteur dédicace sur place. */
 export function getLivres(): Livre[] {
   return livres;
+}
+
+/** Titres vendus sur les stands, sans séance de signature. */
+export function getLivresEnVente(): Livre[] {
+  return livresEnVente;
 }
 
 /* ---------- Maisons d'édition ---------- */
