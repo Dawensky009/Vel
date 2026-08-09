@@ -54,6 +54,17 @@ export interface Communique {
   corpsHtml: string; // rendered HTML from the markdown body
 }
 
+export interface Livre {
+  titre: string;
+  auteur: string;
+  genre?: string;
+  prix: string; // ex. "1 000 HTG"
+  couverture: string; // chemin sous /public
+  note?: string; // ex. "Préface de …"
+  description?: string;
+  photo?: string; // portrait de l'auteur (optionnel)
+}
+
 export interface MediaVideo {
   url: string; // URL d'intégration (YouTube/Facebook/Vimeo) ou fichier local (/videos/….mp4)
   titre?: string;

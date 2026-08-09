@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import EventStory from "@/components/EventStory";
-import HomeHighlights from "@/components/HomeHighlights";
+import BooksShowcase from "@/components/BooksShowcase";
 import HomeReel from "@/components/HomeReel";
 import GuestOfHonour from "@/components/GuestOfHonour";
 import PublishersList from "@/components/PublishersList";
@@ -13,6 +13,7 @@ import {
   getCommuniques,
   getGuestsOfHonour,
   getPublishers,
+  getLivres,
 } from "@/lib/content";
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
 
       <EventStory />
 
-      <HomeHighlights />
+      <BooksShowcase livres={getLivres()} />
 
       <p className="home-more container reveal">
         <Link href="/editions/2026">

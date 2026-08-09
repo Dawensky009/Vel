@@ -8,6 +8,7 @@ import { editions } from "@/content/editions";
 import { publishers } from "@/content/publishers";
 import { organisation } from "@/content/organisation";
 import { activites } from "@/content/activites";
+import { livres } from "@/content/livres";
 import type {
   Edition,
   Communique,
@@ -15,6 +16,7 @@ import type {
   Personne,
   Organisation,
   Activite,
+  Livre,
 } from "./types";
 
 const COMMUNIQUES_DIR = path.join(process.cwd(), "content", "communiques");
@@ -54,6 +56,12 @@ export function getActivite(slug: string): Activite | undefined {
 
 export function getOrganisation(): Organisation {
   return organisation;
+}
+
+/* ---------- Auteurs & livres ---------- */
+
+export function getLivres(): Livre[] {
+  return livres;
 }
 
 /* ---------- Maisons d'édition ---------- */
