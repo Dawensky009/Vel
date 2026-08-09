@@ -49,7 +49,7 @@ export default function Hero() {
             style={{ ["--i"]: 2 } as React.CSSProperties}
           >
             La première édition ouvre le 15 août 2026 : 30 auteurs et plus, un palais qui
-            s&apos;ouvre au public, une journée entière à passer avec les livres.
+            s&apos;ouvre au public, une journée entière à passer avec les livres
           </p>
           <p
             className="hero-im__facts hero-rise"
@@ -68,7 +68,7 @@ export default function Hero() {
               </span>
             </Link>
             <span className="hero-im__free">
-              <b>500 HTG</b> · gratuit pour les enfants jusqu&apos;à 14 ans.
+              <b>500 HTG</b> · gratuit pour les enfants jusqu&apos;à 14 ans
             </span>
           </div>
         </div>
