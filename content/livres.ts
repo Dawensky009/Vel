@@ -26,4 +26,32 @@ export const livres: Livre[] = [
     couverture: "/images/livres/choisir-ses-etudes-en-haiti.jpg",
     note: "Préface de Placide Jobby",
   },
+  {
+    titre: "J'ai combattu le bon combat",
+    auteur: "Abraham Edmond",
+    genre: "Spiritualité",
+    prix: "1 700 HTG",
+    couverture: "/images/livres/jai-combattu-le-bon-combat.jpg",
+  },
+  {
+    titre: "La peur des femmes",
+    auteur: "Jackson Chéry",
+    genre: "Roman",
+    prix: "1 200 HTG",
+    couverture: "/images/livres/la-peur-des-femmes.jpg",
+  },
+  {
+    titre: "Lanmou Anba Fenèt ak Klere Chimen",
+    auteur: "Joseph Jackson",
+    genre: "Poésie",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/lanmou-anba-fenet.jpg",
+  },
+  {
+    titre: "Lascahobas 2054",
+    auteur: "Willène Polynice (Madame Popo)",
+    genre: "Essai",
+    prix: "1 200 HTG",
+    couverture: "/images/livres/lascahobas-2054.jpg",
+  },
 ];
