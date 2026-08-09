@@ -556,6 +556,67 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .books__nav:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 3px; }
 .books__all { margin-top: var(--space-md); text-align: center; }
 
+/* Coverflow — rack de couvertures en 3D (composant CoverflowCarousel) */
+.cflow { --gap: clamp(115px, 15vw, 205px); --angle: 44deg; margin-top: var(--space-md); overflow: hidden; }
+.cflow__stage {
+  position: relative; height: clamp(340px, 52vw, 480px);
+  perspective: 1600px; transform-style: preserve-3d;
+  display: grid; place-items: center;
+  touch-action: pan-y; cursor: grab; outline: none;
+}
+.cflow__stage:active { cursor: grabbing; }
+.cflow__stage:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 6px; border-radius: var(--radius-lg); }
+.cflow__floor {
+  position: absolute; bottom: 8%; left: 50%; width: clamp(220px, 30vw, 360px); height: 40px;
+  transform: translateX(-50%); border-radius: 50%;
+  background: radial-gradient(60% 100% at 50% 50%, rgba(var(--vel-navy-rgb),0.28), transparent 72%);
+  filter: blur(3px); z-index: 0; pointer-events: none;
+}
+.cflow__item {
+  position: absolute; height: clamp(290px, 44vw, 420px); aspect-ratio: 2 / 3;
+  margin: 0; padding: 0; border: 0; background: none; cursor: pointer;
+  transform-origin: center center; will-change: transform, opacity;
+  transform:
+    translateX(calc(var(--o) * var(--gap)))
+    translateZ(calc(var(--abs) * -150px))
+    rotateY(calc(var(--sign) * var(--angle)))
+    scale(calc(1 - var(--abs) * 0.06));
+  transition: transform 0.6s var(--ease-out-expo), opacity 0.6s ease;
+}
+.cflow__item.is-active { cursor: default; }
+.cflow__item.is-far { opacity: 0; pointer-events: none; }
+.cflow__cover {
+  position: relative; display: block; width: 100%; height: 100%;
+  border-radius: 6px; overflow: clip; background: var(--vel-navy);
+  box-shadow: 0 26px 50px -20px rgba(var(--vel-navy-rgb),0.65), 0 0 0 1px rgba(255,255,255,0.08);
+}
+.cflow__item::after {
+  content: ""; position: absolute; inset: 0; border-radius: 6px;
+  background: linear-gradient(105deg, rgba(var(--vel-navy-rgb),0) 40%, rgba(var(--vel-navy-rgb),0.28) 100%);
+  opacity: calc(var(--abs) * 0.5); transition: opacity 0.6s ease; pointer-events: none;
+}
+.cflow__item.is-active::after { opacity: 0; }
+
+.cflow__caption { text-align: center; max-width: 42ch; margin: var(--space-md) auto 0; min-height: 8.5rem; }
+.cflow__genre { display: inline-block; color: var(--vel-green-palm); background: rgba(52, 125, 43, 0.10); font-weight: 700; font-size: var(--step--1); padding: 0.18rem 0.65rem; border-radius: 999px; }
+.cflow__title { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-navy); line-height: 1.12; margin-top: 0.6rem; text-wrap: balance; }
+.cflow__author { color: var(--vel-ink-muted); font-size: var(--step-0); margin-top: 0.25rem; }
+.cflow__note { color: var(--vel-ink-muted); font-size: var(--step--1); font-style: italic; margin-top: 0.15rem; }
+.cflow__price { color: var(--vel-green-palm); font-weight: 800; font-size: var(--step-1); font-variant-numeric: tabular-nums; margin-top: 0.5rem; }
+
+.cflow__nav { display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin-top: var(--space-sm); }
+.cflow__btn { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--vel-line-strong); background: var(--vel-cream); color: var(--vel-navy); cursor: pointer; display: grid; place-items: center; transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-quart); }
+.cflow__btn:hover { background: var(--vel-navy); color: var(--vel-cream); }
+.cflow__btn:active { transform: scale(0.94); }
+.cflow__btn:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 3px; }
+.cflow__counter { font-variant-numeric: tabular-nums; color: var(--vel-ink-muted); font-weight: 600; font-size: var(--step-0); min-width: 4.5ch; text-align: center; }
+.cflow__counter span { color: var(--vel-navy); font-weight: 800; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cflow__item { transition: none; }
+  .cflow__item::after { transition: none; }
+}
+
 .books-grid { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 720px) { .books-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 1000px) { .books-grid { grid-template-columns: repeat(4, 1fr); } }
