@@ -40,7 +40,13 @@ export default function GuestOfHonour({ guests }: { guests: Personne[] }) {
             <div className="guest-card__body">
               <p className="guest-card__name">{g.nom}</p>
               {g.role ? <p className="guest-card__role">{g.role}</p> : null}
-              {g.bio ? <p className="guest-card__bio">{g.bio}</p> : null}
+              {g.bio?.length ? (
+                <div className="guest-card__bio">
+                  {g.bio.map((para, j) => (
+                    <p key={j}>{para}</p>
+                  ))}
+                </div>
+              ) : null}
             </div>
           </li>
         ))}

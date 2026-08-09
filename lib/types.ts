@@ -12,7 +12,7 @@ export interface TimelineItem {
 export interface Personne {
   nom: string;
   role?: string;
-  bio?: string;
+  bio?: string[]; // biographie, un élément = un paragraphe
   photo?: string; // path under /public
 }
 
