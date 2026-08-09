@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Countdown from "@/components/Countdown";
 import EventStory from "@/components/EventStory";
 import BooksShowcase from "@/components/BooksShowcase";
 import HomeReel from "@/components/HomeReel";
@@ -25,6 +26,12 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      <Countdown
+        target={`${edition.dateISO}T08:00:00-04:00`}
+        dateLabel={edition.dateLabel}
+        lieu={edition.lieu}
+      />
 
       <EventStory />
 

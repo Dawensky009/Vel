@@ -104,4 +104,20 @@ export const livres: Livre[] = [
     prix: "1 000 HTG",
     couverture: "/images/livres/soulevement-general-des-poussieres.jpg",
   },
+  {
+    titre: "Tourner la page",
+    auteur: "Nènel Cassy",
+    genre: "Essai",
+    prix: "1 500 HTG",
+    couverture: "/images/livres/tourner-la-page.jpg",
+    note: "Haïti au carrefour du développement",
+  },
+  {
+    titre: "Tralala",
+    auteur: "Joseph Jackson",
+    genre: "Poésie",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/tralala.jpg",
+    note: "Limyè anviwònman latè tenyen",
+  },
 ];

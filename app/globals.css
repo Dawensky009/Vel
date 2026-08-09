@@ -574,6 +574,20 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .band__q em { font-style: italic; color: var(--vel-sun); }
 .band__sub { margin-top: var(--space-md); font-size: var(--step-1); color: rgba(244,237,224,0.88); max-width: 44ch; }
 
+/* Countdown ------------------------------------------------------------ */
+.countdown { background: var(--vel-navy); color: var(--vel-cream); }
+.countdown__inner { display: grid; justify-items: center; text-align: center; gap: var(--space-sm); padding-block: clamp(2.75rem, 7vw, 4.5rem); }
+.countdown__lead { color: var(--vel-sun); font-family: var(--font-script); font-weight: 700; font-size: clamp(1.5rem, 3.6vw, 2.3rem); line-height: 1; }
+.countdown__title { font-family: var(--font-display); font-weight: 800; font-size: var(--step-3); line-height: 1.12; text-wrap: balance; }
+.countdown__title em { font-style: italic; color: var(--vel-sun); }
+.countdown__tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(0.5rem, 2.2vw, 1.15rem); width: min(100%, 600px); margin-top: var(--space-2xs); }
+.countdown__tile { display: grid; gap: 0.3rem; padding: clamp(0.8rem, 3vw, 1.35rem) 0.35rem; background: rgba(244, 237, 224, 0.06); border: 1px solid rgba(244, 237, 224, 0.15); border-radius: var(--radius-lg); }
+.countdown__num { font-family: var(--font-display); font-weight: 800; font-variant-numeric: tabular-nums; font-size: clamp(1.9rem, 7.5vw, 3.4rem); line-height: 1; color: var(--vel-sun); }
+.countdown__unit { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.07em; color: rgba(244, 237, 224, 0.72); }
+.countdown__done { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); color: var(--vel-sun); margin-top: var(--space-2xs); }
+.countdown__meta { font-size: var(--step-0); color: rgba(244, 237, 224, 0.85); margin-top: var(--space-2xs); }
+.countdown__cta { margin-top: var(--space-xs); }
+
 /* parallax inner (driven by Parallax component) */
 .parallax { transform: translate3d(0, var(--py, 0px), 0); will-change: transform; }
 
