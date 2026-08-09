@@ -39,7 +39,7 @@ export default function BooksShowcase({ livres }: { livres: Livre[] }) {
       <div className="books__track" ref={track}>
         {livres.map((l) => (
           <div className="books__slide" key={l.titre}>
-            <BookCard livre={l} ctaHref={SEE_ALL} />
+            <BookCard livre={l} />
           </div>
         ))}
       </div>
