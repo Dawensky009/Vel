@@ -14,16 +14,16 @@ export default function EventStory() {
         <div className="prose reveal">
           <p className="prose__lead">
             <em>Vacances en livres</em> n&apos;est pas un salon de plus. C&apos;est une
-            initiative durable pour rapprocher le public haïtien du livre, édition après
+            initiative durable pour rapprocher le public haïtien du livre édition après
             édition. L&apos;organisation qui la porte rassemble libraires, éditeurs,
             bibliothèques associatives et enseignants autour d&apos;une conviction simple :
-            la lecture n&apos;est pas un luxe.
+            « La lecture n&apos;est pas un luxe ».
           </p>
           <p>
-            La première édition ouvre le 15 août 2026, au Palais Municipal de Delmas :
-            plus de 30 auteurs signent, discutent, écoutent ; les enfants ont leur espace,
+            La première édition ouvre le 15 août 2026 au Palais Municipal de Delmas. Plus
+            de 30 auteurs signent, discutent et écoutent. Les enfants ont leur espace et
             les familles repartent avec des livres qu&apos;elles n&apos;auraient pas achetés
-            seules. Ce n&apos;est qu&apos;un début : d&apos;autres rendez-vous suivront.
+            seules. Ce n&apos;est qu&apos;un début, d&apos;autres rendez-vous suivront.
           </p>
           <p className="ev2__more">
             <Link href="/editions">Voir toutes les éditions →</Link>
