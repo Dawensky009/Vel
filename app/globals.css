@@ -61,8 +61,8 @@
   --space-lg:  2.5rem;
   --space-xl:  clamp(3rem, 5vw, 4.5rem);
   --space-section: clamp(3.75rem, 8vw, 7rem);
-  --gutter:    clamp(1.25rem, 5vw, 2.5rem);
-  --container: 1120px;
+  --gutter:    clamp(1.25rem, 5vw, 2.75rem);
+  --container: 1320px;
 
   /* --- Radii ------------------------------------------------------------ */
   --radius-xs: 3px;
@@ -672,11 +672,12 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 /* Invités d'honneur (cartes) */
 .guests { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1.5rem, 3vw, 2.25rem); grid-template-columns: 1fr; }
 .guest-card { display: grid; grid-template-columns: 1fr; background: #fff; border-radius: var(--radius-lg); overflow: clip; box-shadow: 0 1px 2px rgba(27,20,100,0.05), 0 16px 40px -22px rgba(27,20,100,0.28); }
-@media (min-width: 760px) { .guest-card { grid-template-columns: clamp(220px, 32%, 320px) 1fr; } }
-/* Volet marine : portrait « monté », même langage que les couvertures */
-.guest-card__frame { position: relative; background: radial-gradient(120% 90% at 50% 0%, #241b78 0%, var(--vel-navy) 62%, #150f4d 100%); padding: clamp(1.25rem, 4vw, 1.9rem); display: grid; place-items: center; }
-.guest-card__photo { position: relative; width: 100%; max-width: 240px; aspect-ratio: 3 / 4; border-radius: 4px; overflow: clip; background: var(--vel-navy); display: grid; place-items: center; box-shadow: 0 16px 30px -10px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.10); }
-.guest-card__initials { font-family: var(--font-display); font-weight: 800; font-size: var(--step-3); color: var(--vel-cream); letter-spacing: 0.02em; }
+@media (min-width: 760px) { .guest-card { grid-template-columns: clamp(300px, 42%, 480px) 1fr; align-items: stretch; } }
+/* Volet portrait : la photo occupe tout le volet (pleine hauteur) */
+.guest-card__frame { position: relative; background: var(--vel-navy); min-height: clamp(340px, 78vw, 460px); }
+@media (min-width: 760px) { .guest-card__frame { min-height: 100%; } }
+.guest-card__photo { position: absolute; inset: 0; display: grid; place-items: center; }
+.guest-card__initials { font-family: var(--font-display); font-weight: 800; font-size: var(--step-4); color: var(--vel-cream); letter-spacing: 0.02em; }
 .guest-card__body { padding: clamp(1.4rem, 3.5vw, 2.4rem); display: flex; flex-direction: column; }
 @media (min-width: 760px) { .guest-card__body { justify-content: center; } }
 .guest-card__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-3); color: var(--vel-navy); line-height: 1.08; }

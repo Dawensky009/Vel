@@ -31,7 +31,13 @@ export default function GuestOfHonour({ guests }: { guests: Personne[] }) {
             <div className="guest-card__frame">
               <div className="guest-card__photo">
                 {g.photo ? (
-                  <Image src={g.photo} alt={g.nom} fill sizes="(min-width: 760px) 320px, 240px" style={{ objectFit: "cover" }} />
+                  <Image
+                    src={g.photo}
+                    alt={g.nom}
+                    fill
+                    sizes="(min-width: 760px) 42vw, 100vw"
+                    style={{ objectFit: "cover", objectPosition: "center 22%" }}
+                  />
                 ) : (
                   <span className="guest-card__initials" aria-hidden="true">
                     {initials(g.nom)}
