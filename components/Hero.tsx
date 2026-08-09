@@ -73,21 +73,25 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside
-          className="hero-card hero-rise"
-          style={{ ["--i"]: 1 } as React.CSSProperties}
-          aria-label="Le 15 août, en bref"
-        >
-          <p className="hero-card__date">15 août 2026</p>
-          <p className="hero-card__sub">Samedi · Palais Municipal de Delmas</p>
-          <ol className="tl">
-            {TIMELINE.map(([time, label], i) => (
-              <li key={time} style={{ ["--i"]: i } as React.CSSProperties}>
-                <time>{time}</time>
-                <span>{label}</span>
-              </li>
-            ))}
-          </ol>
+        {/* L'entrée (keyframes) vit sur .hero-card, le survol (transition) sur
+            .hero-card__inner : une animation en fill-mode verrouille les
+            propriétés qu'elle anime, les deux ne peuvent pas partager un
+            élément. Même principe pour .tl li (entrée) et .tl__row (survol). */}
+        <aside className="hero-card" aria-label="Le 15 août, en bref">
+          <div className="hero-card__inner">
+            <p className="hero-card__date">15 août 2026</p>
+            <p className="hero-card__sub">Samedi · Palais Municipal de Delmas</p>
+            <ol className="tl">
+              {TIMELINE.map(([time, label], i) => (
+                <li key={time} style={{ ["--i"]: i } as React.CSSProperties}>
+                  <span className="tl__row">
+                    <time>{time}</time>
+                    <span className="tl__label">{label}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
         </aside>
       </div>
     </section>
