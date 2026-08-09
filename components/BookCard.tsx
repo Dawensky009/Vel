@@ -16,14 +16,16 @@ export default function BookCard({
       className="book-card"
       style={index != null ? ({ ["--i"]: index } as React.CSSProperties) : undefined}
     >
-      <div className="book-card__cover">
-        <Image
-          src={livre.couverture}
-          alt={`Couverture du livre « ${livre.titre} »`}
-          fill
-          sizes="(min-width: 720px) 300px, 72vw"
-          style={{ objectFit: "cover" }}
-        />
+      <div className="book-card__stage">
+        <div className="book-card__cover">
+          <Image
+            src={livre.couverture}
+            alt={`Couverture du livre « ${livre.titre} »`}
+            fill
+            sizes="(min-width: 720px) 300px, 72vw"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       </div>
       <div className="book-card__body">
         {livre.genre ? <p className="book-card__genre">{livre.genre}</p> : null}

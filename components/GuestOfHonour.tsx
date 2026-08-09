@@ -28,14 +28,16 @@ export default function GuestOfHonour({ guests }: { guests: Personne[] }) {
             className="guest-card"
             style={{ ["--i"]: i } as React.CSSProperties}
           >
-            <div className="guest-card__photo">
-              {g.photo ? (
-                <Image src={g.photo} alt={g.nom} fill sizes="150px" style={{ objectFit: "cover" }} />
-              ) : (
-                <span className="guest-card__initials" aria-hidden="true">
-                  {initials(g.nom)}
-                </span>
-              )}
+            <div className="guest-card__frame">
+              <div className="guest-card__photo">
+                {g.photo ? (
+                  <Image src={g.photo} alt={g.nom} fill sizes="(min-width: 760px) 320px, 240px" style={{ objectFit: "cover" }} />
+                ) : (
+                  <span className="guest-card__initials" aria-hidden="true">
+                    {initials(g.nom)}
+                  </span>
+                )}
+              </div>
             </div>
             <div className="guest-card__body">
               <p className="guest-card__name">{g.nom}</p>
