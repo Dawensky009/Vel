@@ -9,7 +9,7 @@ import Billetterie from "@/components/Billetterie";
 import Infos from "@/components/Infos";
 import Faq from "@/components/Faq";
 import PrendrePart from "@/components/PrendrePart";
-import BookCard from "@/components/BookCard";
+import AuthorsCatalog from "@/components/AuthorsCatalog";
 import ScrollProgress from "@/components/ScrollProgress";
 import EditionDots from "@/components/EditionDots";
 import { getEdition, getEditions, getLivres } from "@/lib/content";
@@ -62,23 +62,7 @@ export default async function EditionPage({
 
           <Programme />
 
-          <section
-            className="section container"
-            id="auteurs"
-            aria-labelledby="ed-auteurs-title"
-          >
-            <div className="s-head reveal">
-              <p className="s-lead">À découvrir sur place le 15 août</p>
-              <h2 className="s-title" id="ed-auteurs-title">
-                Les auteurs &amp; <em>leurs livres</em>
-              </h2>
-            </div>
-            <div className="books-grid stagger reveal">
-              {getLivres().map((l, i) => (
-                <BookCard key={l.titre} livre={l} index={i} />
-              ))}
-            </div>
-          </section>
+          <AuthorsCatalog livres={getLivres()} />
 
           <div id="galerie" className="ed-anchor">
             <Gallery />

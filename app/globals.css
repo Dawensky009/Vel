@@ -552,6 +552,25 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 @media (min-width: 720px) { .books-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 1000px) { .books-grid { grid-template-columns: repeat(4, 1fr); } }
 
+/* Catalogue des auteurs (page édition) — compteur + filtres par genre */
+.cat-count { color: var(--vel-ink-muted); font-size: var(--step-0); margin-top: var(--space-2xs); }
+.cat-count::before { content: ""; display: inline-block; width: 1.6rem; height: 2px; background: var(--vel-green-palm); vertical-align: middle; margin-right: 0.6rem; transform: translateY(-2px); }
+.cat-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: var(--space-md) 0 var(--space-lg); }
+.cat-chip { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 44px; padding: 0.5rem 0.95rem; border: 1px solid var(--vel-line-strong); border-radius: 999px; background: #fff; color: var(--vel-navy); font-family: inherit; font-size: var(--step--1); font-weight: 700; cursor: pointer; transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-quart); }
+.cat-chip:hover { border-color: var(--vel-green-palm); }
+.cat-chip:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 2px; }
+.cat-chip:active { transform: scale(0.97); }
+.cat-chip__n { font-size: var(--step--1); font-weight: 700; color: var(--vel-ink-muted); font-variant-numeric: tabular-nums; }
+.cat-chip[aria-pressed="true"] { background: var(--vel-navy); color: var(--vel-cream); border-color: var(--vel-navy); }
+.cat-chip[aria-pressed="true"] .cat-chip__n { color: var(--vel-sun); }
+
+.cat-grid { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 720px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .cat-grid { grid-template-columns: repeat(4, 1fr); } }
+.has-js .cat-cell { opacity: 0; animation: cat-in 0.5s var(--ease-out-expo) forwards; animation-delay: calc(var(--i, 0) * 40ms); }
+@keyframes cat-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .has-js .cat-cell { opacity: 1; animation: none; } }
+
 .book-card { display: flex; flex-direction: column; height: 100%; background: #fff; border: 1px solid var(--vel-line); border-radius: var(--radius-lg); overflow: clip; box-shadow: var(--shadow-sm); transition: transform var(--dur-mid) var(--ease-out-quart), box-shadow var(--dur-mid) var(--ease-out-quart), border-color var(--dur-mid) ease; }
 .book-card__cover { position: relative; aspect-ratio: 2 / 3; background: var(--vel-navy); overflow: clip; }
 .book-card__cover img { transition: transform var(--dur-slow) var(--ease-out-expo); }

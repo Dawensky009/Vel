@@ -82,7 +82,7 @@ export default function BooksShowcase({ livres }: { livres: Livre[] }) {
       <div className="s-head reveal">
         <p className="s-lead">Les auteurs de l&apos;édition 2026</p>
         <h2 className="s-title" id="books-title">
-          Auteurs &amp; <em>livres</em>
+          Auteurs &amp; livres <em>en signatures</em>
         </h2>
       </div>
 
