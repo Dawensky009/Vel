@@ -10,7 +10,9 @@
 
 :root {
   /* --- Brand (locked, hex; OKLCH equivalents in comments) --------------- */
-  --vel-navy:       #1B1464;  /* oklch(0.278 0.145 274) — ink, footer      */
+  /* Navy adouci : moins saturé, moins « électrique » (oklch chroma 0.145 -> ~0.075). */
+  --vel-navy:       #29325C;  /* oklch(0.31 0.075 268) — ink, footer       */
+  --vel-navy-rgb:   41, 50, 92; /* même valeur en RGB pour les rgba() (voiles, ombres) */
   --vel-green-palm: #347D2B;  /* oklch(0.526 0.135 143) — signature, badge */
   --vel-sun:        #FECE01;  /* oklch(0.856 0.169  92) — CTAs only        */
   --vel-cream:      #F4EDE0;  /* oklch(0.941 0.021  84) — page background   */
@@ -18,11 +20,11 @@
 
   /* --- Derived tones (navy/cream hue family only; contrast-checked) ----- */
   --vel-ink:        var(--vel-navy);
-  --vel-ink-muted:  #524B83;   /* secondary text — 6.4:1 on cream          */
-  --vel-line:       #DAD3D1;   /* hairline divider (navy 12% over cream)   */
-  --vel-line-strong:#C9C2C7;   /* table rules (navy 20% over cream)        */
+  --vel-ink-muted:  #4F567A;   /* secondary text — slate adouci, ~5.8:1 on cream */
+  --vel-line:       #DBD4CB;   /* hairline divider (navy 12% over cream)   */
+  --vel-line-strong:#C9C2C0;   /* table rules (navy 20% over cream)        */
   --vel-panel:      #EDE4D4;   /* faintly recessed cream surface           */
-  --vel-navy-soft:  #2A2170;
+  --vel-navy-soft:  #3A4372;
   --vel-sun-deep:   #E9BC00;
   --vel-cream-70:   rgba(244, 237, 224, 0.70);
   --vel-cream-55:   rgba(244, 237, 224, 0.55);
@@ -61,8 +63,8 @@
   --space-lg:  2.5rem;
   --space-xl:  clamp(3rem, 5vw, 4.5rem);
   --space-section: clamp(3.75rem, 8vw, 7rem);
-  --gutter:    clamp(1.25rem, 5vw, 2.75rem);
-  --container: 1320px;
+  --gutter:    clamp(1.25rem, 4.5vw, 3.25rem);
+  --container: 1440px;
 
   /* --- Radii ------------------------------------------------------------ */
   --radius-xs: 3px;
@@ -70,9 +72,9 @@
   --radius-lg: 10px;
 
   /* --- Shadows ---------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px rgba(27, 20, 100, 0.06);
-  --shadow-md: 0 6px 20px -8px rgba(27, 20, 100, 0.16);
-  --shadow-lg: 0 24px 60px -24px rgba(27, 20, 100, 0.28);
+  --shadow-sm: 0 1px 2px rgba(var(--vel-navy-rgb), 0.06);
+  --shadow-md: 0 6px 20px -8px rgba(var(--vel-navy-rgb), 0.16);
+  --shadow-lg: 0 24px 60px -24px rgba(var(--vel-navy-rgb), 0.28);
 
   /* --- Motion ----------------------------------------------------------- */
   --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
@@ -188,7 +190,7 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
   border-bottom: 1px solid var(--vel-line);
   transition: box-shadow var(--dur-mid) var(--ease-out-quart), border-color var(--dur-mid) ease, background-color var(--dur-mid) ease;
 }
-.nav--scrolled { box-shadow: 0 8px 24px -16px rgba(27, 20, 100, 0.32); border-bottom-color: var(--vel-line-strong); }
+.nav--scrolled { box-shadow: 0 8px 24px -16px rgba(var(--vel-navy-rgb), 0.32); border-bottom-color: var(--vel-line-strong); }
 .nav__inner { display: flex; align-items: center; gap: var(--space-md); min-height: 4.5rem; }
 .wordmark {
   display: inline-flex; align-items: center; overflow: hidden;
@@ -353,9 +355,11 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .pay .btn { margin-top: var(--space-md); }
 
 /* ---------- Infos pratiques ---------- */
-.infos__grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.info-card h3 { font-family: var(--font-body); font-weight: 700; font-size: var(--step--1); color: var(--vel-ink-muted); margin-bottom: 0.35rem; }
-.info-card p { font-size: var(--step-0); color: var(--vel-navy); }
+.infos__grid { display: grid; gap: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.info-card { background: #fff; border: 1px solid var(--vel-line); border-radius: var(--radius-lg); padding: clamp(1.15rem, 2.5vw, 1.6rem); box-shadow: 0 1px 2px rgba(var(--vel-navy-rgb),0.05), 0 10px 26px -18px rgba(var(--vel-navy-rgb),0.2); }
+.info-card__ic { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: rgba(52, 125, 43, 0.10); color: var(--vel-green-palm); margin-bottom: 0.8rem; }
+.info-card h3 { font-family: var(--font-body); font-weight: 700; font-size: var(--step--1); letter-spacing: 0.01em; color: var(--vel-ink-muted); margin-bottom: 0.35rem; }
+.info-card p { font-size: var(--step-0); color: var(--vel-navy); line-height: 1.55; }
 .info-card a { color: var(--vel-navy); text-decoration-color: var(--vel-line-strong); text-underline-offset: 3px; transition: text-decoration-color var(--dur-fast) ease, text-underline-offset var(--dur-fast) ease; }
 .info-card a:hover { text-decoration-color: var(--vel-sun); text-underline-offset: 5px; }
 .map { margin-top: var(--space-xl); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--vel-line); box-shadow: var(--shadow-sm); }
@@ -421,7 +425,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   overflow: clip; isolation: isolate; color: var(--vel-cream);
 }
 .hero-im__media { position: absolute; inset: 0; z-index: 0; }
-.hero-im__media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-im__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .has-js .hero-im__media > img { animation: kenburns 24s ease-out both; will-change: transform; }
 @keyframes kenburns { from { transform: scale(1.09); } to { transform: scale(1); } }
 
@@ -434,7 +438,11 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 }
 .hero-im__scrim {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to top, rgba(27,20,100,0.94) 0%, rgba(27,20,100,0.80) 48%, rgba(27,20,100,0.62) 100%);
+  /* Base 100 % opaque -> se fond dans le compte à rebours (même navy) ;
+     haut plus léger -> la photo respire ; texte lisible en bas. */
+  background:
+    linear-gradient(to top, var(--vel-navy) 0%, rgba(var(--vel-navy-rgb),0.92) 12%, rgba(var(--vel-navy-rgb),0.60) 46%, rgba(var(--vel-navy-rgb),0.38) 74%, rgba(var(--vel-navy-rgb),0.32) 100%),
+    linear-gradient(105deg, rgba(var(--vel-navy-rgb),0.34) 0%, rgba(var(--vel-navy-rgb),0) 55%);
 }
 .hero-im__inner {
   position: relative; z-index: 2;
@@ -442,14 +450,14 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
   display: grid; gap: clamp(1.75rem, 4vw, 3rem); align-items: end;
 }
 @media (min-width: 980px) { .hero-im__inner { grid-template-columns: 1.6fr auto; } }
-.hero-im__script { color: var(--vel-sun); font-size: clamp(1.45rem, 3vw, 2.1rem); display: inline-block; margin-bottom: 0.3rem; text-shadow: 0 1px 8px rgba(27,20,100,0.55); }
+.hero-im__script { color: var(--vel-sun); font-size: clamp(1.45rem, 3vw, 2.1rem); display: inline-block; margin-bottom: 0.3rem; text-shadow: 0 1px 8px rgba(var(--vel-navy-rgb),0.55); }
 .hero-im h1 {
   font-family: var(--font-display); font-weight: 800;
   font-size: clamp(2.2rem, 5.2vw, 3.9rem); line-height: 1.05;
   letter-spacing: var(--tracking-display); color: var(--vel-cream);
-  max-width: 16ch; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 20px rgba(27,20,100,0.5);
+  max-width: 16ch; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 20px rgba(var(--vel-navy-rgb),0.5);
 }
-.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); font-size: 0.8em; line-height: 1.1; margin-top: 0.12em; text-wrap: balance; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 14px rgba(27,20,100,0.5); }
+.hero-im h1 em { display: block; font-style: italic; font-weight: 400; color: var(--vel-sun); font-size: 0.8em; line-height: 1.1; margin-top: 0.12em; text-wrap: balance; text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 14px rgba(var(--vel-navy-rgb),0.5); }
 .nowrap { white-space: nowrap; }
 .hero-im__deck { font-size: var(--step-1); color: rgba(244,237,224,0.98); max-width: 40ch; margin-top: var(--space-md); line-height: 1.45; text-shadow: 0 1px 3px rgba(0,0,0,0.45); }
 .hero-im__facts { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin-top: var(--space-md); font-size: var(--step--1); color: rgba(244,237,224,0.95); text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
@@ -490,7 +498,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .figbox { position: relative; overflow: clip; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 .figbox img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .figbox--tall { aspect-ratio: 4 / 5; }
-.figbox figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem 1.1rem 0.9rem; font-size: var(--step--1); color: var(--vel-cream); background: linear-gradient(to top, rgba(27,20,100,0.7), transparent); font-style: italic; }
+.figbox figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem 1.1rem 0.9rem; font-size: var(--step--1); color: var(--vel-cream); background: linear-gradient(to top, rgba(var(--vel-navy-rgb),0.7), transparent); font-style: italic; }
 .has-js .reveal-img { clip-path: inset(0 0 100% 0); transition: clip-path var(--dur-slow) var(--ease-out-expo); }
 .has-js .reveal-img.is-in { clip-path: inset(0 0 0 0); }
 .zoom { overflow: clip; }
@@ -572,7 +580,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 @media (prefers-reduced-motion: reduce) { .has-js .cat-cell { opacity: 1; animation: none; } }
 
 /* ── Système de cartes VEL : image « montée » sur une plaque marine ── */
-.book-card { display: flex; flex-direction: column; height: 100%; background: #fff; border-radius: var(--radius-lg); overflow: clip; box-shadow: 0 1px 2px rgba(27,20,100,0.05), 0 12px 30px -18px rgba(27,20,100,0.22); transition: transform var(--dur-mid) var(--ease-out-quart), box-shadow var(--dur-mid) var(--ease-out-quart); }
+.book-card { display: flex; flex-direction: column; height: 100%; background: #fff; border-radius: var(--radius-lg); overflow: clip; box-shadow: 0 1px 2px rgba(var(--vel-navy-rgb),0.05), 0 12px 30px -18px rgba(var(--vel-navy-rgb),0.22); transition: transform var(--dur-mid) var(--ease-out-quart), box-shadow var(--dur-mid) var(--ease-out-quart); }
 /* La plaque marine : chaque couverture devient un livre posé, homogène */
 .book-card__stage { position: relative; background: radial-gradient(120% 80% at 50% 0%, #241b78 0%, var(--vel-navy) 60%, #150f4d 100%); padding: clamp(1rem, 4vw, 1.5rem) clamp(1rem, 4vw, 1.5rem) 0; }
 .book-card__stage::after { content: ""; position: absolute; left: 8%; right: 8%; bottom: -1px; height: 18px; background: radial-gradient(60% 100% at 50% 0%, rgba(0,0,0,0.5), transparent 75%); filter: blur(1px); }
@@ -588,7 +596,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .book-card__price { color: var(--vel-green-palm); font-weight: 800; font-size: var(--step-1); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
 .book-card__cta { align-self: center; }
 @media (hover: hover) {
-  .book-card:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(27,20,100,0.06), 0 30px 55px -22px rgba(27,20,100,0.4); }
+  .book-card:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(var(--vel-navy-rgb),0.06), 0 30px 55px -22px rgba(var(--vel-navy-rgb),0.4); }
   .book-card:hover .book-card__cover img { transform: scale(1.05); }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -601,10 +609,10 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .band { position: relative; overflow: clip; min-height: min(72vh, 640px); display: flex; align-items: center; isolation: isolate; color: var(--vel-cream); }
 .band__media { position: absolute; inset: -12% 0; z-index: 0; }
 .band__media img { width: 100%; height: 100%; object-fit: cover; }
-.band__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(105deg, rgba(27,20,100,0.86) 8%, rgba(27,20,100,0.5) 52%, rgba(27,20,100,0.22) 100%); }
+.band__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(105deg, rgba(var(--vel-navy-rgb),0.86) 8%, rgba(var(--vel-navy-rgb),0.5) 52%, rgba(var(--vel-navy-rgb),0.22) 100%); }
 .band__inner { position: relative; z-index: 2; padding-block: clamp(3rem, 8vw, 5.5rem); }
 .band__lead { color: var(--vel-sun); font-family: var(--font-script); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1; margin-bottom: 0.5rem; }
-.band__q { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 4.4vw, 3.3rem); line-height: 1.12; max-width: 22ch; text-wrap: balance; text-shadow: 0 2px 30px rgba(27,20,100,0.4); }
+.band__q { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 4.4vw, 3.3rem); line-height: 1.12; max-width: 22ch; text-wrap: balance; text-shadow: 0 2px 30px rgba(var(--vel-navy-rgb),0.4); }
 .band__q em { font-style: italic; color: var(--vel-sun); }
 .band__sub { margin-top: var(--space-md); font-size: var(--step-1); color: rgba(244,237,224,0.88); max-width: 44ch; }
 
@@ -671,7 +679,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 
 /* Invités d'honneur (cartes) */
 .guests { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1.5rem, 3vw, 2.25rem); grid-template-columns: 1fr; }
-.guest-card { display: grid; grid-template-columns: 1fr; background: #fff; border-radius: var(--radius-lg); overflow: clip; box-shadow: 0 1px 2px rgba(27,20,100,0.05), 0 16px 40px -22px rgba(27,20,100,0.28); }
+.guest-card { display: grid; grid-template-columns: 1fr; background: #fff; border-radius: var(--radius-lg); overflow: clip; box-shadow: 0 1px 2px rgba(var(--vel-navy-rgb),0.05), 0 16px 40px -22px rgba(var(--vel-navy-rgb),0.28); }
 @media (min-width: 760px) { .guest-card { grid-template-columns: clamp(300px, 42%, 480px) 1fr; align-items: stretch; } }
 /* Volet portrait : la photo occupe tout le volet (pleine hauteur) */
 .guest-card__frame { position: relative; background: var(--vel-navy); min-height: clamp(340px, 78vw, 460px); }
@@ -721,10 +729,10 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .ehero { position: relative; isolation: isolate; overflow: clip; min-height: clamp(440px, 78vh, 700px); display: flex; align-items: flex-end; color: var(--vel-cream); }
 .ehero__media { position: absolute; inset: -8% 0; z-index: 0; }
 .ehero__media img { width: 100%; height: 100%; object-fit: cover; }
-.ehero__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(27,20,100,0.94) 0%, rgba(27,20,100,0.74) 34%, rgba(27,20,100,0.44) 68%, rgba(27,20,100,0.34) 100%); }
+.ehero__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(var(--vel-navy-rgb),0.94) 0%, rgba(var(--vel-navy-rgb),0.74) 34%, rgba(var(--vel-navy-rgb),0.44) 68%, rgba(var(--vel-navy-rgb),0.34) 100%); }
 .ehero__inner { position: relative; z-index: 2; padding-block: clamp(2.75rem, 7vw, 5rem); }
 .ehero__badge-row { margin-bottom: var(--space-sm); }
-.ehero__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; letter-spacing: var(--tracking-display); text-wrap: balance; text-shadow: 0 2px 26px rgba(27,20,100,0.5); }
+.ehero__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; letter-spacing: var(--tracking-display); text-wrap: balance; text-shadow: 0 2px 26px rgba(var(--vel-navy-rgb),0.5); }
 .ehero__year { color: var(--vel-sun); font-style: italic; font-weight: 400; }
 .ehero__tagline { font-family: var(--font-display); font-style: italic; font-size: var(--step-2); color: var(--vel-sun); margin-top: 0.3rem; }
 .ehero__meta { font-weight: 600; color: var(--vel-cream); margin-top: var(--space-md); text-shadow: 0 1px 3px rgba(0,0,0,0.35); }
@@ -908,7 +916,7 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .lightbox {
   position: fixed; inset: 0; z-index: var(--z-overlay);
   display: grid; place-items: center;
-  background: rgba(27, 20, 100, 0.92);
+  background: rgba(var(--vel-navy-rgb), 0.92);
   -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
   padding: clamp(1rem, 4vw, 3rem);
   animation: lb-in var(--dur-mid) ease;
