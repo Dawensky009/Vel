@@ -32,8 +32,8 @@ export default function EventStory() {
         </div>
         <figure className="figbox figbox--tall zoom reveal reveal-img">
           <Image
-            src="/images/evenement/cp-11-presentation.jpg"
-            alt="L'Organisation Vacances en Livres présente l'édition 2026 à la presse."
+            src="/images/evenement/cp-09-prise-parole-portrait.jpg"
+            alt="Une membre de l'Organisation Vacances en Livres prend la parole devant la presse pour présenter l'édition 2026."
             fill
             sizes="(min-width: 880px) 42vw, 92vw"
             style={{ objectFit: "cover" }}
