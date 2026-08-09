@@ -4,13 +4,14 @@ import EditionHeader from "@/components/EditionHeader";
 import Gallery from "@/components/Gallery";
 import EditionMedia from "@/components/EditionMedia";
 import Programme from "@/components/Programme";
-import Sponsors from "@/components/Sponsors";
 import FeatureBand from "@/components/FeatureBand";
 import Billetterie from "@/components/Billetterie";
 import Infos from "@/components/Infos";
 import Faq from "@/components/Faq";
 import PrendrePart from "@/components/PrendrePart";
 import BookCard from "@/components/BookCard";
+import ScrollProgress from "@/components/ScrollProgress";
+import EditionDots from "@/components/EditionDots";
 import { getEdition, getEditions, getLivres } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -31,6 +32,17 @@ export async function generateMetadata({
   };
 }
 
+const CHAPTERS = [
+  { id: "programme", label: "Programme" },
+  { id: "auteurs", label: "Auteurs" },
+  { id: "galerie", label: "Images" },
+  { id: "video", label: "Vidéo" },
+  { id: "tarifs", label: "Tarifs" },
+  { id: "infos", label: "Infos" },
+  { id: "faq", label: "FAQ" },
+  { id: "participer", label: "Participer" },
+];
+
 export default async function EditionPage({
   params,
 }: {
@@ -45,28 +57,50 @@ export default async function EditionPage({
       <EditionHeader e={e} />
       {annee === "2026" ? (
         <>
-          <section className="section container" id="auteurs" aria-labelledby="ed-auteurs-title">
+          <ScrollProgress />
+          <EditionDots items={CHAPTERS} />
+
+          <Programme />
+
+          <section
+            className="section container"
+            id="auteurs"
+            aria-labelledby="ed-auteurs-title"
+          >
             <div className="s-head reveal">
               <p className="s-lead">À découvrir sur place le 15 août</p>
               <h2 className="s-title" id="ed-auteurs-title">
                 Les auteurs &amp; <em>leurs livres</em>
               </h2>
             </div>
-            <div className="books-grid reveal">
-              {getLivres().map((l) => (
-                <BookCard key={l.titre} livre={l} />
+            <div className="books-grid stagger reveal">
+              {getLivres().map((l, i) => (
+                <BookCard key={l.titre} livre={l} index={i} />
               ))}
             </div>
           </section>
-          <Gallery />
-          <EditionMedia videos={e.videos} upcoming={e.statut === "a-venir"} />
-          <Programme />
-          <Sponsors />
-          <FeatureBand />
+
+          <div id="galerie" className="ed-anchor">
+            <Gallery />
+          </div>
+
+          <div id="video" className="ed-anchor">
+            <EditionMedia videos={e.videos} upcoming={e.statut === "a-venir"} />
+          </div>
+
           <Billetterie />
+
+          <FeatureBand />
+
           <Infos />
-          <Faq />
-          <PrendrePart />
+
+          <div id="faq" className="ed-anchor">
+            <Faq />
+          </div>
+
+          <div id="participer" className="ed-anchor">
+            <PrendrePart />
+          </div>
         </>
       ) : (
         <section className="section container">

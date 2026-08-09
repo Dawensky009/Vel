@@ -34,7 +34,8 @@ export interface Edition {
   horaires?: string; // "9h00 – 18h30"
   lieu: string; // "Palais Municipal de Delmas"
   ville?: string; // "Delmas, Ouest, Haïti"
-  affiche?: string; // poster path
+  affiche?: string; // poster path (déprécié — préférer `cover`)
+  cover?: string; // photo d'ambiance (hero d'édition, carte d'archive)
   resume: string; // short description (archive card / home)
   guests?: Personne[]; // invités d'honneur
   maisonsEdition?: string[]; // publisher slugs

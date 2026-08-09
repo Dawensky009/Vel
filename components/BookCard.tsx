@@ -5,12 +5,17 @@ import type { Livre } from "@/lib/types";
 export default function BookCard({
   livre,
   ctaHref,
+  index,
 }: {
   livre: Livre;
   ctaHref?: string;
+  index?: number;
 }) {
   return (
-    <article className="book-card">
+    <article
+      className="book-card"
+      style={index != null ? ({ ["--i"]: index } as React.CSSProperties) : undefined}
+    >
       <div className="book-card__cover">
         <Image
           src={livre.couverture}

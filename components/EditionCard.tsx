@@ -11,10 +11,10 @@ export default function EditionCard({ e, i = 0 }: { e: Edition; i?: number }) {
       style={{ ["--i"]: i } as React.CSSProperties}
     >
       <div className="ecard__media">
-        {e.affiche ? (
+        {e.cover || e.affiche ? (
           <Image
-            src={e.affiche}
-            alt={`Affiche de ${e.titre} ${e.annee}`}
+            src={(e.cover || e.affiche) as string}
+            alt={`Vacances en livres ${e.annee}`}
             fill
             sizes="(min-width: 720px) 33vw, 100vw"
             style={{ objectFit: "cover" }}

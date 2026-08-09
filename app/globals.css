@@ -684,20 +684,57 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .ecard__more { margin-top: var(--space-md); color: var(--vel-green-palm); font-weight: 700; font-size: var(--step--1); }
 .editions-note { margin-top: var(--space-lg); color: var(--vel-ink-muted); font-style: italic; }
 
-/* En-tête d'édition */
-.ehead { padding-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: var(--space-xl); }
-.ehead__grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
-@media (min-width: 880px) { .ehead__grid { grid-template-columns: 1fr 0.7fr; } }
+/* En-tête d'édition — hero immersif */
 .ebadge { display: inline-block; background: var(--vel-navy); color: var(--vel-cream); font-weight: 700; font-size: var(--step--1); padding: 0.35em 0.8em; border-radius: 999px; }
 .ebadge.is-upcoming { background: var(--vel-sun); color: var(--vel-navy); }
-.ehead__badge-row { margin-bottom: var(--space-md); }
-.ehead__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: 1.03; letter-spacing: var(--tracking-display); color: var(--vel-navy); }
-.ehead__year { color: var(--vel-green-palm); font-style: italic; font-weight: 400; }
-.ehead__tagline { font-family: var(--font-display); font-style: italic; font-size: var(--step-2); color: var(--vel-green-palm); margin-top: 0.3rem; }
-.ehead__meta { color: var(--vel-navy); font-weight: 600; margin-top: var(--space-md); }
-.ehead__resume { color: var(--vel-ink-muted); font-size: var(--step-1); margin-top: var(--space-sm); max-width: 54ch; }
-.ehead__poster { margin: 0; border-radius: var(--radius-lg); overflow: clip; box-shadow: var(--shadow-lg); background: #fff; }
-.ehead__poster figcaption { padding: 0.6rem var(--space-md); font-size: var(--step--1); color: var(--vel-ink-muted); font-style: italic; text-align: center; }
+
+.ehero { position: relative; isolation: isolate; overflow: clip; min-height: clamp(440px, 78vh, 700px); display: flex; align-items: flex-end; color: var(--vel-cream); }
+.ehero__media { position: absolute; inset: -8% 0; z-index: 0; }
+.ehero__media img { width: 100%; height: 100%; object-fit: cover; }
+.ehero__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(27,20,100,0.94) 0%, rgba(27,20,100,0.74) 34%, rgba(27,20,100,0.44) 68%, rgba(27,20,100,0.34) 100%); }
+.ehero__inner { position: relative; z-index: 2; padding-block: clamp(2.75rem, 7vw, 5rem); }
+.ehero__badge-row { margin-bottom: var(--space-sm); }
+.ehero__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; letter-spacing: var(--tracking-display); text-wrap: balance; text-shadow: 0 2px 26px rgba(27,20,100,0.5); }
+.ehero__year { color: var(--vel-sun); font-style: italic; font-weight: 400; }
+.ehero__tagline { font-family: var(--font-display); font-style: italic; font-size: var(--step-2); color: var(--vel-sun); margin-top: 0.3rem; }
+.ehero__meta { font-weight: 600; color: var(--vel-cream); margin-top: var(--space-md); text-shadow: 0 1px 3px rgba(0,0,0,0.35); }
+.ehero__resume { color: rgba(244,237,224,0.92); font-size: var(--step-1); margin-top: var(--space-sm); max-width: 54ch; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+.ehero__cta { display: flex; flex-wrap: wrap; gap: 0.85rem 1rem; margin-top: var(--space-lg); }
+
+/* Bandeau de faits sous le hero */
+.efacts { background: var(--vel-navy); color: var(--vel-cream); }
+.efacts__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 720px) { .efacts__list { grid-template-columns: repeat(4, 1fr); } }
+.efacts__list li { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; text-align: center; padding: clamp(1rem, 2.6vw, 1.6rem) 0.5rem; border-top: 1px solid rgba(244,237,224,0.12); border-left: 1px solid rgba(244,237,224,0.12); }
+.efacts__list li:nth-child(-n+2) { border-top: 0; }
+@media (min-width: 720px) { .efacts__list li:nth-child(-n+4) { border-top: 0; } }
+.efacts__k { font-size: var(--step--1); color: rgba(244,237,224,0.68); }
+.efacts__v { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-cream); line-height: 1.1; }
+
+/* Barre de progression de lecture (page édition) */
+.escroll { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: calc(var(--z-sticky) + 1); pointer-events: none; }
+.escroll__bar { display: block; height: 100%; width: 100%; transform-origin: 0 50%; background: var(--vel-green-palm); will-change: transform; }
+
+/* Navigation par points (scroll-spy, desktop) */
+.edots { position: fixed; right: clamp(0.75rem, 1.8vw, 1.4rem); top: 50%; transform: translateY(-50%); z-index: var(--z-sticky); display: none; }
+@media (min-width: 1180px) { .edots { display: block; } }
+.edots ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; align-items: flex-end; }
+.edots a { display: flex; align-items: center; justify-content: flex-end; gap: 0.55rem; text-decoration: none; color: var(--vel-ink-muted); }
+.edots__dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--vel-line-strong); background: transparent; transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-quart); }
+.edots a:hover .edots__dot { border-color: var(--vel-green-palm); }
+.edots a.is-active .edots__dot { background: var(--vel-green-palm); border-color: var(--vel-green-palm); transform: scale(1.3); }
+.edots__label { font-size: var(--step--1); font-weight: 600; color: var(--vel-navy); background: var(--vel-cream); padding: 0.15rem 0.55rem; border-radius: 999px; box-shadow: var(--shadow-sm); opacity: 0; transform: translateX(6px); transition: opacity var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-quart); pointer-events: none; }
+.edots a:hover .edots__label, .edots a.is-active .edots__label { opacity: 1; transform: none; }
+.edots a:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: 3px; border-radius: 8px; }
+.edots a:focus-visible .edots__label { opacity: 1; transform: none; }
+
+/* Ancres de sections (offset sous la barre de nav) */
+.ed-anchor { scroll-margin-top: 5.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .edots__dot, .edots__label { transition: none; }
+  .edots a.is-active .edots__dot { transform: none; }
+}
 
 /* Article (communiqué) + corps markdown */
 .article { max-width: 760px; }

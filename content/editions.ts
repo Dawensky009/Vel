@@ -13,7 +13,7 @@ export const editions: Edition[] = [
     horaires: "9h00 – 21h00",
     lieu: "Palais Municipal de Delmas",
     ville: "69, rue Charbonnière, Delmas 33",
-    affiche: "/Annonces.jpeg",
+    cover: "/images/evenement/cp-05-panel-large.jpg",
     resume:
       "30 auteurs et plus en signature, un palais ouvert au public, une journée entière à passer avec les livres. 500 HTG l'adulte, gratuit pour les enfants de 14 ans et moins.",
     // Invités d'honneur (portraits à ajouter dès réception : champ `photo`).
@@ -44,7 +44,7 @@ export const editions: Edition[] = [
         url: "/videos/vel-spot-2026.mp4",
         poster: "/videos/vel-spot-2026.jpg",
         categorie: "Spot",
-        titre: "Spot officiel de Vacances en Livres 2026.",
+        titre: "Spot officiel de Vacances en Livres 2026",
       },
     ],
   },

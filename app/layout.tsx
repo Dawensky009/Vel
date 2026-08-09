@@ -42,10 +42,10 @@ export const metadata: Metadata = {
       "30 auteurs et plus en signature au Palais Municipal de Delmas, le 15 août 2026. 500 HTG · gratuit pour les enfants de 14 ans et moins.",
     images: [
       {
-        url: "/Annonces.jpeg",
-        width: 1080,
-        height: 1080,
-        alt: "Affiche officielle de Vacances en livres 2026",
+        url: "/images/evenement/cp-05-panel-large.jpg",
+        width: 1600,
+        height: 1067,
+        alt: "Vacances en livres — lancement de l'édition 2026",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Vacances en livres · L'événement de l'été",
     description:
       "30 auteurs et plus en signature au Palais Municipal de Delmas, le 15 août 2026.",
-    images: ["/Annonces.jpeg"],
+    images: ["/images/evenement/cp-05-panel-large.jpg"],
   },
 };
 

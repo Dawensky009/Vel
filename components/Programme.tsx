@@ -2,19 +2,19 @@ type Slot = [time: string, detail: string];
 
 // Volet « Auteurs et découvertes »
 const AUTEURS: Slot[] = [
-  ["8h00", "Montée du drapeau."],
-  ["9h00", "Ouverture au public et début des ventes de livres."],
-  ["10h00 – 10h30", "Accueil des invités d'honneur."],
-  ["12h30 – 13h30", "Remise des plaques d'honneur et prises de parole des invités d'honneur."],
-  ["13h30 – 14h00", "Prises de parole des institutions partenaires."],
-  ["Toute la journée", "Visite des stands, découverte des ouvrages, rencontres avec les auteurs et séances de dédicace."],
-  ["16h00", "Clôture des ventes de livres."],
+  ["8h00", "Montée du drapeau"],
+  ["9h00", "Ouverture au public et début des ventes de livres"],
+  ["10h00 – 10h30", "Accueil des invités d'honneur"],
+  ["12h30 – 13h30", "Remise des plaques d'honneur et prises de parole des invités d'honneur"],
+  ["13h30 – 14h00", "Prises de parole des institutions partenaires"],
+  ["Toute la journée", "Visite des stands, découverte des ouvrages, rencontres avec les auteurs et séances de dédicace"],
+  ["16h00", "Clôture des ventes de livres"],
 ];
 
 // Volet « Animations culturelles et artistiques »
 const ANIMATIONS: Slot[] = [
-  ["9h00 – 11h30", "Animation musicale avec T-Sax et T-Sax Band."],
-  ["17h00 – 20h00", "Performances artistiques avec Ricot et ses amis."],
+  ["9h00 – 11h30", "Animation musicale avec T-Sax et T-Sax Band"],
+  ["17h00 – 20h00", "Performances artistiques avec Ricot et ses amis"],
 ];
 
 function Part({ title, slots }: { title: string; slots: Slot[] }) {
