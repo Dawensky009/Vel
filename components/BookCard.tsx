@@ -22,16 +22,20 @@ export default function BookCard({
       </div>
       <div className="book-card__body">
         {livre.genre ? <p className="book-card__genre">{livre.genre}</p> : null}
-        <h3 className="book-card__title">{livre.titre}</h3>
+        <h3 className="book-card__title" title={livre.titre}>
+          {livre.titre}
+        </h3>
         <p className="book-card__author">{livre.auteur}</p>
         {livre.note ? <p className="book-card__note">{livre.note}</p> : null}
         {livre.description ? <p className="book-card__desc">{livre.description}</p> : null}
-        <p className="book-card__price">{livre.prix}</p>
-        {ctaHref ? (
-          <Link className="btn btn--ghost book-card__cta" href={ctaHref}>
-            Voir plus
-          </Link>
-        ) : null}
+        <div className="book-card__foot">
+          <p className="book-card__price">{livre.prix}</p>
+          {ctaHref ? (
+            <Link className="btn btn--ghost book-card__cta" href={ctaHref}>
+              Voir plus
+            </Link>
+          ) : null}
+        </div>
       </div>
     </article>
   );
