@@ -864,7 +864,23 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 .guest-card__role { display: inline-block; align-self: flex-start; color: var(--vel-green-palm); background: rgba(52, 125, 43, 0.10); font-weight: 700; font-size: var(--step--1); padding: 0.25rem 0.75rem; border-radius: 999px; margin-top: 0.6rem; }
 .guest-card__bio { margin-top: var(--space-md); }
 .guest-card__bio p { color: var(--vel-ink-muted); font-size: var(--step-0); line-height: 1.65; max-width: 64ch; }
-.guest-card__bio p + p { margin-top: 0.7rem; }
+/* Bloc justifié : les paragraphes se touchent davantage qu'en drapeau, il leur
+   faut un peu plus d'air pour rester lisibles comme des blocs distincts. */
+.guest-card__bio p + p { margin-top: 0.95rem; }
+/* Justification réservée au format deux colonnes : en dessous, la ligne est
+   trop courte et le blanc part en lézardes. La césure automatique fait le vrai
+   travail (dictionnaire français grâce au lang="fr" du document) — sans elle,
+   les mots longs du français creusent des trous entre les mots. Les limites de
+   césure interdisent de couper un mot de moins de 6 lettres et de laisser
+   moins de 3 lettres de part et d'autre du tiret. */
+@media (min-width: 760px) {
+  .guest-card__bio p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+  }
+}
 
 /* Maisons d'édition */
 .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(0.6rem, 1.5vw, 1rem); grid-template-columns: repeat(2, 1fr); }
