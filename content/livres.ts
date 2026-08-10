@@ -4,10 +4,9 @@ import type { Livre } from "@/lib/types";
 // `livres`        → « Auteurs & livres en signatures » : l'auteur est présent
 //                   sur place le 15 août pour dédicacer.
 // `livresEnVente` → « Livres en vente » : titres vendus sur les stands sans
-//                   séance de signature. En attente de la liste du client.
+//                   séance de signature.
 // Les deux tableaux ont exactement la même forme (type `Livre`) et alimentent
-// le même rail de cartes ; il suffit de remplir le second pour que la section
-// apparaisse.
+// le même rail de cartes ; vider le second fait disparaître la section.
 
 // Auteurs & livres de l'édition 2026 — une entrée = une carte.
 // Couvertures optimisées dans /images/livres/. Ajoutez `photo` (portrait de
@@ -133,7 +132,132 @@ export const livres: Livre[] = [
 ];
 
 // Livres en vente sur les stands (sans séance de signature).
-// Tant que ce tableau est vide, la section ne s'affiche pas : rien d'inachevé
-// ne part en ligne. Ajoutez les titres sur le même modèle que ci-dessus —
-// `titre`, `auteur`, `prix` et `couverture` suffisent — et la section apparaît.
-export const livresEnVente: Livre[] = [];
+// Couvertures optimisées dans /images/livres-en-vente/. Ordre alphabétique par
+// titre. Les `genre` manquent encore : le client n'a fourni que titre, auteur
+// et prix ; les `note` reprennent le sous-titre imprimé sur la couverture.
+export const livresEnVente: Livre[] = [
+  {
+    titre: "Cazale",
+    auteur: "Joël Lorquet, PhD",
+    prix: "1 300 HTG",
+    couverture: "/images/livres-en-vente/cazale.jpg",
+    note: "Un joyau à valoriser et une histoire à vendre",
+  },
+  {
+    titre: "Cet homme, mon père",
+    auteur: "Rachel Price Vorbe",
+    prix: "3 250 HTG",
+    couverture: "/images/livres-en-vente/cet-homme-mon-pere.jpg",
+  },
+  {
+    titre: "Choc du populisme et de la gauche en Haïti",
+    auteur: "Jean Hector Anacacis",
+    prix: "3 000 HTG",
+    couverture: "/images/livres-en-vente/choc-du-populisme-et-de-la-gauche.jpg",
+    note: "L'envers et le revers du mouvement lavalas",
+  },
+  {
+    titre: "Danse des bulles au soleil",
+    auteur: "Alex Duquella",
+    prix: "1 000 HTG",
+    couverture: "/images/livres-en-vente/danse-des-bulles-au-soleil.jpg",
+  },
+  {
+    titre: "Défense pénale au cours du jugement",
+    auteur: "R. Loridson Glaude",
+    prix: "1 000 HTG",
+    couverture: "/images/livres-en-vente/defense-penale-au-cours-du-jugement.jpg",
+  },
+  {
+    titre: "Diagnostic du pouvoir de Jovenel Moïse : son passé",
+    auteur: "Hector Anacacis",
+    prix: "4 500 HTG",
+    couverture: "/images/livres-en-vente/diagnostic-du-pouvoir-de-jovenel-moise.jpg",
+  },
+  {
+    titre: "Élections en Haïti",
+    auteur: "Jean Hector Anacacis",
+    prix: "3 500 HTG",
+    couverture: "/images/livres-en-vente/elections-en-haiti.jpg",
+    note: "Manœuvre de reprise de pouvoir et de pérennité",
+  },
+  {
+    titre:
+      "Études sur les conditions de travail des migrants haïtiens dans le secteur BTP en République Dominicaine",
+    auteur: "GARR",
+    prix: "1 500 HTG",
+    couverture: "/images/livres-en-vente/migrants-haitiens-btp.jpg",
+    note: "Les dessous du quotidien de ces travailleurs (2024-2025)",
+  },
+  {
+    titre: "Guide de développement local intégré",
+    auteur: "Jean Hector Anacacis",
+    prix: "1 500 HTG",
+    couverture: "/images/livres-en-vente/guide-de-developpement-local-integre.jpg",
+    note: "Décentralisation et actions des collectivités territoriales",
+  },
+  {
+    titre: "Histoires insolites au temps du coronavirus en Haïti",
+    auteur: "Joël Lorquet, PhD Cand",
+    prix: "1 300 HTG",
+    couverture: "/images/livres-en-vente/histoires-insolites-coronavirus.jpg",
+    note: "Suivies de commentaires de plusieurs intellectuels et professionnels haïtiens",
+  },
+  {
+    titre: "J'ai vécu deux vies",
+    auteur: "Rachel Price Vorbe",
+    prix: "2 900 HTG",
+    couverture: "/images/livres-en-vente/jai-vecu-deux-vies.jpg",
+  },
+  {
+    titre: "Je veux votre mari",
+    auteur: "Yenniva Ménard",
+    prix: "1 000 HTG",
+    couverture: "/images/livres-en-vente/je-veux-votre-mari.jpg",
+  },
+  {
+    titre: "Koko ta dwe pale",
+    auteur: "Kervens Roméus",
+    prix: "500 HTG",
+    couverture: "/images/livres-en-vente/koko-ta-dwe-pale.jpg",
+  },
+  {
+    titre: "Le Canal de la rivière Massacre",
+    auteur: "Joël Lorquet, PhD",
+    prix: "1 300 HTG",
+    couverture: "/images/livres-en-vente/le-canal-de-la-riviere-massacre.jpg",
+    note: "Une opportunité pour renforcer la production nationale et entamer le développement endogène",
+  },
+  {
+    titre: "Le comportement du couple dans l'amour après le mariage",
+    auteur: "Derice Lucien",
+    prix: "2 000 HTG",
+    couverture: "/images/livres-en-vente/le-comportement-du-couple.jpg",
+  },
+  {
+    titre: "Médias de proximité et développement social",
+    auteur: "Joël Lorquet, PhD",
+    prix: "1 300 HTG",
+    couverture: "/images/livres-en-vente/medias-de-proximite.jpg",
+    note: "Impact sur la conscience civique de la population haïtienne",
+  },
+  {
+    titre: "Nazaréen de Tabarre : une Église, une histoire",
+    auteur: "Joël Lorquet, PhD",
+    prix: "1 300 HTG",
+    couverture: "/images/livres-en-vente/nazareen-de-tabarre.jpg",
+  },
+  {
+    titre: "Romanez, l'enfant du pays",
+    auteur: "Rachel Price Vorbe",
+    prix: "2 900 HTG",
+    couverture: "/images/livres-en-vente/romanez-lenfant-du-pays.jpg",
+  },
+  {
+    titre: "Tourisme local & développement en Haïti",
+    auteur: "Joël Lorquet, PhD",
+    prix: "1 300 HTG",
+    couverture: "/images/livres-en-vente/tourisme-local-et-developpement.jpg",
+    note: "Vallue, un modèle de développement touristique et économique pour Haïti",
+  },
+];
