@@ -8,7 +8,6 @@ import GuestOfHonour from "@/components/GuestOfHonour";
 import PublishersList from "@/components/PublishersList";
 import CommuniqueCard from "@/components/CommuniqueCard";
 import Billetterie from "@/components/Billetterie";
-import Infos from "@/components/Infos";
 import {
   getUpcomingEdition,
   getCommuniques,
@@ -69,8 +68,6 @@ export default function Home() {
           </Link>
         </p>
       </section>
-
-      <Infos />
     </>
   );
 }

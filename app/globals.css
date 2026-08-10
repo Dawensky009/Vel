@@ -883,12 +883,29 @@ table.tickets thead th { border-top: 0; font-size: var(--step--1); font-weight: 
 }
 
 /* Maisons d'édition */
-.pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(0.6rem, 1.5vw, 1rem); grid-template-columns: repeat(2, 1fr); }
-@media (min-width: 620px) { .pubs { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 900px) { .pubs { grid-template-columns: repeat(6, 1fr); } }
-.pub { aspect-ratio: 3 / 2; display: grid; place-items: center; text-align: center; padding: 0.9rem; background: #fff; border: 1px solid var(--vel-line); border-radius: var(--radius); }
+/* Bandeau de logos défilant. Les bords s'estompent : la piste entre et sort du
+   cadre au lieu d'être tranchée net. overflow en plus du masque, pour qu'une
+   piste plus large que la page ne crée pas de défilement horizontal. */
+.logos { position: relative; overflow: hidden; --logos-fade: clamp(1.5rem, 6vw, 5rem);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--logos-fade), #000 calc(100% - var(--logos-fade)), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 var(--logos-fade), #000 calc(100% - var(--logos-fade)), transparent); }
+/* La gouttière est portée par les vignettes, pas par un `gap` de piste : un gap
+   ne s'applique pas après la dernière: le décalage d'une série tomberait à côté
+   d'une demi-gouttière et la boucle sauterait. */
+.logos__track { list-style: none; margin: 0; padding: 0.4rem 0; display: flex; width: max-content;
+  animation: logos-roll calc(var(--n, 3) * 3s) linear infinite; }
+.logos:hover .logos__track, .logos:focus-within .logos__track { animation-play-state: paused; }
+@keyframes logos-roll { to { transform: translateX(var(--shift, -50%)); } }
+.logos__item { flex: 0 0 auto; width: clamp(148px, 21vw, 196px); aspect-ratio: 3 / 2; margin-right: clamp(0.6rem, 1.5vw, 1rem); display: grid; place-items: center; text-align: center; padding: 0.9rem; background: #fff; border: 1px solid var(--vel-line); border-radius: var(--radius); }
+.logos__img { position: relative; width: 100%; height: 100%; }
+/* Sans animation : les logos reprennent une grille centrée, immobile, et les
+   séries répétées disparaissent pour ne pas afficher deux fois le même logo. */
+@media (prefers-reduced-motion: reduce) {
+  .logos { -webkit-mask-image: none; mask-image: none; overflow: visible; }
+  .logos__track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
+  .logos__item[aria-hidden="true"] { display: none; }
+}
 .pub__name { font-weight: 600; font-size: var(--step--1); color: var(--vel-ink-muted); line-height: 1.3; }
-.pub__logo { position: relative; width: 100%; height: 100%; }
 .pubs__cap { margin-top: var(--space-md); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
 
 /* Cartes éditions (archive) */
