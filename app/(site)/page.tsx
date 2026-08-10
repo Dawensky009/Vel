@@ -14,7 +14,7 @@ import {
   getCommuniques,
   getGuestsOfHonour,
   getPublishers,
-  getLivres,
+  getLivresEnVente,
 } from "@/lib/content";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
 
       <EventStory />
 
-      <BooksShowcase livres={getLivres()} />
+      <BooksShowcase livres={getLivresEnVente()} />
 
       <p className="home-more container reveal">
         <Link href="/editions/2026">

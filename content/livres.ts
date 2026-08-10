@@ -11,8 +11,44 @@ import type { Livre } from "@/lib/types";
 // Auteurs & livres de l'édition 2026 — une entrée = une carte.
 // Couvertures optimisées dans /images/livres/. Ajoutez `photo` (portrait de
 // l'auteur) et `description` quand ils sont fournis.
-// L'ordre du tableau = l'ordre d'affichage (carrousel accueil + grille édition).
+// L'ordre du tableau = l'ordre d'affichage (grille édition) : alphabétique.
+// `genre` n'est renseigné que sur les titres pour lesquels le client l'a
+// confirmé ; les autres n'apparaissent sous aucune puce du filtre par genre.
 export const livres: Livre[] = [
+  {
+    titre: "17 jours dans la fosse aux lions",
+    auteur: "Nenel Cassy",
+    genre: "Récit politique",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/17-jours-fosse-aux-lions.jpg",
+  },
+  {
+    titre: "40 ans au-delà des limites",
+    auteur: "Djina Guillet Delatour",
+    prix: "2 000 HTG",
+    couverture: "/images/livres/40-ans-au-dela-des-limites.jpg",
+    note: "Pour une cause",
+  },
+  {
+    titre: "À défaut d'orgasme",
+    auteur: "Darline Honoré (DaHo)",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/a-defaut-dorgasme.jpg",
+  },
+  {
+    titre: "À toi qui as tout donné",
+    auteur: "Anny-Lee Shaïma Labranche",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/a-toi-qui-as-tout-donne.jpg",
+    note: "Recueil de poèmes",
+  },
+  {
+    titre: "Ayiti solid",
+    auteur: "Jinèl Ulysse",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/ayiti-solid.jpg",
+    note: "Angajman pou yon Ayiti solid",
+  },
   {
     titre: "Choisir ses études en Haïti",
     auteur: "Stanley Joseph & Djeff Prophil",
@@ -22,6 +58,54 @@ export const livres: Livre[] = [
     note: "Préface de Placide Jobby",
   },
   {
+    titre: "Collection de réflexions certaines pour construire une vie chrétienne triomphante",
+    auteur: "Kelly Baldé, D.D. & Ph.D.",
+    genre: "Spiritualité",
+    prix: "2 500 HTG",
+    couverture: "/images/livres/reflexions-vie-chretienne.jpg",
+    note: "Réflexions de 2016 à 2024",
+  },
+  {
+    titre: "Coquillole",
+    auteur: "Mischneider N. Cazimir",
+    prix: "750 HTG",
+    couverture: "/images/livres/coquillole.jpg",
+  },
+  {
+    titre: "De la gestion de vos finances personnelles vers l'entrepreneuriat",
+    auteur: "Léonard Aldophe",
+    prix: "2 500 HTG",
+    couverture: "/images/livres/gestion-finances-entrepreneuriat.jpg",
+    note: "Préface d'Enomy Germain",
+  },
+  {
+    titre: "De la serpillère à manageur",
+    auteur: "Richard'son Jean-Baptiste",
+    prix: "2 250 HTG",
+    couverture: "/images/livres/de-la-serpillere-a-manageur.jpg",
+    note: "L'héritage d'un combat : se construire, s'élever, transmettre",
+  },
+  {
+    titre: "Différentes manifestations du Saint-Esprit dans la vie chrétienne",
+    auteur: "Corlby Michel",
+    prix: "1 500 HTG",
+    couverture: "/images/livres/differentes-manifestations-saint-esprit.jpg",
+  },
+  {
+    titre: "Doctrine chrétienne face aux obstacles à l'évangélisation",
+    auteur: "Kelly Baldé, D.D. & Ph.D.",
+    prix: "2 500 HTG",
+    couverture: "/images/livres/doctrine-chretienne.jpg",
+    note: "Protestant avant le protestantisme",
+  },
+  {
+    titre: "Entre 2 mondes",
+    auteur: "David Pierre Erick Etienne",
+    prix: "750 HTG",
+    couverture: "/images/livres/entre-2-mondes.jpg",
+    note: "Épisode 1 — pou timoun",
+  },
+  {
     titre: "Fais-moi jouir",
     auteur: "Viannye Ménard",
     genre: "Roman",
@@ -29,11 +113,57 @@ export const livres: Livre[] = [
     couverture: "/images/livres/fais-moi-jouir.jpg",
   },
   {
+    titre: "Gangs et écoles en Haïti",
+    auteur: "Claude Édouard",
+    prix: "1 500 HTG",
+    couverture: "/images/livres/gangs-et-ecoles-en-haiti.jpg",
+    note: "Enjeux et perspectives",
+  },
+  {
+    titre: "Haïti : environnement corruptible",
+    auteur: "Inel Torchon",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/haiti-environnement-corruptible.jpg",
+    note: "Enjeux et perspectives",
+  },
+  {
+    titre: "Haïti : la bête noire ?",
+    auteur: "Dre. Claudia Charlot",
+    prix: "1 500 HTG",
+    couverture: "/images/livres/haiti-la-bete-noire.jpg",
+    note: "Pourquoi l'aide étrangère a échoué en Haïti et ce qu'il faut faire pour y remédier",
+  },
+  {
     titre: "J'ai combattu le bon combat",
     auteur: "Abraham Edmond",
     genre: "Spiritualité",
     prix: "1 700 HTG",
     couverture: "/images/livres/jai-combattu-le-bon-combat.jpg",
+  },
+  {
+    titre: "L'héritage de Marie-Thérèse",
+    auteur: "D'jimy Malval",
+    prix: "2 500 HTG",
+    couverture: "/images/livres/lheritage-de-marie-therese.jpg",
+  },
+  {
+    titre: "L'Œuvre du Saint-Esprit",
+    auteur: "Kelly Baldé, D.D. & Ph.D.",
+    prix: "1 750 HTG",
+    couverture: "/images/livres/loeuvre-du-saint-esprit.jpg",
+    note: "Dans / par et pour l'homme — 2e édition",
+  },
+  {
+    titre: "La chair des sentiments",
+    auteur: "Léonard Herby",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/la-chair-des-sentiments.jpg",
+  },
+  {
+    titre: "La musique : au singulier pluriel",
+    auteur: "Kesnel Vertil",
+    prix: "10 500 HTG",
+    couverture: "/images/livres/la-musique-au-singulier-pluriel.jpg",
   },
   {
     titre: "La peur des femmes",
@@ -71,6 +201,26 @@ export const livres: Livre[] = [
     couverture: "/images/livres/le-debut-dune-scene.jpg",
   },
   {
+    titre: "Le pouvoir du sport",
+    auteur: "Ronald Antoine Auguste",
+    prix: "2 500 HTG",
+    couverture: "/images/livres/le-pouvoir-du-sport.jpg",
+  },
+  {
+    titre: "Le sang de Jésus, l'incrédulité et le salut par la foi",
+    auteur: "Dr. Jean-Robert Maître",
+    prix: "2 500 HTG",
+    couverture: "/images/livres/le-sang-de-jesus.jpg",
+    note: "Une réflexion sur l'accomplissement de Jésus à la croix",
+  },
+  {
+    titre: "Les chroniques de Bilolo Kongo",
+    auteur: "Jean Hearby Roc",
+    prix: "7 500 HTG",
+    couverture: "/images/livres/les-chroniques-de-bilolo-kongo.jpg",
+    note: "Tome 1",
+  },
+  {
     titre: "Les hésitations de la passion",
     auteur: "Dimitri Norris",
     genre: "Roman",
@@ -92,12 +242,29 @@ export const livres: Livre[] = [
     couverture: "/images/livres/mirak-reset-ak-te-lakay.jpg",
   },
   {
-    titre: "Collection de réflexions certaines pour construire une vie chrétienne triomphante",
+    titre: "Nou tout ka rive !!!",
+    auteur: "Valéry Numa",
+    prix: "3 000 HTG",
+    couverture: "/images/livres/nou-tout-ka-rive.jpg",
+  },
+  {
+    titre: "Nouvelle naissance, nouvelle vie",
     auteur: "Kelly Baldé, D.D. & Ph.D.",
-    genre: "Spiritualité",
+    prix: "1 500 HTG",
+    couverture: "/images/livres/nouvelle-naissance-nouvelle-vie.jpg",
+    note: "Une vie de service — Tome I, 3e édition",
+  },
+  {
+    titre: "Parce que demain Saïrah",
+    auteur: "Daryl Lorenzo Moïse",
+    prix: "1 000 HTG",
+    couverture: "/images/livres/parce-que-demain-sairah.jpg",
+  },
+  {
+    titre: "Sauver par la foi et vivre par la foi",
+    auteur: "Kelly Baldé, D.D. & Ph.D.",
     prix: "2 500 HTG",
-    couverture: "/images/livres/reflexions-vie-chretienne.jpg",
-    note: "Réflexions de 2016 à 2024",
+    couverture: "/images/livres/sauver-par-la-foi.jpg",
   },
   {
     titre: "Soulèvement général des poussières",
@@ -105,6 +272,14 @@ export const livres: Livre[] = [
     genre: "Poésie",
     prix: "1 000 HTG",
     couverture: "/images/livres/soulevement-general-des-poussieres.jpg",
+  },
+  {
+    titre: "Tourner la page",
+    auteur: "Nenel Cassy",
+    genre: "Essai",
+    prix: "1 500 HTG",
+    couverture: "/images/livres/tourner-la-page.jpg",
+    note: "Haïti au carrefour du développement",
   },
   {
     titre: "Tralala",
@@ -115,19 +290,11 @@ export const livres: Livre[] = [
     note: "Limyè anviwònman latè tenyen",
   },
   {
-    titre: "17 jours dans la fosse aux lions",
-    auteur: "Nenel Cassy",
-    genre: "Récit politique",
-    prix: "1 000 HTG",
-    couverture: "/images/livres/17-jours-fosse-aux-lions.jpg",
-  },
-  {
-    titre: "Tourner la page",
-    auteur: "Nenel Cassy",
-    genre: "Essai",
-    prix: "1 500 HTG",
-    couverture: "/images/livres/tourner-la-page.jpg",
-    note: "Haïti au carrefour du développement",
+    titre: "Un 20e siècle riche en événements et en inventions : le cas d'Haïti",
+    auteur: "Yves Roblin",
+    prix: "2 000 HTG",
+    couverture: "/images/livres/un-20e-siecle.jpg",
+    note: "Sciences de l'éducation : option histoire contemporaine",
   },
 ];
 
