@@ -1,7 +1,7 @@
 import type { Livre } from "@/lib/types";
 
 // ── Deux catalogues distincts ────────────────────────────────────────────
-// `livres`        → « Auteurs & livres en signatures » : l'auteur est présent
+// `livres`        → « Auteurs & livres en signature » : l'auteur est présent
 //                   sur place le 15 août pour dédicacer.
 // `livresEnVente` → « Livres en vente » : titres vendus sur les stands sans
 //                   séance de signature.

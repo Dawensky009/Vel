@@ -17,12 +17,12 @@ export default function BooksShowcase({ livres }: { livres: Livre[] }) {
       <div className="s-head reveal">
         <p className="s-lead">Les auteurs de l&apos;édition 2026</p>
         <h2 className="s-title" id="books-title">
-          Auteurs &amp; livres <em>en signatures</em>
+          Auteurs &amp; livres <em>en signature</em>
         </h2>
       </div>
 
       <div className="reveal">
-        <CoverflowCarousel livres={livres} label="Auteurs et livres en signatures" />
+        <CoverflowCarousel livres={livres} label="Auteurs et livres en signature" />
       </div>
 
       <p className="books__all reveal">

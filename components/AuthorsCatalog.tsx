@@ -28,7 +28,7 @@ export default function AuthorsCatalog({ livres }: { livres: Livre[] }) {
       <div className="s-head reveal">
         <p className="s-lead">À découvrir sur place le 15 août</p>
         <h2 className="s-title" id="ed-auteurs-title">
-          Auteurs &amp; livres <em>en signatures</em>
+          Auteurs &amp; livres <em>en signature</em>
         </h2>
         <p className="cat-count">
           {livres.length} titres · {genres.length} genres à feuilleter sur les stands
@@ -60,7 +60,7 @@ export default function AuthorsCatalog({ livres }: { livres: Livre[] }) {
       <BooksCarousel
         livres={shown}
         resetKey={active}
-        label={`Auteurs et livres en signatures — ${active === "Tous" ? "tous les genres" : active}`}
+        label={`Auteurs et livres en signature — ${active === "Tous" ? "tous les genres" : active}`}
       />
     </section>
   );
