@@ -13,7 +13,13 @@ const SWIPE_STEP = 90; // px de glissement par cran
  * Rendu en CSS 3D (aucune dépendance). Clavier, glisser, lecture auto
  * (en pause au survol / interaction) ; désactivé si prefers-reduced-motion.
  */
-export default function CoverflowCarousel({ livres }: { livres: Livre[] }) {
+export default function CoverflowCarousel({
+  livres,
+  label = "Carrousel de livres",
+}: {
+  livres: Livre[];
+  label?: string;
+}) {
   const n = livres.length;
   const [active, setActive] = useState(0);
   const pausedRef = useRef(false);
@@ -66,14 +72,19 @@ export default function CoverflowCarousel({ livres }: { livres: Livre[] }) {
   return (
     <div
       className="cflow"
-      onMouseEnter={() => (pausedRef.current = true)}
+      // Sur écran tactile, un appui synthétise un `mouseenter` sans jamais
+      // envoyer le `mouseleave` correspondant : sans ce garde, la lecture
+      // auto s'arrêterait définitivement au premier contact.
+      onMouseEnter={() => {
+        if (window.matchMedia("(hover: hover)").matches) pausedRef.current = true;
+      }}
       onMouseLeave={() => (pausedRef.current = false)}
     >
       <div
         className="cflow__stage"
         role="group"
         aria-roledescription="carrousel"
-        aria-label="Auteurs et livres en signatures"
+        aria-label={label}
         tabIndex={0}
         onKeyDown={onKey}
         onPointerDown={onDown}

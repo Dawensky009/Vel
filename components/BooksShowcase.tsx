@@ -22,7 +22,7 @@ export default function BooksShowcase({ livres }: { livres: Livre[] }) {
       </div>
 
       <div className="reveal">
-        <CoverflowCarousel livres={livres} />
+        <CoverflowCarousel livres={livres} label="Livres en vente sur les stands" />
       </div>
 
       <p className="books__all reveal">

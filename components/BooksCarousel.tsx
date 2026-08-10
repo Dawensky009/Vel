@@ -26,6 +26,7 @@ export default function BooksCarousel({
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(true);
   const [thumb, setThumb] = useState({ left: 0, scale: 1 });
+  const [pos, setPos] = useState({ page: 1, pages: 1 });
 
   const sync = useCallback(() => {
     const el = viewRef.current;
@@ -36,6 +37,13 @@ export default function BooksCarousel({
     setThumb({
       left: (el.scrollLeft / el.scrollWidth) * 100,
       scale: Math.min(1, el.clientWidth / el.scrollWidth),
+    });
+    // Repère « écran n sur N » : les flèches avancent d'une largeur de rail,
+    // le compteur compte donc en écrans, pas en cartes.
+    const pages = Math.max(1, Math.ceil(el.scrollWidth / el.clientWidth));
+    setPos({
+      pages,
+      page: Math.min(pages, Math.round(el.scrollLeft / el.clientWidth) + 1),
     });
   }, []);
 
@@ -82,10 +90,9 @@ export default function BooksCarousel({
 
   return (
     <div className="bcar">
-      {/* Commandes à gauche : sur la page édition, le sommaire flottant
-          (.edots) occupe le bord droit et rendrait des flèches droites
-          incliquables. Masquées quand tout tient à l'écran (filtre à 2 ou
-          3 titres) : deux flèches inertes et une barre pleine ne disent rien. */}
+      {/* Commandes groupées en pastille, alignées à droite. Masquées quand tout
+          tient à l'écran (filtre à 2 ou 3 titres) : deux flèches inertes et une
+          barre pleine ne disent rien. */}
       <div className="bcar__bar" hidden={atStart && atEnd}>
         <div className="bcar__nav">
           <button
@@ -95,10 +102,13 @@ export default function BooksCarousel({
             disabled={atStart}
             aria-label="Titres précédents"
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
+          <p className="bcar__counter" aria-hidden="true">
+            <span>{pos.page}</span> / {pos.pages}
+          </p>
           <button
             type="button"
             className="bcar__btn"
@@ -106,20 +116,15 @@ export default function BooksCarousel({
             disabled={atEnd}
             aria-label="Titres suivants"
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
         </div>
-        <div className="bcar__progress" aria-hidden="true">
-          <span
-            style={{ transform: `translateX(${thumb.left}%) scaleX(${thumb.scale})` }}
-          />
-        </div>
       </div>
 
       <div
-        className="bcar__viewport"
+        className={`bcar__viewport${atStart ? " is-start" : ""}${atEnd ? " is-end" : ""}`}
         ref={viewRef}
         tabIndex={0}
         role="group"
@@ -133,6 +138,12 @@ export default function BooksCarousel({
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Règle de position sous le rail : elle en reprend toute la largeur,
+          donc la portion parcourue se lit d'un coup d'œil. */}
+      <div className="bcar__progress" aria-hidden="true" hidden={atStart && atEnd}>
+        <span style={{ transform: `translateX(${thumb.left}%) scaleX(${thumb.scale})` }} />
       </div>
     </div>
   );
