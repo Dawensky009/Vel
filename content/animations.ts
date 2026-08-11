@@ -1,15 +1,12 @@
 import type { CreneauAnimation } from "@/lib/types";
 
-// L'artiste mis en avant sur l'accueil, avec son affiche d'annonce officielle.
-// Pour changer de tête d'affiche : remplacer les champs ci-dessous et déposer
-// l'affiche correspondante dans public/images/artistes/.
+// L'artiste mis en avant sur l'accueil. Pour changer de tête d'affiche :
+// remplacer les champs ci-dessous et déposer le portrait correspondant dans
+// public/images/artistes/.
 export const artisteInvite = {
   nom: "BIC",
-  affiche: "/images/artistes/affiche-bic.jpg",
-  // L'affiche porte déjà le nom, le lieu et la date : décrite en une phrase
-  // pour les lecteurs d'écran plutôt que recopiée mot à mot.
-  afficheAlt:
-    "Affiche d'annonce : BIC, confirmé au Palais Municipal de Delmas le 15 août 2026.",
+  photo: "/images/artistes/bic.jpg",
+  photoAlt: "Portrait de BIC.",
   accroche:
     "Sa venue est confirmée : BIC monte sur scène le 15 août, parmi les performances artistiques de la soirée.",
 } as const;
@@ -29,8 +26,9 @@ export const animations: CreneauAnimation[] = [
     titre: "Animation musicale",
     detail:
       "T-Sax et les DJ se relaient sur scène, en alternance, pendant toute la journée de ventes et de dédicaces.",
-    image: "/images/artistes/scene-musique.jpg",
-    legende: "T-Sax au saxophone.",
+    // Pas de photo d'ambiance ici : la seule disponible est celle de T-Sax au
+    // saxophone, dont son portrait est déjà tiré — le même homme, la même
+    // chemise et le même mur apparaissaient deux fois dans le même créneau.
     artistes: [
       { nom: "T-Sax", role: "Saxophone", photo: "/images/artistes/t-sax.jpg" },
       { nom: "DJ Mayz", role: "DJ", photo: "/images/artistes/dj-mayz.jpg" },

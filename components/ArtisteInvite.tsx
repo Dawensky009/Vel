@@ -3,12 +3,10 @@ import Link from "next/link";
 import { artisteInvite } from "@/content/animations";
 
 /**
- * Tête d'affiche : l'affiche d'annonce officielle, montrée telle quelle.
+ * Tête d'affiche : le portrait de l'artiste et sa place dans la journée.
  *
- * L'affiche est un carré composé (logo, nom, lieu, date, tarifs, contacts) :
- * la recadrer casserait sa mise en page, elle est donc affichée entière. Le
- * texte à côté ne répète pas ce qu'elle dit — il situe l'artiste dans la
- * journée et renvoie au programme.
+ * Le portrait remplace l'ancienne affiche d'annonce, qui imprimait sur la page
+ * des tarifs et un numéro absents de la billetterie et de la page contact.
  */
 export default function ArtisteInvite() {
   const a = artisteInvite;
@@ -20,12 +18,11 @@ export default function ArtisteInvite() {
       <div className="ai">
         <figure className="ai__poster reveal reveal-img">
           <Image
-            src={a.affiche}
-            alt={a.afficheAlt}
-            width={900}
-            height={900}
+            src={a.photo}
+            alt={a.photoAlt}
+            fill
             sizes="(min-width: 900px) 420px, 92vw"
-            style={{ width: "100%", height: "auto" }}
+            style={{ objectFit: "cover", objectPosition: "50% 15%" }}
           />
         </figure>
 
