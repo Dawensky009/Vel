@@ -934,30 +934,46 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
   }
 }
 
-/* Maisons d'édition */
-/* Bandeau de logos défilant. Les bords s'estompent : la piste entre et sort du
-   cadre au lieu d'être tranchée net. overflow en plus du masque, pour qu'une
-   piste plus large que la page ne crée pas de défilement horizontal. */
-.logos { position: relative; overflow: hidden; --logos-fade: clamp(1.5rem, 6vw, 5rem);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--logos-fade), #000 calc(100% - var(--logos-fade)), transparent);
-  mask-image: linear-gradient(to right, transparent, #000 var(--logos-fade), #000 calc(100% - var(--logos-fade)), transparent); }
-/* La gouttière est portée par les vignettes, pas par un `gap` de piste : un gap
-   ne s'applique pas après la dernière: le décalage d'une série tomberait à côté
-   d'une demi-gouttière et la boucle sauterait. */
-.logos__track { list-style: none; margin: 0; padding: 0.4rem 0; display: flex; width: max-content;
-  animation: logos-roll calc(var(--n, 3) * 3s) linear infinite; }
-.logos:hover .logos__track, .logos:focus-within .logos__track { animation-play-state: paused; }
-@keyframes logos-roll { to { transform: translateX(var(--shift, -50%)); } }
-.logos__item { flex: 0 0 auto; width: clamp(148px, 21vw, 196px); aspect-ratio: 3 / 2; margin-right: clamp(0.6rem, 1.5vw, 1rem); display: grid; place-items: center; text-align: center; padding: 0.9rem; background: #fff; border: 1px solid var(--vel-line); border-radius: var(--radius); }
-.logos__img { position: relative; width: 100%; height: 100%; }
-/* Sans animation : les logos reprennent une grille centrée, immobile, et les
-   séries répétées disparaissent pour ne pas afficher deux fois le même logo. */
-@media (prefers-reduced-motion: reduce) {
-  .logos { -webkit-mask-image: none; mask-image: none; overflow: visible; }
-  .logos__track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
-  .logos__item[aria-hidden="true"] { display: none; }
+/* ── Maisons d'édition ──
+   Rangée fixe, logos détourés posés à même le crème. Bornée en largeur : au-delà
+   les trois logos deviendraient des îlots perdus dans le blanc. Les colonnes se
+   séparent d'un filet, comme un index — pas d'encadré par logo. */
+.pubs {
+  list-style: none; margin: var(--space-lg) 0 0; padding: 0;
+  max-width: 47rem;
+  display: grid; grid-template-columns: 1fr; gap: 1px;
+  background: var(--vel-line); border-block: 1px solid var(--vel-line);
 }
-.pub__name { font-weight: 600; font-size: var(--step--1); color: var(--vel-ink-muted); line-height: 1.3; }
+@media (min-width: 560px) { .pubs { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+.pub { background: var(--vel-cream); }
+.pub__link {
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+  padding: clamp(1.5rem, 3.5vw, 2.1rem) var(--space-md) clamp(1.1rem, 2.5vw, 1.5rem);
+  height: 100%; text-decoration: none; color: inherit; text-align: center;
+  transition: background-color var(--dur-mid) var(--ease-out-quart);
+}
+.pub__logo { position: relative; display: block; width: 100%; max-width: 260px; aspect-ratio: 2 / 1; }
+.pub__logo img { transition: transform var(--dur-mid) var(--ease-out-quart); }
+.pub__name { font-weight: 700; font-size: var(--step--1); color: var(--vel-navy); line-height: 1.3; margin-top: 0.6rem; }
+/* Marqueur de lien toujours visible : au survol seulement, il n'existerait pas
+   au doigt. En ink-muted et non en vert — le vert sur crème plafonne à 4,4:1,
+   insuffisant pour un texte de cette taille. */
+.pub__go {
+  display: inline-flex; align-items: center; gap: 0.28rem; margin-top: 0.3rem;
+  font-size: var(--step--1); color: var(--vel-ink-muted);
+  text-underline-offset: 3px; text-decoration-color: transparent;
+  transition: text-decoration-color var(--dur-fast) ease;
+}
+.pub__link:focus-visible { outline: 3px solid var(--vel-focus); outline-offset: -3px; border-radius: var(--radius); }
+@media (hover: hover) {
+  .pub__link:hover { background: var(--vel-panel); }
+  .pub__link:hover .pub__logo img { transform: scale(1.04); }
+  .pub__link:hover .pub__go { text-decoration: underline; text-decoration-color: currentColor; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pub__link, .pub__logo img, .pub__go { transition: none; }
+  .pub__link:hover .pub__logo img { transform: none; }
+}
 .pubs__cap { margin-top: var(--space-md); color: var(--vel-ink-muted); font-style: italic; font-size: var(--step--1); }
 
 /* Cartes éditions (archive) */
