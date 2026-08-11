@@ -934,6 +934,21 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
   }
 }
 
+/* ── Tête d'affiche : l'affiche d'annonce + son contexte ──
+   L'affiche est bornée : à pleine largeur de colonne elle écraserait le reste
+   de l'accueil, alors qu'elle n'est qu'une annonce parmi d'autres. */
+.ai { display: grid; gap: clamp(1.5rem, 4vw, 2.75rem); align-items: center; }
+@media (min-width: 900px) { .ai { grid-template-columns: minmax(0, 420px) 1fr; } }
+.ai__side .s-title { margin-top: 0.15rem; }
+.ai__side .ai__lead { margin-top: var(--space-md); }
+.ai__poster {
+  margin: 0; border-radius: var(--radius-lg); overflow: clip;
+  box-shadow: 0 1px 2px rgba(var(--vel-navy-rgb),0.06), 0 26px 54px -26px rgba(var(--vel-navy-rgb),0.45);
+}
+.ai__poster img { display: block; }
+.ai__lead { font-size: var(--step-1); color: var(--vel-ink); line-height: 1.5; max-width: var(--measure-tight); }
+.ai__more { margin-top: var(--space-lg); font-weight: 600; }
+
 /* ── Maisons d'édition ──
    Rangée fixe, logos détourés posés à même le crème. Bornée en largeur : au-delà
    les trois logos deviendraient des îlots perdus dans le blanc. Les colonnes se

@@ -4,6 +4,7 @@ import Countdown from "@/components/Countdown";
 import EventStory from "@/components/EventStory";
 import BooksShowcase from "@/components/BooksShowcase";
 import HomeReel from "@/components/HomeReel";
+import ArtisteInvite from "@/components/ArtisteInvite";
 import GuestOfHonour from "@/components/GuestOfHonour";
 import PublishersList from "@/components/PublishersList";
 import CommuniqueCard from "@/components/CommuniqueCard";
@@ -33,6 +34,8 @@ export default function Home() {
       />
 
       <EventStory />
+
+      <ArtisteInvite />
 
       <BooksShowcase livres={getLivres()} />
 

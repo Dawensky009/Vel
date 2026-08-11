@@ -1,5 +1,19 @@
 import type { CreneauAnimation } from "@/lib/types";
 
+// L'artiste mis en avant sur l'accueil, avec son affiche d'annonce officielle.
+// Pour changer de tête d'affiche : remplacer les champs ci-dessous et déposer
+// l'affiche correspondante dans public/images/artistes/.
+export const artisteInvite = {
+  nom: "BIC",
+  affiche: "/images/artistes/affiche-bic.jpg",
+  // L'affiche porte déjà le nom, le lieu et la date : décrite en une phrase
+  // pour les lecteurs d'écran plutôt que recopiée mot à mot.
+  afficheAlt:
+    "Affiche d'annonce : BIC, confirmé au Palais Municipal de Delmas le 15 août 2026.",
+  accroche:
+    "Sa venue est confirmée : BIC monte sur scène le 15 août, parmi les performances artistiques de la soirée.",
+} as const;
+
 // La scène du 15 août : ce qui se joue, quand, et par qui.
 //
 // Portraits : découpés dans les visuels d'annonce fournis (Ressources/Artiste),
