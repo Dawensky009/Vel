@@ -24,7 +24,7 @@ export default function Countdown({
   target,
   dateLabel,
   lieu,
-  href = "/agenda",
+  href = "/editions/2026#programme",
 }: {
   target: string;
   dateLabel: string;

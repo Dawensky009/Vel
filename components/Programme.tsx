@@ -1,3 +1,6 @@
+import AnimationsTimeline from "./AnimationsTimeline";
+import { getAnimations } from "@/lib/content";
+
 type Slot = [time: string, detail: string];
 
 // Volet « Auteurs et découvertes »
@@ -11,11 +14,9 @@ const AUTEURS: Slot[] = [
   ["16h00", "Clôture des ventes de livres"],
 ];
 
-// Volet « Animations culturelles et artistiques »
-const ANIMATIONS: Slot[] = [
-  ["9h00 – 11h30", "Animation musicale avec T-Sax et T-Sax Band"],
-  ["17h00 – 20h00", "Performances artistiques avec Ricot et ses amis"],
-];
+// Le volet « Animations culturelles et artistiques » est passé en frise
+// illustrée (AnimationsTimeline) : horaires et distribution vivent désormais
+// dans content/animations.ts.
 
 function Part({ title, slots }: { title: string; slots: Slot[] }) {
   return (
@@ -42,10 +43,15 @@ export default function Programme() {
           Programme
         </h2>
       </div>
-      <div className="prog">
+      <div className="prog prog--solo">
         <Part title="Auteurs et découvertes" slots={AUTEURS} />
-        <Part title="Animations culturelles et artistiques" slots={ANIMATIONS} />
       </div>
+
+      <div className="prog__part prog__part--scene reveal">
+        <h3>Animations culturelles et artistiques</h3>
+        <AnimationsTimeline creneaux={getAnimations()} />
+      </div>
+
       <p className="prog__note reveal">
         Une journée de découvertes littéraires, de rencontres, de musique et de
         prestations artistiques vous attend au Palais municipal de Delmas.

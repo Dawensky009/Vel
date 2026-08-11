@@ -7,16 +7,16 @@ import { marked } from "marked";
 import { editions } from "@/content/editions";
 import { publishers } from "@/content/publishers";
 import { organisation } from "@/content/organisation";
-import { activites } from "@/content/activites";
 import { livres, livresEnVente } from "@/content/livres";
+import { animations } from "@/content/animations";
 import type {
   Edition,
   Communique,
   MaisonEdition,
   Personne,
   Organisation,
-  Activite,
   Livre,
+  CreneauAnimation,
 } from "./types";
 
 const COMMUNIQUES_DIR = path.join(process.cwd(), "content", "communiques");
@@ -40,18 +40,6 @@ export function getGuestsOfHonour(annee?: string): Personne[] {
   return ed?.guests ?? [];
 }
 
-/* ---------- Activités (agenda / timeline) ---------- */
-
-export function getActivites(annee?: string): Activite[] {
-  const list = annee ? activites.filter((a) => a.edition === annee) : [...activites];
-  // chronologique (du plus ancien au plus récent) — la timeline suit l'année
-  return list.sort((a, b) => a.date.localeCompare(b.date));
-}
-
-export function getActivite(slug: string): Activite | undefined {
-  return activites.find((a) => a.slug === slug);
-}
-
 /* ---------- Organisation ---------- */
 
 export function getOrganisation(): Organisation {
@@ -68,6 +56,12 @@ export function getLivres(): Livre[] {
 /** Titres vendus sur les stands, sans séance de signature. */
 export function getLivresEnVente(): Livre[] {
   return livresEnVente;
+}
+
+/* ---------- Scène : musique, slam, performances ---------- */
+
+export function getAnimations(): CreneauAnimation[] {
+  return animations;
 }
 
 /* ---------- Maisons d'édition ---------- */

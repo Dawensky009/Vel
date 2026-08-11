@@ -15,7 +15,7 @@ const TIMELINE: [string, string][] = [
   ["8h00", "Montée du drapeau"],
   ["9h00", "Ouverture au public"],
   ["12h30", "Invités d'honneur & plaques"],
-  ["17h – 20h", "Performances artistiques"],
+  ["17h00", "Slam & performances"],
 ];
 
 export default function Hero() {
@@ -61,7 +61,7 @@ export default function Hero() {
             className="hero-im__cta hero-rise"
             style={{ ["--i"]: 4 } as React.CSSProperties}
           >
-            <Link className="btn btn--cta" href="/agenda">
+            <Link className="btn btn--cta" href="/editions/2026#programme">
               Voir le programme{" "}
               <span className="arw" aria-hidden="true">
                 →

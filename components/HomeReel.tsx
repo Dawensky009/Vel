@@ -24,7 +24,7 @@ export default function HomeReel() {
             journalistes et les partenaires de l&apos;organisation.
           </p>
           <p className="pressconf__link">
-            <Link href="/agenda">Voir l&apos;agenda et toutes les photos →</Link>
+            <Link href="/editions/2026#galerie">Voir toutes les photos →</Link>
           </p>
         </div>
         <div className="pressconf__media reveal">

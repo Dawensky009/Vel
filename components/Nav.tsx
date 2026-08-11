@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 const LINKS = [
   { href: "/actualites", label: "Actualités" },
-  { href: "/agenda", label: "Agenda" },
   { href: "/editions", label: "Éditions" },
   { href: "/a-propos", label: "À propos" },
   { href: "/contact", label: "Contact" },

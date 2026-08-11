@@ -73,26 +73,27 @@ export interface MediaVideo {
   poster?: string; // image d'aperçu (vidéos locales)
 }
 
-export interface Activite {
-  slug: string;
-  titre: string;
-  date: string; // ISO
-  type: string; // "Conférence de presse", "Atelier", "Lancement", "Événement", "Table ronde"…
-  edition?: string; // edition annee ref
-  lieu?: string;
-  statut?: Statut; // "a-venir" | "passe"
-  resume: string;
-  couverture?: string; // path under /public
-  paragraphs?: string[];
-  images?: string[]; // paths under /public
-  videos?: MediaVideo[];
-}
-
 export interface Membre {
   nom: string;
   role: string;
   photo?: string; // path under /public
   bio?: string;
+}
+
+export interface Artiste {
+  nom: string;
+  photo: string; // path under /public
+  role?: string; // "Saxophone", "DJ", "Slam"… omis quand la scène suffit
+}
+
+/** Un créneau de la scène du 15 août (musique, slam, performances). */
+export interface CreneauAnimation {
+  heure: string;
+  titre: string;
+  detail: string;
+  artistes: Artiste[];
+  image?: string; // photo d'ambiance du créneau
+  legende?: string; // légende de l'image d'ambiance
 }
 
 export interface Valeur {

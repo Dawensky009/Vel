@@ -318,7 +318,39 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
   color: var(--vel-navy); letter-spacing: 0.01em;
 }
 .prog dd { color: var(--vel-ink-muted); font-size: var(--step-0); }
+.prog--solo { grid-template-columns: 1fr; }
+.prog--solo .prog__part { max-width: var(--measure); }
+.prog__part--scene { margin-top: var(--space-xl); }
 .prog__note { margin-top: var(--space-lg); font-style: italic; color: var(--vel-ink-muted); max-width: var(--measure); }
+
+/* ── La scène du 15 août : frise verticale illustrée ── */
+.anim { list-style: none; margin: 0; padding: 0; position: relative; }
+.anim__row { position: relative; padding: 0 0 var(--space-xl) clamp(1.6rem, 4vw, 2.4rem); }
+/* Le rail relie les points d'un créneau au suivant ; il s'arrête au dernier. */
+.anim__row::before { content: ""; position: absolute; left: 5px; top: 1.5rem; bottom: 0; width: 2px; background: var(--vel-line-strong); }
+.anim__row:last-child { padding-bottom: 0; }
+.anim__row:last-child::before { display: none; }
+.anim__marker { position: absolute; left: 0; top: 0.55rem; width: 12px; height: 12px; border-radius: 50%; background: var(--vel-sun); box-shadow: 0 0 0 3px var(--vel-cream); }
+.anim__time { font-variant-numeric: tabular-nums; font-weight: 700; font-size: var(--step--1); color: var(--vel-navy); letter-spacing: 0.01em; }
+.anim__title { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy); line-height: 1.15; margin-top: 0.1rem; }
+.anim__detail { color: var(--vel-ink-muted); font-size: var(--step-0); margin-top: 0.25rem; max-width: var(--measure-tight); }
+
+.anim__scene { position: relative; margin: var(--space-md) 0 0; aspect-ratio: 16 / 9; max-width: 40rem; border-radius: var(--radius-lg); overflow: clip; box-shadow: var(--shadow-md); }
+.anim__scene figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.4rem 0.9rem 0.7rem; font-size: var(--step--1); font-style: italic; color: var(--vel-cream); background: linear-gradient(to top, rgba(var(--vel-navy-rgb),0.75), transparent); }
+
+.anim__cast { list-style: none; margin: var(--space-md) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: clamp(0.75rem, 2vw, 1.15rem); }
+.anim__artist { display: flex; flex-direction: column; width: clamp(96px, 22vw, 132px); }
+.anim__photo { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow: clip; background: var(--vel-panel); box-shadow: 0 10px 24px -14px rgba(var(--vel-navy-rgb),0.5); }
+.anim__photo img { transition: transform var(--dur-slow) var(--ease-out-expo); }
+.anim__name { font-weight: 700; font-size: var(--step--1); color: var(--vel-navy); margin-top: 0.45rem; line-height: 1.2; }
+.anim__role { font-size: var(--step--1); color: var(--vel-ink-muted); line-height: 1.2; }
+
+@media (hover: hover) {
+  .anim__artist:hover .anim__photo img { transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anim__photo img { transition: none !important; transform: none !important; }
+}
 
 /* ---------- Sponsors ---------- */
 .sponsors__intro { max-width: var(--measure); font-size: var(--step-1); margin-bottom: var(--space-xl); }
