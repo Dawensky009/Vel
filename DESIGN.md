@@ -45,7 +45,7 @@ Container `min(100% − gutters, 1120px)`, fluid gutters via `clamp()`. Sections
 - **Buttons** — `.btn--cta` sun ground + navy label + nudging arrow; `.btn--ghost` navy-outline; `.btn--ghost-invert` cream-outline for navy panels. `.btn--block` for the full-width reservation CTA.
 - **Hero infographic** — cream `--vel-panel` card, hairline border; date/place header, then a vertical timeline (`<ol>`): sun dots (`box-shadow` ring punches through) on a `--vel-line-strong` rule, tabular times. Informational, not decorative.
 - **"Prendre part" band** — navy panel, two columns (Vous venez / Vous soutenez) split by a 1px rule, sun primary + cream-ghost secondary CTA. Adapted from a two-banner reference into VEL's dual-audience call.
-- **Ticket table** — semantic `<table>`, three formulas; the free tier carries a green pill badge.
+- **Tarifs** — plus de tableau : deux formules en `<dl>`, le tarif composé au-dessus du nom (`order`, l'ordre du DOM reste « formule puis tarif » pour la lecture vocale). Le prix est le plus gros caractère de la section, au-dessus du titre lui-même ; « Gratuit » porte le vert du système en grand caractère, à la place de l'ancienne pastille blanche sur vert. Deux colonnes bornées calées à gauche, séparées par un filet d'1px. Suivent les points de vente : un annuaire en `<ul>` sur colonnes fluides, jamais numéroté — ce sont des commerces, pas des étapes.
 - **FAQ** — native `<details>` with a green +/– affordance, no decoration.
 - **Map** — lazy OpenStreetMap iframe in a bordered frame with a "repère à confirmer" note.
 - **Footer** — navy ground, cream text, contacts / réseaux / colophon.
