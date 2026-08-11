@@ -6,7 +6,6 @@ import EditionMedia from "@/components/EditionMedia";
 import Programme from "@/components/Programme";
 import FeatureBand from "@/components/FeatureBand";
 import Billetterie from "@/components/Billetterie";
-import Infos from "@/components/Infos";
 import Faq from "@/components/Faq";
 import PrendrePart from "@/components/PrendrePart";
 import AuthorsCatalog from "@/components/AuthorsCatalog";
@@ -42,7 +41,6 @@ const CHAPTERS = [
   { id: "galerie", label: "Images" },
   { id: "video", label: "Vidéo" },
   { id: "tarifs", label: "Tarifs" },
-  { id: "infos", label: "Infos" },
   { id: "faq", label: "FAQ" },
   { id: "participer", label: "Participer" },
 ];
@@ -81,8 +79,6 @@ export default async function EditionPage({
           <Billetterie />
 
           <FeatureBand />
-
-          <Infos />
 
           <div id="faq" className="ed-anchor">
             <Faq />
