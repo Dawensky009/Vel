@@ -1252,6 +1252,15 @@ section[id], [id="top"] { scroll-margin-top: 5.5rem; }
   .has-js .hero-rise { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
+/* ---------- 404 ---------- */
+.nf__title { margin-top: 0.15rem; }
+.nf__text { margin-top: var(--space-md); color: var(--vel-ink-muted); font-size: var(--step-1); max-width: var(--measure-tight); }
+.nf__links { list-style: none; margin: var(--space-xl) 0 0; padding: 0; display: grid; gap: 1px; max-width: 42rem; background: var(--vel-line); border-block: 1px solid var(--vel-line); }
+.nf__links li { background: var(--vel-cream); display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.9rem; padding: var(--space-md) 0.2rem; }
+.nf__links a { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--vel-navy); text-decoration-color: var(--vel-line-strong); text-underline-offset: 4px; transition: text-decoration-color var(--dur-fast) ease; }
+.nf__links a:hover { text-decoration-color: var(--vel-sun); }
+.nf__links span { color: var(--vel-ink-muted); font-size: var(--step--1); }
+
 /* ---------- Maintenance / holding page (rendered without site chrome) ---------- */
 .maint {
   min-height: 100dvh;

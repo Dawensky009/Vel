@@ -64,7 +64,12 @@ export const config = {
   // Gate all routes except Next internals, the maintenance page itself, the
   // health endpoint (monitoring stays green), and the public assets the
   // maintenance page needs to render.
+  //
+  // robots.txt and sitemap.xml are excluded on purpose: rewritten to
+  // /maintenance they would answer HTML where a crawler expects text or XML.
+  // They stay reachable and handle the closed gate themselves — robots.ts
+  // serves "Disallow: /" while MAINTENANCE_MODE is on.
   matcher: [
-    "/((?!maintenance|_next/static|_next/image|api/health|favicon.ico|icon.svg|Logo_vel.jpeg|Annonces.jpeg|images/).*)",
+    "/((?!maintenance|_next/static|_next/image|api/health|robots.txt|sitemap.xml|favicon.ico|icon.png|Logo_vel.webp|Annonces.jpeg|images/).*)",
   ],
 };

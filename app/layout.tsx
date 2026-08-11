@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { SITE_URL } from "@/lib/site";
 import { Alegreya, Manrope, Caveat } from "next/font/google";
 import "./globals.css";
 
@@ -24,7 +25,7 @@ const caveat = Caveat({
   display: "swap",
 });
 
-const SITE_URL = "https://vacancesenlivres.org";
+
 const DESCRIPTION =
   "Vacances en livres : 30 auteurs et plus en signature au Palais Municipal de Delmas, le samedi 15 août 2026. 500 HTG par adulte, gratuit pour les enfants de 14 ans et moins.";
 

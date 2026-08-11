@@ -40,7 +40,7 @@ export default function Nav() {
         <Link className="wordmark" href="/" aria-label="Vacances en livres, accueil">
           <img
             className="wordmark__img"
-            src="/Logo_vel.jpeg"
+            src="/Logo_vel.webp"
             alt="Vacances en livres"
             width={1080}
             height={1044}

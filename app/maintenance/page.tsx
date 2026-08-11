@@ -14,10 +14,10 @@ export default function MaintenancePage() {
         <span className="maint__logo">
           <img
             className="maint__logo-img"
-            src="/Logo_vel.jpeg"
+            src="/Logo_vel.webp"
             alt="Vacances en livres"
-            width={1080}
-            height={1044}
+            width={360}
+            height={348}
             decoding="async"
           />
         </span>
